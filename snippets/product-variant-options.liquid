@@ -58,8 +58,8 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-      {{ product.featured_image | img_url: '65x65' | img_tag }}
+    <label class="style-btn" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+      {{ value }}
       <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
     </label>
   {%- elsif block.settings.picker_type == 'dropdown' -%}
