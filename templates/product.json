@@ -68,13 +68,6 @@
           "settings": {
           }
         },
-        "0edd48f8-258a-4472-8a06-16ab2b44cc87": {
-          "type": "text",
-          "settings": {
-            "text": "Text block",
-            "text_style": "body"
-          }
-        },
         "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc": {
           "type": "popup",
           "settings": {
@@ -93,7 +86,6 @@
         "collapsible-row-0",
         "buy_buttons",
         "description",
-        "0edd48f8-258a-4472-8a06-16ab2b44cc87",
         "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc"
       ],
       "settings": {
