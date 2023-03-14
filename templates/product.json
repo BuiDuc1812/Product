@@ -63,9 +63,26 @@
             "show_dynamic_checkout": true
           }
         },
-        "description": {
-          "type": "description",
+        "b9910191-a821-4acc-9ff9-93b7a70d0e3b": {
+          "type": "collapsible_tab",
           "settings": {
+            "heading": "Collapsible row",
+            "text-url": "add the text url",
+            "url-accordion": "",
+            "icon": "check_mark",
+            "content": "",
+            "page": ""
+          }
+        },
+        "2c472ca0-effd-4d0c-938c-27007488ccc9": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Collapsible row",
+            "text-url": "add the text url",
+            "url-accordion": "",
+            "icon": "check_mark",
+            "content": "<p>Monday                9:00am - 5:00pm<\/p><p>Tuesday                9:00am - 5:00pm<\/p><p>Wednesday          9:00am - 5:00pm<\/p><p>Thursday              Closed<\/p><p>Friday                   9:00am - 5:00pm<\/p><p>Saturday               9:00am - 5:00pm<\/p><p>Sunday                9:00am - 5:00pm<\/p><p>Closed public holidays<\/p>",
+            "page": ""
           }
         },
         "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc": {
@@ -73,6 +90,13 @@
           "settings": {
             "text": "Pop-up link text",
             "page": "contact"
+          }
+        },
+        "eb0219b0-cbf4-4f36-a9dd-61fe23fe982f": {
+          "type": "text",
+          "settings": {
+            "text": "Text block",
+            "text_style": "body"
           }
         }
       },
@@ -85,8 +109,10 @@
         "collapsible-row-1",
         "collapsible-row-0",
         "buy_buttons",
-        "description",
-        "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc"
+        "b9910191-a821-4acc-9ff9-93b7a70d0e3b",
+        "2c472ca0-effd-4d0c-938c-27007488ccc9",
+        "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc",
+        "eb0219b0-cbf4-4f36-a9dd-61fe23fe982f"
       ],
       "settings": {
         "enable_sticky_info": true,
