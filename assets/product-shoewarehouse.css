@@ -57,3 +57,12 @@
     left: -3px;
     transform: rotate(-201deg)
 }
+
+.new-add-to-card {
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+    background-color: #C03732;
+    color: white;
+    border-radius: 2px;
+}

@@ -224,8 +224,9 @@ fieldset.product-form__input .form__label {
 }
 
 .product-form__input input[type='radio']:checked + label {
-  color: black !important;
-  border: 1px solid black !important;
+  /* background-color: rgb(var(--color-foreground)); */
+  /* color: rgb(var(--color-background)); */
+  /* color: black !important; */
 }
 
 .product-form__input input[type='radio']:not(.disabled) + label > .visually-hidden {
@@ -251,10 +252,10 @@ fieldset.product-form__input .form__label {
 .product-form__input input[type='radio'].disabled + .style-btn::after {
   display: block;
 }
-.product-form__input input[type='radio'].disabled:checked + label,
+/* .product-form__input input[type='radio'].disabled:checked + label,
 .product-form__input input[type='radio']:disabled:checked + label {
   color: rgba(var(--color-background), 0.6);
-}
+} */
 .product-form__input input[type='radio']:focus-visible + label {
   box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
     0 0 0 0.5rem rgba(var(--color-foreground), 0.55);
