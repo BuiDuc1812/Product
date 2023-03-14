@@ -1,8 +1,12 @@
+.font-fa {
+    font-family: math;
+}
+
 .product-vendor {
     line-height: 32px;
     font-size: 24px;
-    font-weight: 600;
     color: black;
+    font-weight: 600;
 }
 
 .newdesign-product-title {
@@ -10,4 +14,27 @@
     font-size: 20;
     line-height: 24px;
     font-weight: 400;
+}
+
+.money-sale {
+    color: #E3413B;
+    line-height: 32px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.price-compare {
+    color: #9D9EA0;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+.relative-style {
+    position: relative;
+}
+.new-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 0;
 }
