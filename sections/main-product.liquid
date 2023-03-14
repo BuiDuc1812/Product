@@ -190,6 +190,7 @@
                       <h2 class="h4 accordion__title inline-richtext">
                         {{ block.settings.heading | default: block.settings.page.title }}
                       </h2>
+                      <a href="{{ block.settings.url-accordion }}">{{ block.settings.text-url }}</a>
                     </div>
                     {% render 'icon-caret' %}
                   </summary>
@@ -783,6 +784,17 @@
           "default": "Collapsible row",
           "info": "t:sections.main-product.blocks.collapsible_tab.settings.heading.info",
           "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label"
+        },
+        {
+          "type": "text",
+          "id": "text-url",
+          "default": "add the text url",
+          "label": "Text Url"
+        },
+        {
+          "type": "url",
+          "id": "url-accordion",
+          "label": "Url Accordion"
         },
         {
           "type": "select",
