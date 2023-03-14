@@ -185,9 +185,10 @@
               <div class="product__accordion accordion quick-add-hidden" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}">
                   <summary>
-                    <div class="summary__title">
-                      {% render 'icon-accordion', icon: block.settings.icon %}
-                      <h2 class="h4 accordion__title inline-richtext">
+                    <div class="new-summary summary__title">
+                      {% comment %} {% render 'icon-accordion', icon: block.settings.icon %} {% endcomment %}
+                      {{ block.settings.icon-collap.src | img_url: '20x20'| img_tag }}
+                      <h2 class="text-summary h4 accordion__title inline-richtext">
                         {{ block.settings.heading | default: block.settings.page.title }}
                       </h2>
                       <a href="{{ block.settings.url-accordion }}">{{ block.settings.text-url }}</a>
@@ -795,6 +796,11 @@
           "type": "url",
           "id": "url-accordion",
           "label": "Url Accordion"
+        },
+        { 
+          "type": "image_picker",
+          "id":"icon-collap",
+          "label": "Icon collap"
         },
         {
           "type": "select",
