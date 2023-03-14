@@ -187,7 +187,9 @@
                   <summary>
                     <div class="new-summary summary__title">
                       {% comment %} {% render 'icon-accordion', icon: block.settings.icon %} {% endcomment %}
-                      {{ block.settings.icon-collap.src | img_url: '20x20' | img_tag }}
+                      {% if block.settings.icon-collap != blank %}
+                        {{ block.settings.icon-collap.src | img_url: '20x20' | img_tag }}
+                      {% endif %}
                       <h2 class="text-summary h4 accordion__title inline-richtext">
                         {{ block.settings.heading | default: block.settings.page.title }}
                       </h2>
