@@ -42,6 +42,8 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Free delivery over $100.",
+            "text-url": "add the text url",
+            "url-accordion": "",
             "icon": "truck",
             "content": "",
             "page": ""
@@ -51,6 +53,8 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Materials",
+            "text-url": "",
+            "url-accordion": "",
             "icon": "leather",
             "content": "",
             "page": ""
