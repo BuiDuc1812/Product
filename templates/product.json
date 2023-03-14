@@ -42,8 +42,8 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Free delivery over $100.",
-            "text-url": "add the text url",
-            "url-accordion": "",
+            "text-url": "More Info",
+            "url-accordion": "#",
             "icon-collap": "shopify:\/\/shop_images\/3745f611e32b3e75673a.jpg",
             "icon": "truck",
             "content": "",
