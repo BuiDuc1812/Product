@@ -33,11 +33,6 @@
             "picker_type": "button"
           }
         },
-        "quantity_selector": {
-          "type": "quantity_selector",
-          "settings": {
-          }
-        },
         "collapsible-row-1": {
           "type": "collapsible_tab",
           "settings": {
@@ -94,7 +89,6 @@
         "caption",
         "price",
         "variant_picker",
-        "quantity_selector",
         "collapsible-row-1",
         "collapsible-row-0",
         "buy_buttons",
