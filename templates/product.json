@@ -77,9 +77,9 @@
         "2c472ca0-effd-4d0c-938c-27007488ccc9": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Collapsible row",
-            "text-url": "add the text url",
-            "url-accordion": "",
+            "heading": "Store hours today:",
+            "text-url": "9:00am - 5:00pm",
+            "url-accordion": "#",
             "icon": "check_mark",
             "content": "<p>Monday                9:00am - 5:00pm<\/p><p>Tuesday                9:00am - 5:00pm<\/p><p>Wednesday          9:00am - 5:00pm<\/p><p>Thursday              Closed<\/p><p>Friday                   9:00am - 5:00pm<\/p><p>Saturday               9:00am - 5:00pm<\/p><p>Sunday                9:00am - 5:00pm<\/p><p>Closed public holidays<\/p>",
             "page": ""
