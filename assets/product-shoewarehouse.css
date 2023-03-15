@@ -121,13 +121,19 @@
 
 .payment-button {
     display: flex;
+    padding-bottom: 32px;
+    padding-top: 24px;
+    border-bottom: 1px solid #E0DFDF ;
+    margin: 0;
 }
 
 .payment-item {
     width: 50%;
     text-align: center;
 }
-
+.payment-item:first-child {
+    border-right:1px solid  #E0DFDF;
+}
 .style-btn-popup {
     padding-right: 0;
 }
