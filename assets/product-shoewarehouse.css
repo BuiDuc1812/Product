@@ -127,3 +127,15 @@
     width: 50%;
     text-align: center;
 }
+
+.style-btn-popup {
+    padding-right: 0;
+}
+
+.text-payment {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 600;
+    color: black;
+}

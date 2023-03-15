@@ -298,24 +298,24 @@
               <div class="payment-item">
                 <button
                   id="ProductPopup-{{ block.id }}"
-                  class="product-popup-modal__button link"
+                  class="product-popup-modal__button link style-btn-popup"
                   type="button"
                   aria-haspopup="dialog"
                 >
                   {{ block.settings.image1 | default: block.settings.page1.title | img_url: '74x26' | img_tag }}
                 </button>
-                <p>{{ block.settings.text1 }}</p>
+                <p class="text-payment">{{ block.settings.text1 }}</p>
               </div>
               <div class="payment-item">
                 <button
                   id="ProductPopup-{{ block.id }}"
-                  class="product-popup-modal__button link"
+                  class="product-popup-modal__button link style-btn-popup"
                   type="button"
                   aria-haspopup="dialog"
                 >
                 {{ block.settings.image2 | default: block.settings.page2.title | img_url: '74x26' | img_tag }}
                 </button>
-                <p>{{ block.settings.text2 }}</p>
+                <p class="text-payment">{{ block.settings.text2 }}</p>
               </div>
               </modal-opener>
               <a href="{{ block.settings.page1.url }}" class="product-popup-modal__button link no-js">
