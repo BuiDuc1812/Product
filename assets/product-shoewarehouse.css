@@ -1,5 +1,48 @@
+
+@font-face {
+    font-family: 'Alaska VAR';
+    src: url('AlaskaVAR-Regular.ttf') format('truetype');
+    font-display: wrap;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Alaska VAR';
+    src: url('AlaskaVAR-Regular.ttf') format('truetype');
+    font-display: wrap;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Alaska VAR';
+    src: url('AlaskaVAR-Regular.ttf') format('truetype');
+    font-display: wrap;
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'Alaska VAR';
+    src: url('AlaskaVAR-Regular.ttf') format('truetype');
+    font-display: wrap;
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Alaska VAR';
+    src: url('AlaskaVAR-Regular.ttf') format('truetype');
+    font-display: wrap;
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Alaska VAR Italic';
+    src: url('AlaskaVAR-RegularItalic.otf') format('opentype');
+    font-display: wrap;
+    font-style: italic;
+    font-weight: 400;
+}
 .font-fa {
-    font-family: math;
+    font-family: 'Alaska VAR';
 }   
 .product-vendor {
     line-height: 32px;
