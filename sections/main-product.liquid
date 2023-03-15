@@ -302,7 +302,7 @@
                   type="button"
                   aria-haspopup="dialog"
                 >
-                  {{ block.settings.text | default: block.settings.page.title }}
+                  {{ block.settings.text1 | default: block.settings.page1.title }}
                 </button>
               </div>
               <div class="payment-item">
@@ -312,11 +312,14 @@
                   type="button"
                   aria-haspopup="dialog"
                 >
-                  {{ block.settings.text | default: block.settings.page.title }}
+                  {{ block.settings.text2 | default: block.settings.page2.title }}
                 </button>
               </div>
               </modal-opener>
-              <a href="{{ block.settings.page.url }}" class="product-popup-modal__button link no-js">
+              <a href="{{ block.settings.page1.url }}" class="product-popup-modal__button link no-js">
+                {{- block.settings.text -}}
+              </a>
+              <a href="{{ block.settings.page2.url }}" class="product-popup-modal__button link no-js">
                 {{- block.settings.text -}}
               </a>
             {%- when 'share' -%}
@@ -1018,12 +1021,23 @@
       "settings": [
         {
           "type": "text",
-          "id": "text",
+          "id": "text1",
           "default": "Pop-up link text",
           "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
         },
         {
-          "id": "page",
+          "id": "page1",
+          "type": "page",
+          "label": "t:sections.main-product.blocks.popup.settings.page.label"
+        },
+        {
+          "type": "text",
+          "id": "text2",
+          "default": "Pop-up link text",
+          "label": "t:sections.main-product.blocks.popup.settings.link_label.label"
+        },
+        {
+          "id": "page2",
           "type": "page",
           "label": "t:sections.main-product.blocks.popup.settings.page.label"
         }
