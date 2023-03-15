@@ -66,8 +66,10 @@
         "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc": {
           "type": "popup",
           "settings": {
-            "text": "4 x $35.75",
-            "page": "contact"
+            "text1": "4 x $35.75",
+            "page1": "contact",
+            "text2": "PoFrom $10.00",
+            "page2": "contact"
           }
         },
         "b9910191-a821-4acc-9ff9-93b7a70d0e3b": {
