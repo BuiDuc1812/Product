@@ -94,7 +94,6 @@
 
 .group-btn {
     display: flex;
-    margin-bottom: 1rem;
 }
 
 .wish-list {
@@ -111,4 +110,20 @@
 
 .style-list-img {
     max-width: 821px !important;
+}
+
+.list-button {
+    margin-bottom: 0;
+}
+.remove-style {
+    margin-bottom: 0 !important;
+}
+
+.payment-button {
+    display: flex;
+}
+
+.payment-item {
+    width: 50%;
+    text-align: center;
 }

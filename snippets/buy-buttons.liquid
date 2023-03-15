@@ -10,9 +10,9 @@
   Usage:
   {% render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, show_pickup_availability: true %}
 {% endcomment %}
-<div {{ block.shopify_attributes }}>
+<div class="list-button" {{ block.shopify_attributes }}>
   {%- if product != blank -%}
-    <product-form class="product-form">
+    <product-form class="product-form remove-style">
       <div class="product-form__error-message-wrapper" role="alert" hidden>
         <svg
           aria-hidden="true"
@@ -85,9 +85,9 @@
             {% render 'icon-heart' %}
           </span>
           </div>
-          {%- if block.settings.show_dynamic_checkout -%}
+          {% comment %} {%- if block.settings.show_dynamic_checkout -%}
             {{ form | payment_button }}
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
         </div>
       {%- endform -%}
     </product-form>
