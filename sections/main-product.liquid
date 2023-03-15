@@ -302,7 +302,7 @@
                   type="button"
                   aria-haspopup="dialog"
                 >
-                  {{ block.settings.text1 | default: block.settings.page1.title }}
+                  {{ block.settings.image1 | default: block.settings.page1.title | img_url: '74x26' | img_tag }}
                 </button>
               </div>
               <div class="payment-item">
