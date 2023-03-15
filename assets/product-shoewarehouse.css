@@ -65,6 +65,7 @@
     background-color: #C03732;
     color: white;
     border-radius: 2px;
+    margin-bottom: 0;
 }
 
 .new-summary {
@@ -82,4 +83,28 @@
 
 .icon-coll {
     margin-right: 10px;
+}
+
+.new-variant {
+    font-size: 16px;
+    line-height: 24px;
+    color: black;
+    font-weight: 600;
+}
+
+.group-btn {
+    display: flex;
+    margin-bottom: 1rem;
+}
+
+.wish-list {
+    border: none;
+    border-radius: 2px;
+    background-color: #C03732;
+    margin-left: 2px;
+    padding: 11px;
+}
+
+.hidden {
+    display: none;
 }

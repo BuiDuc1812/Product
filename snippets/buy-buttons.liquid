@@ -52,6 +52,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
+          <div class="group-btn">
           <button
             id = "ProductSubmitButton-{{ section_id }}"
             type="submit"
@@ -80,6 +81,10 @@
               </svg>
             </div>
           </button>
+          <button class="wish-list">
+            {% render 'icon-heart' %}
+          </button>
+          </div>
           {%- if block.settings.show_dynamic_checkout -%}
             {{ form | payment_button }}
           {%- endif -%}
