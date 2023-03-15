@@ -64,6 +64,11 @@
     color: white;
     border-radius: 2px;
     margin-bottom: 0;
+    transition: all 0.3s ease;
+}
+
+.new-add-to-card:hover {
+  background-color: rgb(227 65 59);
 }
 
 .new-summary {
