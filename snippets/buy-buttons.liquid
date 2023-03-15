@@ -81,9 +81,9 @@
               </svg>
             </div>
           </button>
-          <button class="wish-list">
+          <span class="wish-list">
             {% render 'icon-heart' %}
-          </button>
+          </span>
           </div>
           {%- if block.settings.show_dynamic_checkout -%}
             {{ form | payment_button }}
