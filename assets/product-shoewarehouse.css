@@ -91,6 +91,7 @@
 
 .group-btn {
     display: flex;
+    max-height: 54px;
 }
 
 .wish-list {

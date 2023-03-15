@@ -1014,7 +1014,7 @@ a.product__text {
 }
 
 .product-popup-modal__toggle:hover {
-  color: rgba(var(--color-foreground), 0.75);
+  background-color: rgb(253, 37, 30);
 }
 
 .product-popup-modal__toggle .icon {
