@@ -290,40 +290,38 @@
                 </div>
               </div>
             {%- when 'popup' -%}
-              <modal-opener
+              <div class="payment-group">
+                <modal-opener
+                  class="product-popup-modal__opener payment-button no-js-hidden quick-add-hidden"
+                  data-modal="#PopupModal-{{ block.id }}1"
+                  {{ block.shopify_attributes }}
+                >
+                  <button
+                    id="ProductPopup-{{ block.id }}"
+                    class="product-popup-modal__button link style-btn-popup"
+                    type="button"
+                    aria-haspopup="dialog"
+                  >
+                    {{ block.settings.image1 | default: block.settings.page1.title | img_url: '74x26' | img_tag }}
+                  </button>
+                  <p class="text-payment">{{ block.settings.text1 }}</p>
+                </modal-opener>
+                <modal-opener
                 class="product-popup-modal__opener payment-button no-js-hidden quick-add-hidden"
-                data-modal="#PopupModal-{{ block.id }}"
+                data-modal="#PopupModal-{{ block.id }}2"
                 {{ block.shopify_attributes }}
-              >
-              <div class="payment-item">
-                <button
+                >
+                  <button
                   id="ProductPopup-{{ block.id }}"
                   class="product-popup-modal__button link style-btn-popup"
                   type="button"
                   aria-haspopup="dialog"
-                >
-                  {{ block.settings.image1 | default: block.settings.page1.title | img_url: '74x26' | img_tag }}
-                </button>
-                <p class="text-payment">{{ block.settings.text1 }}</p>
-              </div>
-              <div class="payment-item">
-                <button
-                  id="ProductPopup-{{ block.id }}"
-                  class="product-popup-modal__button link style-btn-popup"
-                  type="button"
-                  aria-haspopup="dialog"
-                >
-                {{ block.settings.image2 | default: block.settings.page2.title | img_url: '74x26' | img_tag }}
-                </button>
-                <p class="text-payment">{{ block.settings.text2 }}</p>
-              </div>
-              </modal-opener>
-              <a href="{{ block.settings.page1.url }}" class="product-popup-modal__button link no-js">
-                {{- block.settings.text -}}
-              </a>
-              <a href="{{ block.settings.page2.url }}" class="product-popup-modal__button link no-js">
-                {{- block.settings.text -}}
-              </a>
+                  >
+                    {{ block.settings.image2 | default: block.settings.page2.title | img_url: '74x26' | img_tag }}
+                  </button>
+                  <p class="text-payment">{{ block.settings.text2 }}</p>
+                </modal-opener>
+            </div>
             {%- when 'share' -%}
               {% assign share_url = product.selected_variant.url | default: product.url | prepend: request.origin %}
               {% render 'share-button',
@@ -476,7 +474,7 @@
 
   {% assign popups = section.blocks | where: 'type', 'popup' %}
   {%- for block in popups -%}
-    <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+    <modal-dialog id="PopupModal-{{ block.id }}1" class="product-popup-modal" {{ block.shopify_attributes }}>
       <div
         role="dialog"
         aria-label="{{ block.settings.text }}"
@@ -493,7 +491,29 @@
           {% render 'icon-close' %}
         </button>
         <div class="product-popup-modal__content-info">
-          <h1 class="h2">{{ block.settings.page1.title }}</h1>
+          {{ block.settings.image-content.src | img_url: 'master' | img_tag }}
+        </div>
+      </div>
+    </modal-dialog>
+
+    <modal-dialog id="PopupModal-{{ block.id }}2" class="product-popup-modal" {{ block.shopify_attributes }}>
+      <div
+        role="dialog"
+        aria-label="{{ block.settings.text }}"
+        aria-modal="true"
+        class="product-popup-modal__content"
+        tabindex="-1"
+      >
+        <button
+          id="ModalClose-{{ block.id }}"
+          type="button"
+          class="product-popup-modal__toggle"
+          aria-label="{{ 'accessibility.close' | t }}"
+        >
+          {% render 'icon-close' %}
+        </button>
+        <div class="product-popup-modal__content-info">
+          {% comment %} <h1 class="h2">{{ block.settings.page1.title }}</h1> {% endcomment %}
           {% comment %} {{ block.settings.page1.content }} {% endcomment %}
           {{ block.settings.image-content.src | img_url: 'master' | img_tag }}
         </div>
