@@ -513,9 +513,8 @@
           {% render 'icon-close' %}
         </button>
         <div class="product-popup-modal__content-info">
-          {% comment %} <h1 class="h2">{{ block.settings.page1.title }}</h1> {% endcomment %}
-          {% comment %} {{ block.settings.page1.content }} {% endcomment %}
-          {{ block.settings.image-content.src | img_url: 'master' | img_tag }}
+          <h1 class="h2">{{ block.settings.page2.title }}</h1>
+          {{ block.settings.page2.content }}
         </div>
       </div>
     </modal-dialog>
