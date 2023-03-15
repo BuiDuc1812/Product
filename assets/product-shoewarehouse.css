@@ -1,49 +1,4 @@
-
-@font-face {
-    font-family: 'Alaska VAR';
-    src: url('AlaskaVAR-Regular.ttf') format('truetype');
-    font-display: wrap;
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: 'Alaska VAR';
-    src: url('AlaskaVAR-Regular.ttf') format('truetype');
-    font-display: wrap;
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: 'Alaska VAR';
-    src: url('AlaskaVAR-Regular.ttf') format('truetype');
-    font-display: wrap;
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: 'Alaska VAR';
-    src: url('AlaskaVAR-Regular.ttf') format('truetype');
-    font-display: wrap;
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: 'Alaska VAR';
-    src: url('AlaskaVAR-Regular.ttf') format('truetype');
-    font-display: wrap;
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: 'Alaska VAR Italic';
-    src: url('AlaskaVAR-RegularItalic.otf') format('opentype');
-    font-display: wrap;
-    font-style: italic;
-    font-weight: 400;
-}
-.font-fa {
-    font-family: 'Alaska VAR';
-}   
+ 
 .product-vendor {
     line-height: 32px;
     font-size: 24px;
@@ -118,7 +73,6 @@
 .text-summary {
     font-size: 16px;
     line-height: 24px;
-    font-family: match;
 }
 .new-summary a {
    color: black;
@@ -173,6 +127,10 @@
 .payment-group modal-opener {
     width: 50%;
     text-align: center;
+}
+
+.accordion__title {
+    font-family: 'Alaska VAR';
 }
 
 .payment-group modal-opener:first-child {
