@@ -494,7 +494,8 @@
         </button>
         <div class="product-popup-modal__content-info">
           <h1 class="h2">{{ block.settings.page1.title }}</h1>
-          {{ block.settings.page1.content }}
+          {% comment %} {{ block.settings.page1.content }} {% endcomment %}
+          {{ block.settings.image-content.src | img_url: 'master' | img_tag }}
         </div>
       </div>
     </modal-dialog>
@@ -1034,6 +1035,11 @@
         },
         {
           "id": "image1",
+          "type": "image_picker",
+          "label": "Image for afterpay"
+        },
+        {
+          "id": "image-content",
           "type": "image_picker",
           "label": "Image for afterpay"
         },
