@@ -312,7 +312,7 @@
                   type="button"
                   aria-haspopup="dialog"
                 >
-                  {{ block.settings.text2 | default: block.settings.page2.title }}
+                {{ block.settings.image2 | default: block.settings.page2.title | img_url: '74x26' | img_tag }}
                 </button>
               </div>
               </modal-opener>
