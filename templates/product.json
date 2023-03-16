@@ -37,7 +37,8 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "button"
+            "picker_type": "button",
+            "text-popup": "Size Guide"
           }
         },
         "collapsible-row-1": {
