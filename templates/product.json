@@ -22,16 +22,16 @@
             "text_style": "subtitle"
           }
         },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
         "9e125293-3a23-490c-ace5-b2b703428a77": {
           "type": "tag",
           "settings": {
             "text-tag": "10% off everyday",
             "color-tag": "#f7cc46"
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
           }
         },
         "variant_picker": {
@@ -128,8 +128,8 @@
         "vendor",
         "title",
         "caption",
-        "9e125293-3a23-490c-ace5-b2b703428a77",
         "price",
+        "9e125293-3a23-490c-ace5-b2b703428a77",
         "variant_picker",
         "collapsible-row-1",
         "collapsible-row-0",

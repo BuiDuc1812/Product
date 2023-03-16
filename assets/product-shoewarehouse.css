@@ -270,3 +270,9 @@
 .tabs-title:hover.tabs-title::after {
     width: 100%;
 }
+
+
+.test {
+    display: flex;
+    justify-content: center;
+}
