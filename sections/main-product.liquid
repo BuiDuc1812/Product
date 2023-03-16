@@ -100,10 +100,10 @@
                 <p class="tabs-title" data-title-name="{{ block.settings.text-tabs2 }}">{{ block.settings.text-tabs2 }}</p>
                 <p class="tabs-title" data-title-name="{{ block.settings.text-tabs3 }}">{{ block.settings.text-tabs3 }}</p>
               </div>
-              <div class="data-tabs" data-block-name="{{ block.settings.text-tabs1 }}">
+              <div class="data-tabs hidden" data-block-name="{{ block.settings.text-tabs1 }}">
                 {{ product.description }}
               </div>
-              <div class="data-tabs" data-block-name="{{ block.settings.text-tabs2 }}">
+              <div class="data-tabs hidden" data-block-name="{{ block.settings.text-tabs2 }}">
                 <p class="meta-filde {% if block.settings.text-filde1 == blank %}hidden{% endif %} ">
                   Product Code: <span>{{ block.settings.text-filde1 }}</span>
                 </p>
@@ -120,7 +120,7 @@
                   Upper Material: <span>{{ block.settings.text-filde5 }}</span>
                 </p>
               </div>
-              <div class="data-tabs" data-block-name="{{ block.settings.text-tabs3 }}">
+              <div class="data-tabs hidden" data-block-name="{{ block.settings.text-tabs3 }}">
               </div>
             </div>
             {%- when 'text' -%}
