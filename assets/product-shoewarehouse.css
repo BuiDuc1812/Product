@@ -248,10 +248,9 @@
     background-color: #1A1E4A;
 }
 
-/* .active {
-    position: relative;
+.active {
     color: #1A1E4A !important;
-} */
+}
 
 .active::after{
     position: absolute;
