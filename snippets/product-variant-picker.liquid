@@ -22,7 +22,7 @@
       {{ block.shopify_attributes }}
     >
     <script>
-      console.log({{ product.available | json }})
+      console.log({{ product.quantity | json }})
     </script>
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
