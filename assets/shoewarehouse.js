@@ -16,7 +16,7 @@ if (productTabs) {
                 item.classList.add('hidden');
             })
             item.classList.add('active');
-            item.classList.remove('hidden');
+            content.classList.remove('hidden');
         })
     })
 }
