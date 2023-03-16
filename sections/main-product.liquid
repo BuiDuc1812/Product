@@ -134,6 +134,7 @@
                   {% endif %}
                   <p>Available at 12 other stores</p> 
                 </div>
+                <div>
               {%- when 'text' -%}
                 <p
                   class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -149,6 +150,7 @@
                       {{ product.title | escape }}
                     </h2>
                   </a>
+                </div>
                 </div>
               {%- when 'price' -%}
                 <div class="new-price no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
