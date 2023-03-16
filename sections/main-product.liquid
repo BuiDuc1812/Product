@@ -94,6 +94,7 @@
                 {{ block.settings.text-tag }}
               </div>
             {% when 'tabbed' %}
+            <div class="product-tabs">
               <div class="heading-tabs">
                 <p data-title-name="{{ block.settings.text-tabs1 }}">{{ block.settings.text-tabs1 }}</p>
                 <p data-title-name="{{ block.settings.text-tabs2 }}">{{ block.settings.text-tabs2 }}</p>
@@ -121,6 +122,7 @@
               </div>
               <div style="display: none;" class="data-tabs" data-block-name="{{ block.settings.text-tabs3 }}">
               </div>
+            </div>
             {%- when 'text' -%}
               <p
                 class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
