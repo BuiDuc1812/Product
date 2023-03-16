@@ -61,7 +61,7 @@
                     {% render 'icon-close' %}
                   </button>
                   <div class="product-popup-modal__content-info">
-                    {% comment %} {{ block.settings.image-content.src | img_url: 'master' | img_tag }} {% endcomment %}
+                    {{ block.settings.image-size-guide.src | img_url: 'master' | img_tag }}
                   </div>
                 </div>
               </modal-dialog>
