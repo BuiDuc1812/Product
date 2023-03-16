@@ -110,7 +110,8 @@
           "settings": {
             "text-tabs1": "Features",
             "text-tabs2": "Materials",
-            "text-tabs3": "Reviews"
+            "text-tabs3": "Reviews",
+            "text-filde1": "Add the text{{ product.metafields.custom.product_code.value }}"
           }
         }
       },
