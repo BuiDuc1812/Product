@@ -105,6 +105,11 @@
             "page": ""
           }
         },
+        "98c0ed59-866d-4444-b898-20ae16a59843": {
+          "type": "check",
+          "settings": {
+          }
+        },
         "60416ade-9196-4fd5-b90e-0d2e1c51462a": {
           "type": "tabbed",
           "settings": {
@@ -132,6 +137,7 @@
         "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc",
         "b9910191-a821-4acc-9ff9-93b7a70d0e3b",
         "2c472ca0-effd-4d0c-938c-27007488ccc9",
+        "98c0ed59-866d-4444-b898-20ae16a59843",
         "60416ade-9196-4fd5-b90e-0d2e1c51462a"
       ],
       "settings": {
