@@ -199,3 +199,7 @@
     width: 100%;
     background-color: #9D9EA0;
 }
+
+.heading-tabs {
+    display: flex;
+}
