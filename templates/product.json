@@ -22,6 +22,13 @@
             "text_style": "subtitle"
           }
         },
+        "9e125293-3a23-490c-ace5-b2b703428a77": {
+          "type": "tag",
+          "settings": {
+            "text-tag": "10% off everyday",
+            "color-tag": "#f7cc46"
+          }
+        },
         "price": {
           "type": "price",
           "settings": {
@@ -95,19 +102,13 @@
             "content": "<p>Monday                9:00am - 5:00pm<\/p><p>Tuesday                9:00am - 5:00pm<\/p><p>Wednesday          9:00am - 5:00pm<\/p><p>Thursday              Closed<\/p><p>Friday                   9:00am - 5:00pm<\/p><p>Saturday               9:00am - 5:00pm<\/p><p>Sunday                9:00am - 5:00pm<\/p><p>Closed public holidays<\/p>",
             "page": ""
           }
-        },
-        "9e125293-3a23-490c-ace5-b2b703428a77": {
-          "type": "tag",
-          "settings": {
-            "text-tag": "10% off everyday",
-            "color-tag": "#f7cc46"
-          }
         }
       },
       "block_order": [
         "vendor",
         "title",
         "caption",
+        "9e125293-3a23-490c-ace5-b2b703428a77",
         "price",
         "variant_picker",
         "collapsible-row-1",
@@ -115,8 +116,7 @@
         "buy_buttons",
         "1b4dbd2f-58a7-4700-8a7a-6b5961ae3ddc",
         "b9910191-a821-4acc-9ff9-93b7a70d0e3b",
-        "2c472ca0-effd-4d0c-938c-27007488ccc9",
-        "9e125293-3a23-490c-ace5-b2b703428a77"
+        "2c472ca0-effd-4d0c-938c-27007488ccc9"
       ],
       "settings": {
         "enable_sticky_info": true,
