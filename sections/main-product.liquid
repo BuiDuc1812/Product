@@ -93,6 +93,17 @@
               <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
                 {{ block.settings.text-tag }}
               </div>
+            {% when 'tabbed' %}
+              <div class="product-tabs">
+                <div class="heading-tabs">
+                  <p>{{ block.settings.text-tabs1 }}</p>
+                  <p>{{ block.settings.text-tabs2 }}</p>
+                  <p>{{ block.settings.text-tabse }}</p>
+                </div>
+                  {% comment %} <div class="data-tabs">
+    
+                  </div> {% endcomment %}
+              </div>
             {%- when 'text' -%}
               <p
                 class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -346,17 +357,6 @@
                 block: block,
                 share_link: share_url
               %}
-            {% comment %} {% when tabbed %}
-              <div class="product-tabs">
-                <div class="heading-tabs">
-                  <p>{{ block.settings.text-tabs1 }}</p>
-                  <p>{{ block.settings.text-tabs2 }}</p>
-                  <p>{{ block.settings.text-tabse }}</p>
-                </div>
-                <div class="data-tabs">
-  
-                </div>
-              </div> {% endcomment %}
             {%- when 'variant_picker' -%}
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
@@ -664,6 +664,30 @@
           "type":"color",
           "id":"color-tag",
           "label": "Color tag"
+        }
+      ]
+    },
+    {
+      "type": "tabbed",
+      "name": "Tabbeds",
+      "settings": [
+        {
+          "type":"text",
+          "id":"text-tabs1",
+          "default": "Add the text",
+          "label": "Text tabs 1"
+        },
+        {
+          "type":"text",
+          "id":"text-tabs2",
+          "default": "Add the text",
+          "label": "Text tabs 2"
+        },
+        {
+          "type":"text",
+          "id":"text-tabs3",
+          "default": "Add the text",
+          "label": "Text tabs 3"
         }
       ]
     },
@@ -2026,30 +2050,6 @@
           "default": "Heading",
           "label": "t:sections.main-product.blocks.icon_with_text.settings.heading_3.label",
           "info": "t:sections.main-product.blocks.icon_with_text.settings.heading.info"
-        }
-      ]
-    },
-    {
-      "type": "tabbed",
-      "name": "Tabbeds",
-      "settings": [
-        {
-          "type":"text",
-          "id":"text-tabs1",
-          "default": "Add the text",
-          "label": "Text tabs 1"
-        },
-        {
-          "type":"text",
-          "id":"text-tabs2",
-          "default": "Add the text",
-          "label": "Text tabs 2"
-        },
-        {
-          "type":"text",
-          "id":"text-tabs3",
-          "default": "Add the text",
-          "label": "Text tabs 3"
         }
       ]
     }
