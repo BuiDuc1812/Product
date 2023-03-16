@@ -251,8 +251,11 @@
                     {% if product.available == true %}
                       <p>{% render 'icon-check' %} Available in this store</p>  
                       <p>{% render 'icon-check' %} Available for Click & Collect</p>
-                      <p>Available at 12 other stores</p> 
+                    {% else %}
+                      <p>{% render 'times-cricle' %} Not available in this store</p>  
+                      <p>{% render 'times-cricle' %} Not available for Click & Collect</p>
                     {% endif %}
+                    <p>Available at 12 other stores</p> 
                   </div>
                 </details>
               </div>
