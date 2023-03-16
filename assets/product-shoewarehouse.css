@@ -216,7 +216,7 @@
     margin-right:  32px;
     font-size: 16px;
     line-height: 24px;
-    font-weight: 400;
+    font-weight: 600;
     color: #404346;
 }
 
@@ -233,5 +233,38 @@
 }
 
 .tabs-title {
+    position: relative;
     cursor: pointer;
+}
+
+.tabs-title::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    transition: all 0.3s ease;
+    background-color: #1A1E4A;
+}
+
+.active {
+    position: relative;
+    color: #1A1E4A;
+}
+.active::after{
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #1A1E4A;
+}
+
+.tabs-title:hover {
+    color: #1A1E4A;
+}
+.tabs-title:hover.tabs-title::after {
+    width: 100%;
 }
