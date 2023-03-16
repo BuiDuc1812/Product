@@ -13,7 +13,7 @@
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
   {{ 'product-shoewarehouse.css' | asset_url | stylesheet_tag }}
 
-
+  <script src="{{ 'shoewarehouse.js' | asset_url }}" defer="defen"></script>
   {%- style -%}
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
