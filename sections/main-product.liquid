@@ -123,6 +123,9 @@
               <div class="data-tabs hidden" data-block-name="{{ block.settings.text-tabs3 }}">
               </div>
             </div>
+            <script>
+              console.log({{ product.available | json }})
+            </script>
             {%- when 'text' -%}
               <p
                 class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
