@@ -38,7 +38,8 @@
           "type": "variant_picker",
           "settings": {
             "picker_type": "button",
-            "text-popup": "Size Guide"
+            "text-popup": "Size Guide",
+            "image-size-guide": "shopify:\/\/shop_images\/R.jpg"
           }
         },
         "collapsible-row-1": {
