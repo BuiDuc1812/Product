@@ -89,10 +89,14 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
-            {% when 'tag' %}
+
+            <div>
+              {% when 'tag' %}
               <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
                 {{ block.settings.text-tag }}
               </div>
+            </div>
+            
             {% when 'tabbed' %}
             <div class="product-tabs">
               <div class="heading-tabs">
