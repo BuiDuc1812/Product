@@ -89,6 +89,10 @@
           {%- case block.type -%}
             {%- when '@app' -%}
               {% render block %}
+            {% when 'tag' %}
+              <span style="background-color: {{ block.settings.color-tag }};">
+                {{ block.settings.text-tag }}
+              </span>
             {%- when 'text' -%}
               <p
                 class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -635,6 +639,23 @@
   "blocks": [
     {
       "type": "@app"
+    },
+    {
+      "type": "tag",
+      "name": "Tag product",
+      "settings": [
+        {
+          "type": "text",
+          "id":"text-tag",
+          "default": "Add the text",
+          "label": "Text tag"
+        },
+        {
+          "type":"color",
+          "id":"color-tag",
+          "label": "Color tag"
+        }
+      ]
     },
     {
       "type": "text",
