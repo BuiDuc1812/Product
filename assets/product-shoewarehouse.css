@@ -250,7 +250,7 @@
 
 .active {
     position: relative;
-    color: #1A1E4A;
+    color: #1A1E4A !important;
 }
 .active::after{
     position: absolute;
