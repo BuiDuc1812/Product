@@ -219,3 +219,15 @@
     font-weight: 400;
     color: #404346;
 }
+
+.meta-filde {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+.meta-filde span {
+    color: #404346 ;
+    font-weight: 400;
+}
