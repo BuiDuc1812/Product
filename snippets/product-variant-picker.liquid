@@ -41,6 +41,31 @@
                 </button>
               </modal-opener>
             </div>
+
+            {% assign popupsV = section.blocks | where: 'type', 'variant_picker' %}
+            {%- for block in popupsV -%}
+              <modal-dialog id="PopupModal-{{ block.id }}" class="product-popup-modal" {{ block.shopify_attributes }}>
+                <div
+                  role="dialog"
+                  aria-label="{{ block.settings.text-popup }}"
+                  aria-modal="true"
+                  class="product-popup-modal__content"
+                  tabindex="-1"
+                >
+                  <button
+                    id="ModalClose-{{ block.id }}"
+                    type="button"
+                    class="product-popup-modal__toggle"
+                    aria-label="{{ 'accessibility.close' | t }}"
+                  >
+                    {% render 'icon-close' %}
+                  </button>
+                  <div class="product-popup-modal__content-info">
+                    {% comment %} {{ block.settings.image-content.src | img_url: 'master' | img_tag }} {% endcomment %}
+                  </div>
+                </div>
+              </modal-dialog>
+            {%- endfor -%}
           {% else %}
           <legend class="form__label new-variant">{{ option.name }}:</legend>
           {% endif %}
