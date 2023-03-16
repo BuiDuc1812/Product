@@ -23,23 +23,27 @@
     >
       {%- for option in product.options_with_values -%}
         <fieldset class="js product-form__input">
-          <div class="heading-variant">
-            <legend class="form__label new-variant">{{ option.name }}:</legend>
-            <modal-opener
-            class="product-popup-modal__opener no-js-hidden quick-add-hidden"
-            data-modal="#PopupModal-{{ block.id }}"
-            {{ block.shopify_attributes }}
-            >
-              <button
-              id="ProductPopup-{{ block.id }}"
-              class="product-popup-modal__button link style-btn-popup"
-              type="button"
-              aria-haspopup="dialog"
+          {% if option.name == 'Size' %}
+            <div class="heading-variant">
+              <legend class="form__label new-variant">{{ option.name }}:</legend>
+              <modal-opener
+              class="product-popup-modal__opener no-js-hidden quick-add-hidden"
+              data-modal="#PopupModal-{{ block.id }}"
+              {{ block.shopify_attributes }}
               >
-                {{ block.settings.text-popup }}
-              </button>
-            </modal-opener>
-          </div>
+                <button
+                id="ProductPopup-{{ block.id }}"
+                class="product-popup-modal__button link style-btn-popup"
+                type="button"
+                aria-haspopup="dialog"
+                >
+                  {{ block.settings.text-popup }}
+                </button>
+              </modal-opener>
+            </div>
+          {% else %}
+          <legend class="form__label new-variant">{{ option.name }}:</legend>
+          {% endif %}
           {% render 'product-variant-options', product: product, option: option, block: block %}
         </fieldset>
       {%- endfor -%}
