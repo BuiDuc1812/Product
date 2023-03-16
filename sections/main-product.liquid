@@ -87,6 +87,8 @@
 
         {%- for block in section.blocks -%}
           {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
             {% when 'tag' %}
               <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
                 {{ block.settings.text-tag }}
@@ -675,6 +677,9 @@
   "tag": "section",
   "class": "section",
   "blocks": [
+    {
+      "type": "@app"
+    },
     {
       "type": "tag",
       "name": "Tag product",
