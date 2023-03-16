@@ -77,6 +77,9 @@
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
+      <script>
+        console.log({{ product.available | json }})
+      </script>
       <product-info
         id="ProductInfo-{{ section.id }}"
         data-section="{{ section.id }}"
