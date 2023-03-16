@@ -207,3 +207,11 @@
     line-height: 24px;
     color: #7A7D81;
 }
+
+.heading-tabs {
+    display: flex;
+}
+
+.heading-tabs p {
+    margin-right:  32px;
+}
