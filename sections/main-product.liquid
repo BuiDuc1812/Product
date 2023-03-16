@@ -90,9 +90,9 @@
             {%- when '@app' -%}
               {% render block %}
             {% when 'tag' %}
-              <span style="background-color: {{ block.settings.color-tag }};">
+              <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
                 {{ block.settings.text-tag }}
-              </span>
+              </div>
             {%- when 'text' -%}
               <p
                 class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
@@ -472,6 +472,17 @@
               {% render 'icon-with-text',
                 block: block
               %}
+            {% when tabbed %}
+              <div class="product-tabs">
+                <div class="heading-tabs">
+                  <h4>{{ block.settings.text-tabs1 }}</h4>
+                  <h4>{{ block.settings.text-tabs2 }}</h4>
+                  <h4>{{ block.settings.text-tabse }}</h4>
+                </div>
+                <div class="data-tabs">
+
+                </div>
+              </div>
           {%- endcase -%}
         {%- endfor -%}
         <a href="{{ product.url }}" class="link product__view-details animate-arrow">
