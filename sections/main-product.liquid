@@ -84,7 +84,16 @@
         class="relative-style product__info-container{% if section.settings.enable_sticky_info %} product__column-sticky{% endif %}"
       >
         {%- assign product_form_id = 'product-form-' | append: section.id -%}
-
+        <div>
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'tag' %}
+                <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
+                  {{ block.settings.text-tag }}
+                </div>   
+            {% endcase %}
+          {% endfor %}
+        </div>
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {% when 'tag' %}
