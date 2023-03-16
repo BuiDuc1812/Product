@@ -252,6 +252,7 @@
     position: relative;
     color: #1A1E4A !important;
 }
+
 .active::after{
     position: absolute;
     content: '';
@@ -265,6 +266,7 @@
 .tabs-title:hover {
     color: #1A1E4A;
 }
+
 .tabs-title:hover.tabs-title::after {
     width: 100%;
 }
