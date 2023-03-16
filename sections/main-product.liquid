@@ -249,7 +249,9 @@
                     {{ block.settings.content }}
                     {{ block.settings.page.content }}
                     {% if product.available == true %}
-                      {% render 'icon-check' %}
+                      <p>{% render 'icon-check' %} Available in this store</p>  
+                      <p>{% render 'icon-check' %} Available for Click & Collect</p>
+                      <p>Available at 12 other stores</p> 
                     {% endif %}
                   </div>
                 </details>
