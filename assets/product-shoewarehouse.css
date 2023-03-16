@@ -153,3 +153,33 @@
     font-weight: 600;
     color: black;
 }
+
+.grid-img-product {
+    position: relative;
+}
+.list-tag {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    z-index: 3;
+}
+.tag-type {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 3px 8px;
+    background-image: linear-gradient(180deg, #FF9CA8 0%, #FF8057 100%);
+    border-radius: 3px;
+}
+
+.tag-sale {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 700;
+    color: white;
+    padding: 3px 8px;
+    background-color: #E3413B;
+    border-radius: 3px;
+    margin-right: 12px;
+}

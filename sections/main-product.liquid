@@ -59,7 +59,21 @@
   {% assign variant_images = product.images | where: 'attached_to_variant?', true | map: 'src' %}
 
   <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.media_position }} product--{{ section.settings.gallery_layout }} product--mobile-{{ section.settings.mobile_thumbnails }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
-    <div class="grid__item style-list-img product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+    <div class="grid__item grid-img-product style-list-img product__media-wrapper{% if section.settings.media_position == 'right' %} medium-hide large-up-hide{% endif %}">
+      <div class="list-tag">
+        <span class="tag-sale">
+          <script>
+            let priceCompare = '{{ product.compare_at_price | money }}';
+            if(priceCompare){
+              let tag = document.querySelector('.tag-sale');
+              let price = '{{ product.price | money }}';
+              let total = Math.floor((price/priceCompare)*100);
+              tag.innerText ='Sale '+ total + '%';
+            }
+          </script>
+        </span>
+        <span class="tag-type">{{ product.type | escape }}</span>
+      </div>
       {% render 'product-media-gallery', variant_images: variant_images %}
     </div>
     <div class="product__info-wrapper grid__item{% if settings.page_width > 1400 and section.settings.media_size == "small" %} product__info-wrapper--extra-padding{% endif %}">
