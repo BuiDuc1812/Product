@@ -94,15 +94,12 @@
                 {{ block.settings.text-tag }}
               </div>
             {% when 'tabbed' %}
-              <div class="product-tabs">
-                <div class="heading-tabs">
-                  <p>{{ block.settings.text-tabs1 }}</p>
-                  <p>{{ block.settings.text-tabs2 }}</p>
-                  <p>{{ block.settings.text-tabse }}</p>
-                </div>
-                  {% comment %} <div class="data-tabs">
-    
-                  </div> {% endcomment %}
+              <div class="heading-tabs">
+                <p>{{ block.settings.text-tabs1 }}</p>
+                <p>{{ block.settings.text-tabs2 }}</p>
+                <p>{{ block.settings.text-tabse }}</p>
+              </div>
+              <div class="data-tabs">
               </div>
             {%- when 'text' -%}
               <p
