@@ -6,7 +6,8 @@ if (productTabs) {
     let contentTabs = productTabs.querySelectorAll('.data-tabs');
     titleTabs.forEach(item=>{
         let attribute = item.getAttribute("data-title-name");
-        let content = productTabs.querySelector('[data-block-name]'.concat(attribute,']'));
+        let content = productTabs.querySelector('[data-block-name='.concat(attribute,']'));
+        console.log(content)
         item.addEventListener('click',function(){
             titleTabs.forEach(item=>{
                 item.classList.remove('active');

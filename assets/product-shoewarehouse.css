@@ -231,3 +231,7 @@
     color: #404346 ;
     font-weight: 400;
 }
+
+.tabs-title {
+    cursor: pointer;
+}
