@@ -303,10 +303,12 @@
 .style-group-dots {
     padding: 6px 8px;
     border-radius: 50px;
+    background-color: white;
 }
 
 .style-dots {
     width: 100%;
     position: absolute;
     bottom: 0;
+    z-index: 3;
 }
