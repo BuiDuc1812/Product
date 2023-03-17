@@ -301,3 +301,7 @@
     bottom: 0;
     transform: translateX(50%);
 } */
+
+.remove-btn-slide {
+    display: none;
+}
