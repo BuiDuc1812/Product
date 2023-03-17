@@ -295,3 +295,9 @@
 .new-price-item {
     margin-right: 0 !important;
 }
+
+.style-dots {
+    position: absolute;
+    bottom: 0;
+    transform: translateX(50%);
+}
