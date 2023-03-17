@@ -90,36 +90,34 @@
             <div>
               {% for block in section.blocks %}
                 {% case block.type %}
-                    {%- when 'text' -%}
-                      <p
-                        class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
-                        {{ block.shopify_attributes }}
-                      >
-                        {{- block.settings.text -}}
-                      </p>
-                    {%- when 'title' -%}
-                      <div class="product__title" {{ block.shopify_attributes }}>
-                        <p class="newdesign-product-title">{{ product.title | escape }}</p>
-                        <a href="{{ product.url }}" class="product__title">
-                          <h2 class="h1">
-                            {{ product.title | escape }}
-                          </h2>
-                        </a>
-                      </div>
+                  {%- when 'text' -%}
+                    <p
+                      class="product-vendor product__text inline-richtext{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}"
+                      {{ block.shopify_attributes }}
+                    >
+                      {{- block.settings.text -}}
+                    </p>
+                  {%- when 'title' -%}
+                    <div class="product__title" {{ block.shopify_attributes }}>
+                      <p class="newdesign-product-title">{{ product.title | escape }}</p>
+                      <a href="{{ product.url }}" class="product__title">
+                        <h2 class="h1">{{ product.title | escape }}</h2>
+                      </a>
+                    </div>
                 {% endcase %}
               {% endfor %}
             </div>
             {% for block in section.blocks %}
               {% case block.type %}
-                  {%- when 'price' -%}
-                    <div class="new-price no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
-                      {%- render 'price',
-                        product: product,
-                        use_variant: true,
-                        show_badges: true,
-                        price_class: 'price--large'
-                      -%}
-                    </div>
+                {%- when 'price' -%}
+                  <div class="new-price no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+                    {%- render 'price',
+                      product: product,
+                      use_variant: true,
+                      show_badges: true,
+                      price_class: 'price--large'
+                    -%}
+                  </div>
                     {%- if shop.taxes_included or shop.shipping_policy.body != blank -%}
                       <div class="product__tax caption rte">
                         {%- if shop.taxes_included -%}
