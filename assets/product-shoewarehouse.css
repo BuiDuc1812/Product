@@ -296,15 +296,10 @@
     margin-right: 0 !important;
 }
 
-/* .style-dots {
-    position: absolute;
-    bottom: 0;
-    transform: translateX(50%);
-} */
-
+/* 
 .remove-btn-slide {
     display: none;
-}
+} */
 
 .btn-dots {
     padding: 0 4px;
