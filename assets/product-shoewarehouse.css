@@ -25,7 +25,7 @@
     font-size: 16px;
     line-height: 24px;
 }
-
+/* 
 .relative-style {
     position: relative;
 }
@@ -34,7 +34,7 @@
     top: 0;
     right: 0;
     margin-top: 0;
-}
+} */
 
 .style-btn {
     position: relative;
