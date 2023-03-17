@@ -312,3 +312,13 @@
     bottom: 16px;
     z-index: 3;
 }
+
+@media screen and (max-width:750px) {
+    .remove-gap {
+        gap: 0;
+    }
+
+    .item-media {
+        width: 100% !important;
+    }
+}
