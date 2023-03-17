@@ -131,9 +131,9 @@
           {% render 'icon-caret' %}
         </button>
         <div class="slider-counter caption">
-          <div class="slideshow__control-wrapper">
+          <div class="slideshow__control-wrapper style-group-dots">
               {%- for block in product.media -%}
-            <button class="slider-counter__link slider-counter__link--dots link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
+            <button class="slider-counter__link btn-dots slider-counter__link--dots link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
               <span class="dot"></span>
             </button>
             {%- endfor -%}

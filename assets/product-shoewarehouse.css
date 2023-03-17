@@ -305,3 +305,12 @@
 .remove-btn-slide {
     display: none;
 }
+
+.btn-dots {
+    padding: 0 4px;
+}
+
+.style-group-dots {
+    padding: 6px 8px;
+    border-radius: 50px;
+}
