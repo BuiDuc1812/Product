@@ -320,11 +320,6 @@
     .remove-gap {
         gap: 0;
     }
-
-    .item-media {
-        width: 100% !important;
-    }
-
     .font-fa {
         padding-top: 0px !important;
     }
