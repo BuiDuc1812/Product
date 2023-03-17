@@ -128,7 +128,7 @@
           name="previous"
           aria-label="{{ 'general.slider.previous_slide' | t }}"
         >
-          {% render 'icon-caret' %}
+          {% comment %} {% render 'icon-caret' %} {% endcomment %}
         </button>
         <div class="slider-counter caption">
           <div class="slideshow__control-wrapper style-group-dots">
@@ -145,7 +145,7 @@
           name="next"
           aria-label="{{ 'general.slider.next_slide' | t }}"
         >
-          {% render 'icon-caret' %}
+          {% comment %} {% render 'icon-caret' %} {% endcomment %}
         </button>
       </div>
     {%- endunless -%}
