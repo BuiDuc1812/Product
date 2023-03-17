@@ -331,11 +331,15 @@
     }
 
     .list-tag {
-        z-index: 1;
+        z-index: 2;
     }
 
     .style-list-img {
         margin-left: -1.5rem;
         margin-right: -1.5rem;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: #1A1E4A;
     }
 }
