@@ -22,7 +22,6 @@
 
 .price-compare {
     color: #9D9EA0;
-    font-size: 16px;
     line-height: 24px;
 }
 
@@ -304,10 +303,17 @@
 }
 
 @media screen and ( max-width:990px ) {
+    .money-sale,
+    .product-vendor {
+        font-size: 20px;
+    }
 
+    .price-compare {
+        font-size: 14px !important;
+    }
 }
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:749px) {
     .group-title-header {
         margin-top: 20px;
         order: 2;
