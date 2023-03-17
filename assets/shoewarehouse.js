@@ -19,3 +19,25 @@ if (productTabs) {
         })
     })
 }
+
+var init = false;
+var swiper = '';
+function swiperAnnouncement() {
+    if (window.innerWidth < 750) {
+        if (!init) {
+            init = true;
+            swiper = new Swiper('.swiper', {
+                slidesPerView: 1,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                }
+            });
+        }
+    } else if (init) {
+        swiper.destroy();
+        init = false;
+    }
+}
+swiperAnnouncement();
+window.addEventListener('resize', swiperAnnouncement);

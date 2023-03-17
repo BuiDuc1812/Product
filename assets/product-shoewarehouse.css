@@ -321,14 +321,21 @@
         gap: 0;
         width: 100%;
     }
+
     .font-fa {
         padding-top: 0px !important;
     }
+
     .item-media {
         width: 100% !important;
     }
 
     .list-tag {
         z-index: 1;
+    }
+
+    .style-list-img {
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
     }
 }
