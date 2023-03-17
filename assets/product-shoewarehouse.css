@@ -122,6 +122,7 @@
 
 .style-list-img {
     max-width: 821px !important;
+    z-index: 1;
 }
 
 .list-button {
@@ -170,7 +171,7 @@
     position: absolute;
     top: 16px;
     left: 16px;
-    z-index: 1;
+    z-index: 3;
 }
 .tag-type {
     font-size: 14px;
@@ -326,5 +327,9 @@
 
     .font-fa {
         padding-top: 0px !important;
+    }
+    
+    .list-tag {
+        z-index: 1;
     }
 }
