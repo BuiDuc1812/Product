@@ -278,19 +278,6 @@
     width: 100%;
 }
 
-@media screen and ( max-width:750px ) {
-    .group-title-header {
-        margin-top: 20px;
-        order: 2;
-    }
-
-    .off-tag {
-        order: 1;
-        margin-left: -1.5rem;
-        margin-right: -1.5rem;
-    }
-}
-
 .block-form {
     display: none;
 }
@@ -316,7 +303,22 @@
     z-index: 3;
 }
 
+@media screen and ( max-width:990px ) {
+
+}
+
 @media screen and (max-width:750px) {
+    .group-title-header {
+        margin-top: 20px;
+        order: 2;
+    }
+
+    .off-tag {
+        order: 1;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
+    }
+
     .remove-gap {
         gap: 0;
         width: 100%;
