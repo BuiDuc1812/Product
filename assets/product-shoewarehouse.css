@@ -309,6 +309,6 @@
 .style-dots {
     width: 100%;
     position: absolute;
-    bottom: 0;
+    bottom: 16px;
     z-index: 3;
 }
