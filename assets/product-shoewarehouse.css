@@ -304,3 +304,9 @@
     padding: 6px 8px;
     border-radius: 50px;
 }
+
+.style-dots {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
