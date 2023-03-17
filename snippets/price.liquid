@@ -51,13 +51,13 @@
       </span>
     </div>
     <div class="price__sale">
-      <span class="price-item price-item--sale price-item--last money-sale">
+      <span class="price-item new-price-item price-item--sale price-item--last money-sale">
         {{ money_price }}
       </span>
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
         <span>
-          <s class="price-item price-item--regular price-compare">
+          <s class="price-item new-price-item price-item--regular price-compare">
             {% if settings.currency_code_enabled %}
               RRP {{ compare_at_price | money_with_currency }}
             {% else %}
