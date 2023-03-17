@@ -195,7 +195,7 @@
 
 .off-tag {
     order: 2;
-    width: 100%;
+    /* width: 100%; */
     font-size: 16px;
     line-height: 16px;
     font-weight: 600;
@@ -285,6 +285,8 @@
 
     .off-tag {
         order: 1;
+        margin-left: -1.5rem;
+        margin-right: -1.5rem;
     }
 }
 
