@@ -276,8 +276,8 @@ slider-component.slider-component-full-width {
 }
 
 .slider-counter__link--dots .dot {
-  width: 0.6rem;
-  height: 0.6rem;
+  width: 0.8rem;
+  height: 0.8rem;
   border-radius: 50%;
   /* border: 0.1rem solid rgba(var(--color-foreground), 0.5); */
   padding: 0;
