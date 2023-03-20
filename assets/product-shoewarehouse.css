@@ -362,11 +362,3 @@
     flex-wrap: wrap;
     width: 100%;
 }
-
-.product__info-wrapper {
-    padding: 0 !important;
-}
-
-.style-product {
-    column-gap: 4rem;
-}
