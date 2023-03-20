@@ -126,10 +126,10 @@
               {% # theme-check-enable %}
             </div>
           {%- endif -%}
-
+{% comment %} 
           {%- if section.settings.show_social and has_social_icons -%}
             {%- render 'social-icons' -%}
-          {%- endif -%}
+          {%- endif -%} {% endcomment %}
         </div>
         {%- if section.blocks.size > 0 -%}
           {%- liquid
