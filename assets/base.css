@@ -3200,7 +3200,7 @@ details-disclosure > details {
   }
 
   .footer__content-top .grid--5-col-desktop .grid__item{
-    width: 100%;
+    width: 100% !important;
   }
   
   .list-unstyled{
