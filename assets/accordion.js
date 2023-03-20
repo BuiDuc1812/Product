@@ -1,6 +1,6 @@
 let arrcodion = document.querySelectorAll('.footer-block--menu');
 if(arrcodion){
-    window.addEventListener('resize', accordionDrawer)
+  accordionDrawer();
 }
 function accordionDrawer(){
     arrcodion.forEach((item, index)=>{
@@ -11,7 +11,6 @@ function accordionDrawer(){
 function addOpen(params, ind){
   var header = params.querySelector('.footer-block__heading');
   header.addEventListener('click',()=>{
-    if (window.innerWidth < 990) {
       params.classList.toggle('open');
       let description = params.querySelector('.list-unstyled');
       if(params.classList.contains('open')){
@@ -20,7 +19,6 @@ function addOpen(params, ind){
         description.style.height = '0';
       }
       removeOpen(ind);
-    }
   })
 }
 
