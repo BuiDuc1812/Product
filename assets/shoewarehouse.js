@@ -18,13 +18,6 @@ let productTabs = document.querySelector('.product-tabs');
         })
     }
 
-    class VariantSelects extends HTMLElement {
-        constructor(){
-            console.log(this)
-        }
-    }
-    customElements.define('variant-selects', VariantSelects);
-
 var init = false;
 var swiper = '';
 function swiperAnnouncement() {

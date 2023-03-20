@@ -145,8 +145,6 @@ function onKeyUpEscape(event) {
 class QuantityInput extends HTMLElement {
   constructor() {
     super();
-    console.log(this)
-    
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
 
