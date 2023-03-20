@@ -367,10 +367,6 @@
     .product__info-wrapper {
         padding: 0 0 0 2rem;
     }
-
-    .product__info-wrapper {
-        max-width: 400px !important;
-    }
 }
 
 @media screen and (min-width:990px) {
