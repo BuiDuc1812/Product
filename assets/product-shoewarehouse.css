@@ -351,3 +351,7 @@
         background-color: #1A1E4A;
     }
 }
+
+.space {
+    justify-content: space-between;
+}
