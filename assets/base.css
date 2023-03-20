@@ -3179,7 +3179,7 @@ details-disclosure > details {
   }
 }
 
-/* @media screen and (min-width:990px) {
+@media screen and (min-width:990px) {
   .footer__content-top .grid--5-col-desktop .grid__item{
     max-width: unset;
   }
@@ -3205,8 +3205,11 @@ details-disclosure > details {
   
   .list-unstyled{
     height: 0;
-    overflow: hidden;
     transition:all 0.2s linear;
   }
-} */
+
+  .over {
+    overflow: hidden;
+  }
+}
 
