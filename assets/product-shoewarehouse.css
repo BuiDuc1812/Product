@@ -369,12 +369,12 @@
     }
 
     .product__info-wrapper {
-        max-width: 400px;
+        max-width: 400px !important;
     }
 }
 
 @media screen and (min-width:990px) {
     .product__info-wrapper {
-        max-width: 420px;
+        max-width: 460px !important;
     }
 }
