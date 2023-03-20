@@ -3,14 +3,12 @@ if(arrcodion){
     window.addEventListener('resize', accordionDrawer)
 }
 function accordionDrawer(){
-    if (window.innerWidth < 990) {
-        arrcodion.forEach((item, index)=>{
+    arrcodion.forEach((item, index)=>{
+        if (window.innerWidth < 990) {
             addOpen(item,index);
-        })
-    }
-    else{
-        console.log("false");
-    }
+        }
+    })
+
 }
 
 function addOpen(params, ind){
