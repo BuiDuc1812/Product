@@ -1,11 +1,15 @@
 let arrcodion = document.querySelectorAll('.footer-block--menu');
+
+
 if(arrcodion){
-  accordionDrawer()
+    window.addEventListener('resize', accordionDrawer)
 }
 function accordionDrawer(){
-    arrcodion.forEach((item, index)=>{
-    addOpen(item,index)
-  })
+    if (window.innerWidth < 990) {
+        arrcodion.forEach((item, index)=>{
+            addOpen(item,index)
+        })
+    }
 }
 
 function addOpen(params, ind){
@@ -23,14 +27,12 @@ function addOpen(params, ind){
 }
 
 
-// function removeOpen(i){
-//   accordion.forEach((item, ind)=>{
-//     if(i != ind){
-//       item.classList.remove('open');
-//       let des = item.querySelector('.accordion-description');
-//       des.style.height='0';
-//       item.querySelector('.down').classList.remove('turn-off');
-//       item.querySelector('.up').classList.add('turn-off');
-//     }
-//   })
-// }
+function removeOpen(i){
+    arrcodion.forEach((item, ind)=>{
+    if(i != ind){
+      item.classList.remove('open');
+      let des = item.querySelector('.list-unstyled');
+      des.style.height='0';
+    }
+  })
+}

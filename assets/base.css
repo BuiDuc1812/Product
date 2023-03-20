@@ -3201,6 +3201,7 @@ details-disclosure > details {
   
   .list-unstyled{
     height: 0;
+    overflow: hidden;
     transition:all 0.2s linear;
   }
 }
