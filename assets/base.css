@@ -3178,3 +3178,14 @@ details-disclosure > details {
     100% { transform: rotate(360deg) translateX(1em) rotate(-360deg) scale(1.2); }
   }
 }
+
+
+.style-img-social {
+  width: fit-content;
+}
+
+@media screen and (min-width:990px) {
+  .footer__content-top .grid--5-col-desktop .grid__item{
+    max-width: unset;
+  }
+}
