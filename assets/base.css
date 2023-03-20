@@ -3183,7 +3183,7 @@ details-disclosure > details {
   .footer__content-top .grid--5-col-desktop .grid__item{
     max-width: unset;
   }
-  
+
   .footer-block:last-child{
     width: fit-content;
   }
@@ -3193,5 +3193,9 @@ details-disclosure > details {
 @media screen and (max-width:990px) {
   .footer__blocks-wrapper {
     flex-direction: column;
+  }
+
+  .footer__content-top .grid--5-col-desktop .grid__item{
+    width: 100%;
   }
 }
