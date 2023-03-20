@@ -22,13 +22,9 @@
 
   assign product_form_id = 'product-form-' | append: section.id
 -%}
-<script>
-  console.log({{ arr_color_option | json }})
-</script>
 {%- for value in option.values -%}
   {%- liquid
     assign option_disabled = true
-
     for option1_name in arr_color_option
       case option.position
         when 1
