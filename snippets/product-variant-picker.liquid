@@ -69,8 +69,10 @@
           {% else %}
           <legend class="form__label new-variant">{{ option.name }}:</legend>
           {% endif %}
+          <div class="list-picker-variant">
           {% render 'product-variant-options', product: product, option: option, block: block %}
-        </fieldset>
+          </div>
+          </fieldset>
       {%- endfor -%}
       <script type="application/json">
         {{ product.variants | json }}

@@ -46,10 +46,10 @@
 .style-btn {
     position: relative;
     padding: 12px;
-    min-width: 99px;
     overflow: hidden;
     border-radius: 2px;
     font-weight: 600;
+    width: calc(25% - 6px);
 }
 
 .style-btn::after {
@@ -354,4 +354,19 @@
 
 .space {
     justify-content: space-between;
+}
+
+.list-picker-variant {
+    display: flex;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product__info-wrapper {
+    padding: 0 !important;
+}
+
+.style-product {
+    column-gap: 4rem;
 }
