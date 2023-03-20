@@ -3187,6 +3187,10 @@ details-disclosure > details {
   .footer-block:last-child{
     width: fit-content;
   }
+  
+  .list-unstyled{
+    height: 100%;
+  }
 }
 
 
