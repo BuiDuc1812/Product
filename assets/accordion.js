@@ -1,7 +1,31 @@
 let arrcodion = document.querySelectorAll('.footer-block--menu');
-console.log(arrcodion)
-console.log('asfasfas')
+if(accordion){
+  accordionDrawer()
+}
+function accordionDrawer(){
+  accordion.forEach((item, index)=>{
+    addOpen(item,index)
+  })
+}
 
+function addOpen(params, ind){
+  var header = params.querySelector('.footer-block__heading');
+  console.log(header)
+//   header.addEventListener('click',()=>{
+//     params.classList.toggle('open');
+//     let description = params.querySelector('.accordion-description');
+//     if(params.classList.contains('open')){
+//       params.querySelector('.down').classList.add('turn-off');
+//       params.querySelector('.up').classList.remove('turn-off');
+//       description.style.height = `${description.scrollHeight}px`;
+//     } else{
+//       description.style.height = '0';
+//       params.querySelector('.down').classList.remove('turn-off');
+//       params.querySelector('.up').classList.add('turn-off');
+//     }
+//     removeOpen(ind);
+//   })
+}
 
 
 // var accordion = document.querySelectorAll('.accordion');
