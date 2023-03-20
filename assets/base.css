@@ -3198,4 +3198,10 @@ details-disclosure > details {
   .footer__content-top .grid--5-col-desktop .grid__item{
     width: 100%;
   }
+  
+  .list-unstyled{
+    height: 0;
+    transition:all 0.2s linear;
+  }
 }
+
