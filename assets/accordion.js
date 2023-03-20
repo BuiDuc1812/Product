@@ -1,17 +1,15 @@
 let arrcodion = document.querySelectorAll('.footer-block--menu');
-
-
 if(arrcodion){
     window.addEventListener('resize', accordionDrawer)
 }
 function accordionDrawer(){
     if (window.innerWidth < 990) {
         arrcodion.forEach((item, index)=>{
-            addOpen(item,index)
+            addOpen(item,index);
         })
     }
-    else { 
-        return false;
+    else{
+        console.log("false");
     }
 }
 
