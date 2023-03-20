@@ -304,9 +304,9 @@ html.no-js .no-js-hidden {
 }
 
 @media screen and (min-width: 750px) {
-  .page-width {
+  /* .page-width {
     padding: 0 5rem;
-  }
+  } */
 
   .header.page-width {
     padding-left: 3.2rem;
