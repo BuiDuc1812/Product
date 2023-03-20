@@ -244,7 +244,7 @@ fieldset.product-form__input .form__label {
 
 .product-form__input input[type='radio']:disabled + label,
 .product-form__input input[type='radio'].disabled + label {
-  border-color: rgba(var(--color-foreground), 0.1);
+  /* border-color: rgba(var(--color-foreground), 0.1); */
   color: rgba(var(--color-foreground), 0.6);
 }
 .product-form__input input[type='radio']:disabled + .style-btn::after,
@@ -359,9 +359,9 @@ a.product__text {
   margin-top: 0;
 }
 
-.product__accordion .accordion__content {
+/* .product__accordion .accordion__content {
   padding: 0 1rem;
-}
+} */
 
 .product .price .badge {
   margin-bottom: 0.5rem;
