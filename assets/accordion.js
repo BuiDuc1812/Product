@@ -1,5 +1,7 @@
 let arrcodion = document.querySelectorAll('.footer-block--menu');
-
+if(arrcodion){
+    window.addEventListener('resize', accordionDrawer)
+}
 function accordionDrawer(){
     arrcodion.forEach((item, index)=>{
       addOpen(item,index);
@@ -32,5 +34,3 @@ function removeOpen(i){
     }
   })
 }
-
-window.addEventListener('resize', addOpen)
