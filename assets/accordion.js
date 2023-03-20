@@ -10,6 +10,9 @@ function accordionDrawer(){
             addOpen(item,index)
         })
     }
+    else { 
+        return false;
+    }
 }
 
 function addOpen(params, ind){
