@@ -18,11 +18,34 @@
             "heading": "Info",
             "menu": "main-menu"
           }
+        },
+        "4692fd49-cae8-4b77-9f1c-ceb4021c0adc": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "boys"
+          }
+        },
+        "62a33f36-cfd1-4ebf-989f-f992e3c965c8": {
+          "type": "link_list",
+          "settings": {
+            "heading": "Quick links",
+            "menu": "main-menu"
+          }
+        },
+        "4ad096b6-65b2-4f85-bdad-1814c81a1118": {
+          "type": "brand_information",
+          "settings": {
+            "show_social": true
+          }
         }
       },
       "block_order": [
         "footer-0",
-        "footer-1"
+        "footer-1",
+        "4692fd49-cae8-4b77-9f1c-ceb4021c0adc",
+        "62a33f36-cfd1-4ebf-989f-f992e3c965c8",
+        "4ad096b6-65b2-4f85-bdad-1814c81a1118"
       ],
       "settings": {
         "color_scheme": "background-1",
