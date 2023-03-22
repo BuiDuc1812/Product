@@ -71,7 +71,7 @@
                 {{ block.shopify_attributes }}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}}</h2>
+                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}} {% render 'icon-arrow-footer' %}</h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
@@ -122,6 +122,9 @@
                       {%- endif -%}
                       {%- if settings.brand_description != blank -%}
                         <div class="rte">{{ settings.brand_description }}</div>
+                      {%- endif -%}
+                      {%- if block.settings.show_social and has_social_icons -%}
+                        {%- render 'social-icons' -%}
                       {%- endif -%}
                     </div>
                   {%- when 'image' -%}

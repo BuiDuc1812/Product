@@ -3198,13 +3198,10 @@ details-disclosure > details {
   .footer__content-top .grid--5-col-desktop .grid__item{
     width: 100%;
   }
-  
-  .list-unstyled{
-    height: 0;
-    transition:all 0.2s linear;
-  }
 
   .over {
+    height: 0;
+    transition:all 0.2s linear;
     overflow: hidden;
   }
 }
@@ -3213,7 +3210,15 @@ details-disclosure > details {
   font-family: "Alaska VAR";
 }
 
-@media screen and (max-width:750px) {
+.icon-arrow {
+  display: none;
+}
+
+@media screen and (max-width:990px) {
+  .padding-grid {
+    padding: 12px 0 !important;
+  }
+
   .footer-block__heading {
     margin-bottom: 0 !important;
   }
@@ -3222,7 +3227,22 @@ details-disclosure > details {
     margin-bottom: 0 !important;
   }
 
-  .padding-grid {
-    padding: 12px 0 !important;
+  .footer-block__heading {
+    position: relative;
+  }
+
+  .icon-arrow {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .turn-off {
+    display: none;
+  }
+  
+  .footer__content-bottom {
+    padding-top: 0 !important;
   }
 }
