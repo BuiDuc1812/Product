@@ -58,6 +58,9 @@
         {% endif %}
       >
       <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+        <script>
+          console.log( {{ product.variants | json }} )
+        </script>
         {{ product.featured_image | img_url: '65x65' | img_tag }}
         <span class="visually-hidden">{{ 'products.product.variant_sold_out_or_unavailable' | t }}</span>
       </label>

@@ -3245,6 +3245,10 @@ details-disclosure > details {
   .footer__content-bottom {
     padding-top: 0 !important;
   }
+
+  .over li:first-child {
+    padding-top: 20px;
+  }
 }
 
 @media screen and (min-width:991px) {
