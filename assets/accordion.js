@@ -26,7 +26,6 @@ function addOpen(params, ind){
   })
 }
 
-
 function removeOpen(i){
     arrcodion.forEach((item, ind)=>{
     if(i != ind){
