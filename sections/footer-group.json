@@ -8,28 +8,28 @@
         "footer-0": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Top Brands",
             "menu": "main-menu"
           }
         },
         "footer-1": {
           "type": "link_list",
           "settings": {
-            "heading": "Info",
+            "heading": "Customer Service",
             "menu": "main-menu"
           }
         },
         "4692fd49-cae8-4b77-9f1c-ceb4021c0adc": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "My Account",
             "menu": "boys"
           }
         },
         "62a33f36-cfd1-4ebf-989f-f992e3c965c8": {
           "type": "link_list",
           "settings": {
-            "heading": "Quick links",
+            "heading": "Information",
             "menu": "main-menu"
           }
         },
