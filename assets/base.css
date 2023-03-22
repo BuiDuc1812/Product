@@ -3273,3 +3273,9 @@ details-disclosure > details {
   font-size: 16px;
   line-height: 22px;
 }
+
+@media screen and (max-width: 750px) {
+  .list-payment {
+    padding-left: 0;
+  }
+}

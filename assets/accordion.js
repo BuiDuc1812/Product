@@ -1,7 +1,7 @@
 function arrcodion(element) {
   element.classList.toggle('open');
   let description = element.parentNode.querySelector('.over');
-  if (element.classList.contains('open')) {
+  if ( element.classList.contains('open') ) {
     element.querySelector('.down').classList.add('turn-off');
     element.querySelector('.up').classList.remove('turn-off');
     description.style.height = `${description.scrollHeight}px`;
@@ -18,7 +18,7 @@ function removeOpen(test){
   let gridAccordion = document.querySelectorAll('.footer-block--menu');
   gridAccordion.forEach(item=>{
     let header = item.querySelector('.footer-block__heading');
-    if(!header.isEqualNode(test)){
+    if ( !header.isEqualNode(test) ) {
       header.classList.remove('open');
       header.querySelector('.down').classList.remove('turn-off');
       header.querySelector('.up').classList.add('turn-off');  
