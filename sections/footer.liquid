@@ -71,7 +71,7 @@
                 {{ block.shopify_attributes }}
               >
                 {%- if block.settings.heading != blank -%}
-                  <h2 class="footer-block__heading inline-richtext">{{- block.settings.heading -}} {% render 'icon-arrow-footer' %}</h2>
+                  <h2 class="footer-block__heading inline-richtext" onclick="arrcodion(this)">{{- block.settings.heading -}} {% render 'icon-arrow-footer' %}</h2>
                 {%- endif -%}
 
                 {%- case block.type -%}
