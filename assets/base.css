@@ -3251,4 +3251,21 @@ details-disclosure > details {
   .footer-block__heading {
     pointer-events: none;
   }
+
+  .over {
+    height: 100% !important;
+  }
+  
+  .footer__content-bottom {
+    border-top: 1px solid #3E437C;
+  }
+}
+
+.footer-block__heading {
+  font-weight: 600;
+}
+
+.link-footer {
+  font-size: 16px;
+  line-height: 22px;
 }

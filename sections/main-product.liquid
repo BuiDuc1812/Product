@@ -146,9 +146,11 @@
           {% for block in section.blocks %}
             {% case block.type %}
               {% when 'tag' %}
-                <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
-                  {{ block.settings.text-tag }}
-                </div>  
+                {% if product.compare_at_price %}
+                  <div class="off-tag" style="background-color: {{ block.settings.color-tag }};">
+                    {{ block.settings.text-tag }}
+                  </div>  
+                {% endif %}
             {% endcase %}
           {% endfor %}
         </div>
