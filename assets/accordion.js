@@ -3,15 +3,14 @@ if(arrcodion){
     accordionDrawer();
 }
 function accordionDrawer(){
-  arrcodion.forEach((item, index)=>{
-    window.addEventListener('resize',addOpen(item, index))
-  })
 }
+    window.addEventListener('resize',addOpen())
+  
 
-function addOpen(params, ind){
-  var header = params.querySelector('.footer-block__heading');
+function addOpen(){
+  // var header = params.querySelector('.footer-block__heading');
   if (window.innerWidth < 990) {
-    console.log(header, ind)
+    console.log('ádasdasd')
     // header.addEventListener ('click',()=>{ 
     //   params.classList.toggle('open');
     //   let description = params.querySelector('.over');
