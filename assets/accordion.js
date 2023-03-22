@@ -1,12 +1,3 @@
-class footer{
-  constructor(){
-    var a = 100;
-  }
-  r(){
-    console.log(this);
-  }
-}
-
 function arrcodion(element) {
   element.classList.toggle('open');
   let description = element.parentNode.querySelector('.over');
