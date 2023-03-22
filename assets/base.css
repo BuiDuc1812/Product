@@ -3275,6 +3275,9 @@ details-disclosure > details {
 }
 
 @media screen and (max-width: 750px) {
+  .bottom-footer {
+    flex-direction: column;
+  }
   .list-payment {
     padding-left: 0;
   }
