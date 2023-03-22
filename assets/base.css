@@ -3247,7 +3247,7 @@ details-disclosure > details {
   }
 }
 
-@media screen and (min-width:990px) {
+@media screen and (min-width:991px) {
   .footer-block__heading {
     pointer-events: none;
   }
