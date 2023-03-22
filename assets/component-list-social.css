@@ -18,10 +18,14 @@
 .list-social__link {
   align-items: center;
   display: flex;
-  padding: 1.3rem;
+  /* padding: 1.3rem; */
   color: rgb(var(--color-foreground));
 }
 
 .list-social__link:hover .icon {
   transform: scale(1.07);
+}
+
+.list-social__item:first-child {
+  padding-right: 24px;
 }

@@ -5,8 +5,7 @@ function arrcodion(element) {
     element.querySelector('.down').classList.add('turn-off');
     element.querySelector('.up').classList.remove('turn-off');
     description.style.height = `${description.scrollHeight}px`;
-  }
-  else {
+  } else {
     element.querySelector('.down').classList.remove('turn-off');
     element.querySelector('.up').classList.add('turn-off');
     description.style.height = '0';
