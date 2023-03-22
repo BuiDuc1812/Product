@@ -1093,7 +1093,7 @@ summary::-webkit-details-marker {
 @media screen and (min-width: 750px) {
   .grid {
     column-gap: var(--grid-desktop-horizontal-spacing);
-    row-gap: var(--grid-desktop-vertical-spacing);
+    row-gap: var(--grid-desktop-vertical-spacing);  
   }
 }
 
@@ -3211,4 +3211,18 @@ details-disclosure > details {
 
 .footer-block__heading {
   font-family: "Alaska VAR";
+}
+
+@media screen and (max-width:750px) {
+  .footer-block__heading {
+    margin-bottom: 0 !important;
+  }
+
+  .footer-block__details-content {
+    margin-bottom: 0 !important;
+  }
+
+  .padding-grid {
+    padding: 12px 0 !important;
+  }
 }
