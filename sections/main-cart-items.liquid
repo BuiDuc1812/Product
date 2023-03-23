@@ -4,6 +4,7 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'main-cart-footer.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -353,7 +354,7 @@
     </p>
   </form>
 
-  <div> {% render 'tess' %} </div>
+  <div> {% render 'footer-cart' %} </div>
 </cart-items>
 
 {% schema %}
