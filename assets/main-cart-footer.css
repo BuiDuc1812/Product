@@ -1,5 +1,9 @@
 .title--primary {
     font-family: "Alaska VAR";
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: 600;   
+    padding-bottom: 24px;
 }
 
 .totals__subtotal,
@@ -21,6 +25,7 @@
 }
 
 #main-cart-footer {
+    height: fit-content;
     border: 1px solid #E0DFDF;
 }
 
@@ -81,7 +86,7 @@
 }
 
 .title-viewcart {
-    margin: 0;
+    margin: 0 !important;
 }
 
 .unset-btn-close {
