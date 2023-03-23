@@ -74,3 +74,25 @@
 .form-viewcart {
     width: 100%;
 }
+
+.form-viewcart input {
+    width: 100%;
+}
+
+.title-viewcart {
+    margin: 0;
+}
+
+.unset-btn-close {
+    position: unset !important;
+}
+
+.draw-cartitem {
+    padding: 0 24px;
+}
+
+@media screen and (max-width:749px) {
+    .draw-cartitem {
+        padding: 0 16px;
+    }
+}
