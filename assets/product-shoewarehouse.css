@@ -262,7 +262,7 @@
     color: #1A1E4A !important;
 }
 
-.active::after{
+.actives::after{
     content: '';
     width: 100%;
     height: 2px;

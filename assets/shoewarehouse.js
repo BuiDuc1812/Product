@@ -11,12 +11,12 @@ class product{
             let content = param.querySelector('[data-block-name='.concat(attribute,']'));
             item.addEventListener('click',function(){
                 titleTabs.forEach(item=>{
-                    item.classList.remove('active');
+                    item.classList.remove('actives');
                 })
                 contentTabs.forEach(item=>{
                     item.classList.add('hidden');
                 })
-                item.classList.add('active');
+                item.classList.add('actives');
                 content.classList.remove('hidden');
             })
         })
