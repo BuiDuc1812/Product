@@ -428,7 +428,9 @@
           >
             {{ 'sections.cart.checkout' | t }}
           </button> {% endcomment %}
-          <a href="{{ routes.cart_url }}">View Cart & Checkout</a> 
+          <form class="form-viewcart" action="{{ routes.cart_url }}">
+            <input id="CartDrawer-Checkout"  class="cart__checkout-button button" type="submit" value="View Cart & Checkout">
+          </form>
         </div>
       </div>
     </div>
