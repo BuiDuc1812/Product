@@ -2,7 +2,7 @@
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
-{% comment %} {{ 'main-cart-footer.css' | asset_url | stylesheet_tag }} {% endcomment %}
+{{ 'main-cart-footer.css' | asset_url | stylesheet_tag }}
 <div
   class="page-width{% if cart == empty %} is-empty{% endif %}"
   id="main-cart-footer"
