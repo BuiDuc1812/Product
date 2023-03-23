@@ -15,10 +15,7 @@
     font-weight: 600;
 }
 
-.cart-content {
-    display: flex;
-    column-gap: 72px;
-}
+
 
 .cart__blocks {
     width: 100%;
