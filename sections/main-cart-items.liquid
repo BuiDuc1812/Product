@@ -42,7 +42,6 @@
       </p>
     {%- endif -%}
   </div>
-   {% comment %} <div class="cart-content"> {% endcomment %}
 
   <form action="{{ routes.cart_url }}" class="cart__contents critical-hidden" method="post" id="cart">
     <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
@@ -352,20 +351,12 @@
       {{ 'accessibility.loading' | t }}
     </p>
   </form>
-  {% comment %} </div>  {% endcomment %}
-  {% render 'footer-cart' %}
 </cart-items>
 
 {% schema %}
 {
   "name": "t:sections.main-cart-items.name",
   "settings": [
-    {
-        "type": "checkbox",
-        "id": "payment_enable",
-        "default": true,
-        "label": "t:sections.footer.settings.payment_enable.label"
-    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
@@ -389,21 +380,6 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    }
-  ],
-  "blocks": [
-    {
-      "type": "subtotal",
-      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
-      "limit": 1
-    },
-    {
-      "type": "buttons",
-      "name": "t:sections.main-cart-footer.blocks.buttons.name",
-      "limit": 1
-    },
-    {
-      "type": "@app"
     }
   ]
 }
