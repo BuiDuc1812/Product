@@ -86,7 +86,20 @@
               {%- endif -%}
           {%- endcase -%}
         {% endfor %}
-
+        <div class="">
+          {%- if section.settings.payment_enable -%}
+            <div class="footer__payment">
+              <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+              <ul class="list list-payment" role="list">
+                {%- for type in shop.enabled_payment_types -%}
+                  <li class="list-payment__item">
+                    {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </div>
+          {%- endif -%}
+        </div>
         <div id="cart-errors"></div>
       </div>
     </div>
@@ -118,6 +131,14 @@
 {
   "name": "t:sections.main-cart-footer.name",
   "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    }
+  ],
   "blocks": [
     {
       "type": "subtotal",
