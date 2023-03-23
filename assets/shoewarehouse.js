@@ -25,7 +25,6 @@ class product{
 
 Product = new product();
 
-
 var init = false;
 var swiper = '';
 function swiperAnnouncement() {
