@@ -352,12 +352,20 @@
       {{ 'accessibility.loading' | t }}
     </p>
   </form>
+
+  <div> {% render 'tess' %} </div>
 </cart-items>
 
 {% schema %}
 {
   "name": "t:sections.main-cart-items.name",
   "settings": [
+    {
+      "type": "checkbox",
+      "id": "payment_enable",
+      "default": true,
+      "label": "t:sections.footer.settings.payment_enable.label"
+    },
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
@@ -382,6 +390,19 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
-  ]
+  ],
+  "blocks": [
+      {
+        "type": "subtotal",
+        "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+        "limit": 1
+      }, {
+        "type": "buttons",
+        "name": "t:sections.main-cart-footer.blocks.buttons.name",
+        "limit": 1
+      }, {
+        "type": "@app"
+      }
+    ]
 }
 {% endschema %}
