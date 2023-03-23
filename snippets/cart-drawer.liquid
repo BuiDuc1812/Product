@@ -289,11 +289,11 @@
                                 {% if item.variant.quantity_rule.max != null %}
                                   max="{{ item.variant.quantity_rule.max }}"
                                 {% endif %}
-                                step="{{ item.variant.quantity_rule.increment }}"
+                                step="{{ item.variant.quantity_rule.increment }}"%}
                                 {% # theme-check-enable %}
                                 aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                                 id="Drawer-quantity-{{ item.index | plus: 1 }}"
-                                data-index="{{ item.index | plus: 1 }}"
+                                data-index="{{ item.index | plus: 1 }}"%}
                               >
                               <button class="quantity__button no-js-hidden" name="plus" type="button">
                                 <span class="visually-hidden">
@@ -410,7 +410,7 @@
         <!-- CTAs -->
 
         <div class="cart__ctas" {{ block.shopify_attributes }}>
-          <noscript>
+          {% comment %} <noscript>
             <button type="submit" class="cart__update-button button button--secondary" form="CartDrawer-Form">
               {{ 'sections.cart.update' | t }}
             </button>
@@ -427,7 +427,8 @@
             {% endif %}
           >
             {{ 'sections.cart.checkout' | t }}
-          </button>
+          </button> {% endcomment %}
+          <a href="{{ routes.cart_url }}">View Cart & Checkout</a> 
         </div>
       </div>
     </div>
