@@ -2,18 +2,36 @@
     font-family: "Alaska VAR";
 }
 
+.totals__subtotal,
+.totals__subtotal-value {
+    color: black;
+    font-family: "Alaska VAR";
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
 .cart-content {
     display: flex;
     column-gap: 72px;
 }
 
+.cart__blocks {
+    width: 100%;
+}
+
 #main-cart-footer {
     border: 1px solid #E0DFDF;
-    max-width: 344px;
 }
 
 .cart__contents {
     width: 100%;
+}
+
+@media screen and (min-width:990px) {
+    #main-cart-footer {
+        min-width: 344px;
+    }
 }
 
 @media screen and (max-width:990px) {
@@ -22,6 +40,33 @@
     }
 }
 
+@media screen and (max-width:750px){
+    .cart-item__image {
+        min-width: 80px;
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .list-payment {
     padding-left: 0;
+}
+
+.field-payment {
+    border-top: 1px solid #E0DFDF   ;
+    border-bottom:none ;
+    border-left: none;
+    border-right: none;
+}
+
+.field-payment legend {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+    padding-bottom: 16px    ;
+}
+
+.cart__ctas {
+    padding: 16px 0;
 }
