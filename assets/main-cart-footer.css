@@ -1,3 +1,27 @@
+.title--primary {
+    font-family: "Alaska VAR";
+}
+
+.cart-content {
+    display: flex;
+    column-gap: 72px;
+}
+
+#main-cart-footer {
+    border: 1px solid #E0DFDF;
+    max-width: 344px;
+}
+
+.cart__contents {
+    width: 100%;
+}
+
+@media screen and (max-width:990px) {
+    .cart-content {
+        display: block;
+    }
+}
+
 .list-payment {
     padding-left: 0;
 }
