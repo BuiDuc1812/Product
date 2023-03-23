@@ -24,9 +24,9 @@
 {%- endunless -%}
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
-  <div class="title-wrapper-with-link title-viewcart">
-    <h1 class="title title--primary">My cart</h1>
-    {% comment %} <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a> {% endcomment %}
+  <div class="title-wrapper-with-link">
+    <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+    <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
   </div>
 
   <div class="cart__warnings">
@@ -51,7 +51,7 @@
             <caption class="visually-hidden">
               {{ 'sections.cart.title' | t }}
             </caption>
-              {% comment %} <thead>
+            <thead>
               <tr>
                 <th class="caption-with-letter-spacing" colspan="2" scope="col">
                   {{ 'sections.cart.headings.product' | t }}
@@ -66,7 +66,7 @@
                   {{ 'sections.cart.headings.total' | t }}
                 </th>
               </tr>
-              </thead> {% endcomment %}
+            </thead>
 
             <tbody>
               {%- for item in cart.items -%}
@@ -81,8 +81,8 @@
                           class="cart-item__image"
                           alt="{{ item.image.alt | escape }}"
                           loading="lazy"
-                            width="128"
-                            height="128"
+                          width="150"
+                          height="{{ 150 | divided_by: item.image.aspect_ratio | ceil }}"
                         >
                       </div>
                     {% endif %}
@@ -241,11 +241,11 @@
                           {% if item.variant.quantity_rule.max != null %}
                             max="{{ item.variant.quantity_rule.max }}"
                           {% endif %}
-                            step="{{ item.variant.quantity_rule.increment }}" %}
+                          step="{{ item.variant.quantity_rule.increment }}"
                           {% # theme-check-enable %}
                           aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                           id="Quantity-{{ item.index | plus: 1 }}"
-                            data-index="{{ item.index | plus: 1 }}" %}
+                          data-index="{{ item.index | plus: 1 }}"
                         >
                         <button class="quantity__button no-js-hidden" name="plus" type="button">
                           <span class="visually-hidden">
@@ -359,12 +359,6 @@
   "name": "t:sections.main-cart-items.name",
   "settings": [
     {
-      "type": "checkbox",
-      "id": "payment_enable",
-      "default": true,
-      "label": "t:sections.footer.settings.payment_enable.label"
-    },
-    {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
@@ -388,19 +382,6 @@
       "label": "t:sections.all.padding.padding_bottom",
       "default": 36
     }
-  ],
-  "blocks": [
-      {
-        "type": "subtotal",
-        "name": "t:sections.main-cart-footer.blocks.subtotal.name",
-        "limit": 1
-      }, {
-        "type": "buttons",
-        "name": "t:sections.main-cart-footer.blocks.buttons.name",
-        "limit": 1
-      }, {
-        "type": "@app"
-      }
   ]
 }
 {% endschema %}
