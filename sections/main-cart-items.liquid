@@ -242,11 +242,11 @@
                           {% if item.variant.quantity_rule.max != null %}
                             max="{{ item.variant.quantity_rule.max }}"
                           {% endif %}
-                          step="{{ item.variant.quantity_rule.increment }}"
+                          step="{{ item.variant.quantity_rule.increment }}" %}
                           {% # theme-check-enable %}
                           aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
                           id="Quantity-{{ item.index | plus: 1 }}"
-                          data-index="{{ item.index | plus: 1 }}"
+                          data-index="{{ item.index | plus: 1 }}" %}
                         >
                         <button class="quantity__button no-js-hidden" name="plus" type="button">
                           <span class="visually-hidden">
