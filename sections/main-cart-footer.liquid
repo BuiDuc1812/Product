@@ -26,7 +26,10 @@
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
                 <div class="shipping">
-                  {% assign result = cart.total_price | times : 1.0 | minus: settings.rate-shipping %}
+                  {% assign result = cart.total_price | times : 1 | minus: settings.rate-shipping %}
+                  <p class="totals__subtotal-value">{{ cart.total_price | divided_by: 100.0 }}</p>
+                  <p class="totals__subtotal-value">{{ settings.rate-shipping }}</p>
+
                   <p class="totals__subtotal-value">{{ result }}</p>
                   {% if result > 0 %}
                     ok free ship
