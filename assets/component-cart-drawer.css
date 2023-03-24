@@ -85,6 +85,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
 }
 
 .drawer__heading {
+  display: flex;
   font-family: "Alaska VAR";
   font-size: 20px;
   font-weight: 600;

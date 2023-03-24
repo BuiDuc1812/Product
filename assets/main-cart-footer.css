@@ -161,3 +161,11 @@ table .cart-item {
     width: var(--afterWidth, 0);
     border-radius: 10px;
 }
+
+.count-item {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #7A7D81;
+}
