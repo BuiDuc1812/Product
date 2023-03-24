@@ -142,8 +142,21 @@ table .cart-item {
 }
 
 .line {
+    position: relative;
     height: 10px;
     width: 100%;
     background-color: #EFEFEF;
+    border-radius: 10px;
+    display: block !important;
+}
+
+.line::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background-color: #E3413B;
+    height: inherit;
+    width: 50%;
     border-radius: 10px;
 }
