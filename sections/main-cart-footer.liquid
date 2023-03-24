@@ -26,17 +26,21 @@
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
                 <div class="shipping">
-                  {% assign result = cart.total_price | times : 1 | minus: settings.rate-shipping %}
-                  <p class="totals__subtotal-value">{{ cart.total_price | divided_by: 100.0 }}</p>
-                  <p class="totals__subtotal-value">{{ settings.rate-shipping }}</p>
-
-                  <p class="totals__subtotal-value">{{ result }}</p>
-                  {% if result > 0 %}
-                    ok free ship
+                  {% assign total_price = cart.total_price | divided_by: 100.0 %}
+                  {% assign free_shipping = settings.rate-shipping %}
+                  {% assign result = free_shipping | minus: total_price %}
+                  {% if total_price >= free_shipping %}
+                  🎉You qualify for <b>free shipping!</b> 
                   {% else %}
-                    thieu {{ result }}
+                    Just <b>${{ result }}</b> away from free shipping!
                   {% endif %}
+                  <div class="line"></div>
+                  <div class="free-shipping">
 
+                  </div>
+                <script>
+                  console.log({{ shipping_method | json }})
+                </script>
                 </div>
                 <div class="totals">
                   <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h2>
