@@ -1,3 +1,7 @@
+.block-title {
+    margin: 0 !important;
+}
+
 .title--primary {
     font-family: "Alaska VAR";
     font-size: 30px;
@@ -36,11 +40,6 @@
     }
 }
 
-@media screen and (max-width:990px) {
-    .cart-content {
-        display: block;
-    }
-}
 
 @media screen and (max-width:750px){
     .cart-item__image {
@@ -66,7 +65,6 @@
     line-height: 20px;
     font-weight: 400;
     text-align: center;
-    padding-bottom: 16px    ;
 }
 
 .cart__ctas {
@@ -80,10 +78,6 @@
 .form-viewcart input {
     width: 100%;
     border-radius: 2px;
-}
-
-.title-viewcart {
-    margin: 0 !important;
 }
 
 .unset-btn-close {
@@ -104,8 +98,4 @@
     .draw-cartitem {
         padding: 0 16px;
     }
-}
-
-.style-newcart {
-    padding-bottom: 0;
 }
