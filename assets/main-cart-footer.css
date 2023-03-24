@@ -140,3 +140,10 @@
 table .cart-item {
     border-top: 1px solid black;
 }
+
+.line {
+    height: 10px;
+    width: 100%;
+    background-color: #EFEFEF;
+    border-radius: 10px;
+}

@@ -35,12 +35,10 @@
                     Just <b>${{ result }}</b> away from free shipping!
                   {% endif %}
                   <div class="line"></div>
-                  <div class="free-shipping">
-
+                  <div class="free-shipping totals">
+                    <h2 class="totals__subtotal">Shipping</h2>
+                    <p class="totals__subtotal-value">Free</p>
                   </div>
-                <script>
-                  console.log({{ shipping_method | json }})
-                </script>
                 </div>
                 <div class="totals">
                   <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h2>
