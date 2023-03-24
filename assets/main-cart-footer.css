@@ -103,3 +103,40 @@
 .list-option-vaiants {
     display: flex;
 }
+
+.vendor-cart {
+    font-size: 18px !important;
+    line-height: 24px !important;
+    font-weight: 600 !important;
+    color: black;
+}
+
+.name-item-cart {
+    font-family: 'Alaska VAR';
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    color: black;
+}
+
+.price-default {
+    text-decoration: line-through;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+    color: #9D9EA0;
+}
+
+.price-original {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 500;
+}
+
+.red {
+    color: #E3413B;
+}
+
+table .cart-item {
+    border-top: 1px solid black;
+}
