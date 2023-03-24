@@ -147,12 +147,10 @@ class QuantityInput extends HTMLElement {
     super();
     this.input = this.querySelector('input');
     this.changeEvent = new Event('change', { bubbles: true });
-
     this.input.addEventListener('change', this.onInputChange.bind(this));
     this.querySelectorAll('button').forEach(
       (button) => button.addEventListener('click', this.onButtonClick.bind(this))
     );
-    this.line = document.getElementById('line')
   }
 
   quantityUpdateUnsubscriber = undefined;

@@ -141,7 +141,7 @@ table .cart-item {
     border-top: 1px solid black;
 }
 
-#line {
+.line {
     position: relative;
     height: 10px;
     width: 100%;
@@ -151,7 +151,7 @@ table .cart-item {
     overflow: hidden;
 }
 
-#line::after {
+.line::after {
     position: absolute;
     content: '';
     top: 0;

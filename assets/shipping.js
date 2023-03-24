@@ -1,4 +1,2 @@
-let line = document.getElementById('line');
-line.addEventListener('change',(event)=>{
-    console.log(event)
-})
+// var line_shipping = document.querySelector('.line');
+// console.log(line_shipping)
