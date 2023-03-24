@@ -141,22 +141,23 @@ table .cart-item {
     border-top: 1px solid black;
 }
 
-.line {
+#line {
     position: relative;
     height: 10px;
     width: 100%;
     background-color: #EFEFEF;
     border-radius: 10px;
     display: block !important;
+    overflow: hidden;
 }
 
-.line::after {
+#line::after {
     position: absolute;
     content: '';
     top: 0;
     left: 0;
     background-color: #E3413B;
     height: inherit;
-    width: 50%;
+    width: var(--afterWidth, 0);
     border-radius: 10px;
 }
