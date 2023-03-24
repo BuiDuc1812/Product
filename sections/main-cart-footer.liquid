@@ -17,9 +17,7 @@
           >{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
-      <script>
-        console.log({{ cart | json }})
-      </script>
+
       <div class="cart__blocks">
         {% for block in section.blocks %}
           {%- case block.type -%}
@@ -28,7 +26,7 @@
             {%- when 'subtotal' -%}
               <div class="js-contents" {{ block.shopify_attributes }}>
                 <div class="shipping">
-                  <p class="totals__subtotal-value">{{ checkout }}</p>
+                  <p class="totals__subtotal-value">{{ section.settings.rate-shipping }}</p>
                 </div>
                 <div class="totals">
                   <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h2>
