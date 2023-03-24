@@ -192,9 +192,9 @@ cart-remove-button .icon-remove {
   display: none;
 }
 
-.product-option + .product-option {
+/* .product-option + .product-option {
   margin-top: 0.4rem;
-}
+} */
 
 .product-option * {
   display: inline;
