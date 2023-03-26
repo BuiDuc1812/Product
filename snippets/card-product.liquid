@@ -134,6 +134,26 @@
             {%- endif -%}
           </div>
         </div>
+        <form class="form-quick_view" action="#" product_id="{{ card_product.selected_or_first_available_variant.id }}">
+            {%- if card_product.available == false or quantity_rule_soldout -%}
+              <button
+                type="submit"
+                name="add"
+                disabled
+                class="style-soul ProductSubmitButton"
+              >
+                  Soul out
+              </button>
+            {%- else -%}
+              <button
+                class = "ProductSubmitButton"
+                type="submit"
+                name="add"
+              >
+                Quick View
+              </button>
+            {%- endif -%}
+        </form>
       </div>
       <div class="card__content">
         <div class="card__information">
