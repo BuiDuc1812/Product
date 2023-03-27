@@ -22,19 +22,13 @@ function quickView(){
                     },
                     body: JSON.stringify(product)
                 }
-                // const formData = new FormData(item);
-                // if (cartDrawer) {
-                //     formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
-                //     formData.append('sections_url', window.location.pathname);
-                //     cartDrawer.setActiveElement(document.activeElement);
-                // }    
                 fetch(window.Shopify.routes.root + 'cart/add.js', config)
                 .then(response => {
                     return response.json();                  
                 })
                 .then(dataConfig => {
-                    console.log(dataConfig); 
                     cartDrawer.classList.add('active')
+                    loadDataToCart(item)
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -45,6 +39,10 @@ function quickView(){
 }
 quickView()
 
-function loadDataToCart(){
-
+function loadDataToCart(form){
+    const formData = new FormData(form);
+    formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
+    formData.append('sections_url', window.location.pathname);
+    console.log(formData)
+    cartDrawer.setActiveElement(document.activeElement);
 }
