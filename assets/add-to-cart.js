@@ -28,7 +28,9 @@ function quickView(){
                 })
                 .then(dataConfig => {
                     cartDrawer.classList.add('active')
-                    loadDataToCart(item)
+                    let data = dataConfig.items[0];
+                    cartDrawer.renderContents(data)
+                    // loadDataToCart(item)
                 })
                 .catch((error) => {
                     console.error('Error:', error);
@@ -39,10 +41,9 @@ function quickView(){
 }
 quickView()
 
-function loadDataToCart(form){
-    const formData = new FormData(form);
-    formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
-    formData.append('sections_url', window.location.pathname);
-    console.log(formData)
-    cartDrawer.setActiveElement(document.activeElement);
-}
+// function loadDataToCart(form){
+//     const formData = new FormData(form);
+//     formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
+//     formData.append('sections_url', window.location.pathname);
+//     cartDrawer.setActiveElement(document.activeElement);
+// }
