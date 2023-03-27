@@ -4,7 +4,10 @@ function quickView(){
 
     if (quickForm) {
         quickForm.forEach(item=>{
+            console.log(item)
             var btnSubmit = item.querySelector('.ProductSubmitButton');
+            console.log(item)
+
             if (cartDrawer) btnSubmit.setAttribute('aria-haspopup', 'dialog');
             item.addEventListener('submit',(e)=>{
                 e.preventDefault();
