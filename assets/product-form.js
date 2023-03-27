@@ -59,7 +59,8 @@ if (!customElements.get('product-form')) {
               setTimeout(() => { this.cart.renderContents(response) });
             }, { once: true });
             quickAddModal.hide(true);
-          } else {
+          } 
+          else {
             this.cart.renderContents(response);
           }
         })

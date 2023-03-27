@@ -10,6 +10,12 @@ function quickView(){
                 e.preventDefault();
                 if(btnSubmit.getAttribute('aria-disabled') === 'true') return;
                 btnSubmit.setAttribute('aria-disabled', true);
+                const formData =  new FormData(item);
+                if(cartDrawer){
+                    formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
+                    formData.append('sections_url', window.location.pathname);
+                    cartDrawer.setActiveElement(document.activeElement);
+                }
                 fetch(window.Shopify.routes.root + 'cart/add.js',{
                     method: 'POST',
                     headers: {
@@ -26,7 +32,9 @@ function quickView(){
                     return response.json();
                 })
                 .then(response => {
-                    window.location = window.routes.cart_url;
+                    console.log(response)
+                    // cartDrawer.renderContents(response)
+                    // window.location = window.routes.cart_url;
                 })
                 .catch((error) => {
                     console.error('Error:', error);

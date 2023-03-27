@@ -8,16 +8,6 @@ class CartDrawer extends HTMLElement {
   }
 
   setHeaderCartIconAccessibility() {
-    // var quickFormLink = document.querySelectorAll('.form-quick_view');
-    // quickFormLink.forEach(item=>{
-    //   item.setAttribute('role', 'button');
-    //   item.setAttribute('aria-haspopup', 'dialog');
-    //   item.addEventListener('click', (event) => {
-    //     event.preventDefault();
-    //     this.open(cartLink)
-    //   });
-    // })
-    // console.log(quickFormLink);
     const cartLink = document.querySelector('#cart-icon-bubble');
     cartLink.setAttribute('role', 'button');
     cartLink.setAttribute('aria-haspopup', 'dialog');
