@@ -29,7 +29,7 @@ function quickView(){
                 .then(dataConfig => {
                     cartDrawer.classList.add('active')
                     let data = dataConfig.items[0];
-                    cartDrawer.renderContents(data)
+                    // cartDrawer.renderContents(data)
                     // loadDataToCart(item)
                 })
                 .catch((error) => {
