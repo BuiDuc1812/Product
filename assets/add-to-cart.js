@@ -27,11 +27,13 @@ function quickView(){
                     return response.json();                  
                 })
                 .then(dataConfig => {
-                    cartDrawer.classList.add('active')
-                    let data = dataConfig.items[0];
-                    // cartDrawer.renderContents(data)
-                    // loadDataToCart(item)
+                    var data = dataConfig.items[0];
+                    cartDrawer.renderContents(data)
+                    cartDrawer.classList.add('active');
                 })
+                // .finally(response=>{
+                //     cartDrawer.classList.add('active');
+                // })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
@@ -42,8 +44,17 @@ function quickView(){
 quickView()
 
 // function loadDataToCart(form){
+//     const config = fetchConfig('javascript');
+//     config.headers['X-Requested-With'] = 'XMLHttpRequest';
+//     delete config.headers['Content-Type'];
+
 //     const formData = new FormData(form);
+
 //     formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
 //     formData.append('sections_url', window.location.pathname);
 //     cartDrawer.setActiveElement(document.activeElement);
+
+//     config.body = formData;
 // }
+
+
