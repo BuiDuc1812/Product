@@ -96,7 +96,6 @@ class CartItems extends HTMLElement {
         return response.text();
       })
       .then((state) => {
-        console.log(state)
         const parsedState = JSON.parse(state);
         const quantityElement = document.getElementById(`Quantity-${line}`) || document.getElementById(`Drawer-quantity-${line}`);
         const items = document.querySelectorAll('.cart-item');
@@ -112,7 +111,7 @@ class CartItems extends HTMLElement {
 
         if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-
+        console.log(document.querySelector('.shipping'))
         this.getSectionsToRender().forEach((section => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
