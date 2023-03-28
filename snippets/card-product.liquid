@@ -134,8 +134,9 @@
             {%- endif -%}
           </div>
         </div>
-        <form class="form-quick_view" action="#" product_id="{{ card_product.selected_or_first_available_variant.id }}">
-          <input type="text" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id">
+        <form class="form-quick_view" action="" product_id="{{ card_product.selected_or_first_available_variant.id }}">
+          <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id">
+          <input type="text" name="quantity" value="1" class="hidden product-variant-id">
             {%- if card_product.available == false or quantity_rule_soldout -%}
               <button
                 id = "ProductSubmitButton-{{ section_id }}"

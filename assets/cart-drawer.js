@@ -93,12 +93,6 @@ class CartDrawer extends HTMLElement {
     ];
   }
 
-  getSectionDOM(html, selector = '.shopify-section') {
-    return new DOMParser()
-      .parseFromString(html, 'text/html')
-      .querySelector(selector);
-  }
-
   setActiveElement(element) {
     this.activeElement = element;
   }
