@@ -31,3 +31,28 @@
 .underline-links-hover:hover .form-quick_view {
     display: block;
 }
+
+.icon-search {
+    display: none;
+}
+
+@media screen and (max-width:750px) {
+    .icon-search {
+        display: block;
+        padding: 8px 0 4px 0;
+    }
+
+    .text-btn {
+        display: none;
+    }
+
+    .form-quick_view button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0 8px 0 0;
+        float: right;
+        
+    }
+}
