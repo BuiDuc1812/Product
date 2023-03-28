@@ -115,12 +115,10 @@ class CartDrawerItems extends CartItems {
       },
       {
         id: 'main-cart-items',
-        // section: document.getElementById('main-cart-items').dataset.id,
         selector: '.js-contents'
       },
       {
         id: 'main-cart-footer',
-        // section: document.getElementById('main-cart-footer').dataset.id,
         selector: '.js-contents'
       }
     ];
