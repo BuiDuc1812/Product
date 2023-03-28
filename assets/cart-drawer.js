@@ -45,20 +45,20 @@ class CartDrawer extends HTMLElement {
     document.body.classList.remove('overflow-hidden');
   }
 
-  setSummaryAccessibility(cartDrawerNote) {
-    cartDrawerNote.setAttribute('role', 'button');
-    cartDrawerNote.setAttribute('aria-expanded', 'false');
+  // setSummaryAccessibility(cartDrawerNote) {
+  //   cartDrawerNote.setAttribute('role', 'button');
+  //   cartDrawerNote.setAttribute('aria-expanded', 'false');
 
-    if(cartDrawerNote.nextElementSibling.getAttribute('id')) {
-      cartDrawerNote.setAttribute('aria-controls', cartDrawerNote.nextElementSibling.id);
-    }
+  //   if(cartDrawerNote.nextElementSibling.getAttribute('id')) {
+  //     cartDrawerNote.setAttribute('aria-controls', cartDrawerNote.nextElementSibling.id);
+  //   }
 
-    cartDrawerNote.addEventListener('click', (event) => {
-      event.currentTarget.setAttribute('aria-expanded', !event.currentTarget.closest('details').hasAttribute('open'));
-    });
+  //   cartDrawerNote.addEventListener('click', (event) => {
+  //     event.currentTarget.setAttribute('aria-expanded', !event.currentTarget.closest('details').hasAttribute('open'));
+  //   });
 
-    cartDrawerNote.parentElement.addEventListener('keyup', onKeyUpEscape);
-  }
+  //   cartDrawerNote.parentElement.addEventListener('keyup', onKeyUpEscape);
+  // }
 
   renderContents(parsedState) {
     this.querySelector('.drawer__inner').classList.contains('is-empty') && this.querySelector('.drawer__inner').classList.remove('is-empty');

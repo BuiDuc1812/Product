@@ -160,6 +160,7 @@ table .cart-item {
     height: inherit;
     width: var(--afterWidth, 0);
     border-radius: 10px;
+    transition: all 0.3s ease-in;
 }
 
 .count-item {

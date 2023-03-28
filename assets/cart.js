@@ -111,7 +111,6 @@ class CartItems extends HTMLElement {
 
         if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
         if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-        console.log(document.querySelector('.shipping'))
         this.getSectionsToRender().forEach((section => {
           const elementToReplace =
             document.getElementById(section.id).querySelector(section.selector) || document.getElementById(section.id);
@@ -137,6 +136,9 @@ class CartItems extends HTMLElement {
           trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
         }
         publish(PUB_SUB_EVENTS.cartUpdate, {source: 'cart-items'});
+        var line = document.querySelector('.line');
+        var result =Math.floor((line.getAttribute('total')/line.getAttribute('shipping'))*100);
+        line.style.setProperty('--afterWidth',`${result}%`)
       }).catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
