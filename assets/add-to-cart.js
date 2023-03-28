@@ -27,13 +27,10 @@ function quickView(){
                     return response.json();                  
                 })
                 .then(dataConfig => {
-                    var data = dataConfig.items[0];
-                    cartDrawer.renderContents(data)
                     cartDrawer.classList.add('active');
+                    var data = dataConfig.items[0];
+                    renderContents(data)
                 })
-                // .finally(response=>{
-                //     cartDrawer.classList.add('active');
-                // })
                 .catch((error) => {
                     console.error('Error:', error);
                 });
@@ -43,18 +40,26 @@ function quickView(){
 }
 quickView()
 
-// function loadDataToCart(form){
-//     const config = fetchConfig('javascript');
-//     config.headers['X-Requested-With'] = 'XMLHttpRequest';
-//     delete config.headers['Content-Type'];
-
-//     const formData = new FormData(form);
-
-//     formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
-//     formData.append('sections_url', window.location.pathname);
-//     cartDrawer.setActiveElement(document.activeElement);
-
-//     config.body = formData;
-// }
 
 
+function renderContents(parsedState) { 
+    cartDrawer.querySelector('.drawer__inner').classList.contains('is-empty') && cartDrawer.querySelector('.drawer__inner').classList.remove('is-empty');
+    getSectionTorender().forEach((section=>{
+        const sectionElement = section.selector ? document.querySelector(section.selector) : document.getElementById(section.id);
+        console.log(sectionElement)
+        sectionElement.innerHTML = getSectionInnerHTML(section.id,section.selector);
+    }))
+}
+function getSectionInnerHTML(html, selector) {
+    return new DOMParser()
+      .parseFromString(html, 'text/html')
+      .querySelector(selector).innerHTML;
+}
+function getSectionTorender(){
+    return [
+        {
+            id: 'cart-drawer',
+            selector: '#CartDrawer'
+        }
+    ];
+}
