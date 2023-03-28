@@ -20,7 +20,7 @@ class CartItems extends HTMLElement {
     const debouncedOnChange = debounce((event) => {
       this.onChange(event);
     }, ON_CHANGE_DEBOUNCE_TIMER);
-
+    this.loadData();
     this.addEventListener('change', debouncedOnChange.bind(this));
   }
 
@@ -141,9 +141,8 @@ class CartItems extends HTMLElement {
           trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
         }
         publish(PUB_SUB_EVENTS.cartUpdate, {source: 'cart-items'});
-        var line = document.querySelector('.line');
-        var result =Math.floor((line.getAttribute('total')/line.getAttribute('shipping'))*100);
-        line.style.setProperty('--afterWidth',`${result}%`)
+
+        this.loadData();
       }).catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
@@ -155,6 +154,12 @@ class CartItems extends HTMLElement {
     return new DOMParser()
       .parseFromString(html, 'text/html')
       .querySelector(selector).innerHTML;
+  }
+
+  loadData() {
+    var line = document.querySelector('.line');
+    var result = Math.floor((line.getAttribute('total') / line.getAttribute('shipping')) * 100);
+    line.style.setProperty('--afterWidth',`${result}%`)
   }
 }
 
