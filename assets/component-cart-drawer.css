@@ -90,6 +90,7 @@ cart-drawer:not(.is-empty) .cart-drawer__collection {
   font-size: 20px;
   font-weight: 600;
   line-height: 32px;
+  align-items: center;
   margin: 0;
 }
 
