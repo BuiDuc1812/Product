@@ -66,6 +66,11 @@ class CartItems extends HTMLElement {
         selector: '.js-contents'
       },
       {
+        id: 'CartDrawer',
+        section: 'cart-drawer',
+        selector: '.drawer__inner'
+      },
+      {
         id: 'cart-icon-bubble',
         section: 'cart-icon-bubble',
         selector: '.shopify-section'
