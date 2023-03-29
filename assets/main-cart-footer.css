@@ -27,7 +27,6 @@
 
 #main-cart-footer {
     height: fit-content;
-    border: 1px solid #E0DFDF;
 }
 
 .cart__contents {
@@ -65,10 +64,11 @@
     line-height: 20px;
     font-weight: 400;
     text-align: center;
+    padding-bottom: 20px;
 }
 
 .cart__ctas {
-    padding: 16px 0;
+    padding-bottom: 16px;
 }
 
 .form-viewcart {
@@ -145,6 +145,7 @@
 
 .line {
     position: relative;
+    max-width: 352px;
     height: 10px;
     width: 100%;
     background-color: #EFEFEF;

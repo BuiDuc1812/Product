@@ -35,15 +35,15 @@
                   {% else %}
                     Just <b>${{ result }}</b> away from free shipping!
                   {% endif %}
-                  <div class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
-                  <div class="free-shipping totals">
-                    <h2 class="totals__subtotal">Shipping</h2>
-                    <p class="totals__subtotal-value">Free</p>
-                  </div>
+                </div>
+                <div class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
+                <div class="free-shipping totals">
+                  <h2 class="totals__subtotal tall">Shipping</h2>
+                  <p class="totals__subtotal tall">Free</p>
                 </div>
                 <div class="totals">
-                  <h2 class="totals__subtotal">{{ 'sections.cart.subtotal' | t }}</h2>
-                  <p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+                  <h2 class="totals__subtotal">Order Total</h2>
+                  <p class="totals__subtotal">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
                 <div>
@@ -83,14 +83,15 @@
                 <button
                   type="submit"
                   id="checkout"
-                  class="cart__checkout-button button"
+                  class="cart__checkout-button button checkout-style"
                   name="checkout"
                   {% if cart == empty %}
                     disabled
                   {% endif %}
                   form="cart"
                 >
-                  {{ 'sections.cart.checkout' | t }}
+                Go to Checkout
+                  {% comment %} {{ 'sections.cart.checkout' | t }} {% endcomment %}
                 </button>
               </div>
 

@@ -47,7 +47,7 @@
     <div class="cart__items" id="main-cart-items" data-id="{{ section.id }}">
       <div class="js-contents">
         {%- if cart != empty -%}
-          <table class="cart-items">
+          <table class="cart-items cart-items-desk">
             <caption class="visually-hidden">
               {{ 'sections.cart.title' | t }}
             </caption>
@@ -131,7 +131,7 @@
                       </div>
                     {%- else -%}
                       <div class="product-option price-option">
-                        <p class="price-original {% if item.product.compare_at_price %}red{% endif %}">{{ item.original_price | money_with_currency }}</p> 
+                        <p class="price-original {% if item.product.compare_at_price %}red{% endif %}">{{ item.original_price | money_with_currency }}&nbsp;</p> 
                         {% for variant in item.product.variants %}
                           {% if item.id == variant.id and variant.compare_at_price %}
                             <p class="price-default">RRR {{ variant.compare_at_price | money_with_currency }}</p>
