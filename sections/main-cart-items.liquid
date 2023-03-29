@@ -25,7 +25,7 @@
 
 <cart-items class="page-width{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link block-title">
-    <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
+    <h1 class="title title--primary">My cart</h1>
     {% comment %} <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a> {% endcomment %}
   </div>
 
@@ -51,30 +51,13 @@
             <caption class="visually-hidden">
               {{ 'sections.cart.title' | t }}
             </caption>
-            {% comment %} <thead>
-              <tr>
-                <th class="caption-with-letter-spacing" colspan="2" scope="col">
-                  {{ 'sections.cart.headings.product' | t }}
-                </th>
-                <th class="medium-hide large-up-hide right caption-with-letter-spacing" colspan="1" scope="col">
-                  {{ 'sections.cart.headings.total' | t }}
-                </th>
-                <th class="cart-items__heading--wide small-hide caption-with-letter-spacing" colspan="1" scope="col">
-                  {{ 'sections.cart.headings.quantity' | t }}
-                </th>
-                <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">
-                  {{ 'sections.cart.headings.total' | t }}
-                </th>
-              </tr>
-            </thead> {% endcomment %}
-
             <tbody>
               {%- for item in cart.items -%}
                 <tr class="cart-item" id="CartItem-{{ item.index | plus: 1 }}">
                   <td class="cart-item__media">
                     {% if item.image %}
                       {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                      <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a>
+                      {% comment %} <a href="{{ item.url }}" class="cart-item__link" aria-hidden="true" tabindex="-1"> </a> {% endcomment %}
                       <div class="cart-item__image-container gradient global-media-settings">
                         <img
                           src="{{ item.image | image_url: width: 300 }}"
@@ -104,7 +87,7 @@
                           {%- for option in item.options_with_values -%}
                             <div class="product-option">
                               <dt>{{ option.name }}:</dt>
-                              <dd>{{ option.value }}</dd>
+                              <dd class="value-variant">{{ option.value }}&nbsp;<span>/</span>&nbsp;</dd>
                             </div>
                           {%- endfor -%}
                         {%- endif -%}
@@ -147,7 +130,7 @@
                         </strong>
                       </div>
                     {%- else -%}
-                      <div class="product-option">
+                      <div class="product-option price-option">
                         <p class="price-original {% if item.product.compare_at_price %}red{% endif %}">{{ item.original_price | money_with_currency }}</p> 
                         {% for variant in item.product.variants %}
                           {% if item.id == variant.id and variant.compare_at_price %}
@@ -201,7 +184,7 @@
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          {{ item.original_line_price | money }}
+                          {{ item.original_line_price | money_with_currency }}
                         </span>
                       {%- endif -%}
 
@@ -266,10 +249,11 @@
                       >
                         <a
                           href="{{ item.url_to_remove }}"
-                          class="button button--tertiary"
+                          class="button remove--text button--tertiary"
                           aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
                         >
-                          {% render 'icon-remove' %}
+                          {% comment %} {% render 'icon-remove' %} {% endcomment %}
+                          Remove
                         </a>
                       </cart-remove-button>
                     </div>
@@ -324,7 +308,7 @@
                         </dl>
                       {%- else -%}
                         <span class="price price--end">
-                          {{ item.original_line_price | money }}
+                          {{ item.original_line_price | money_with_currency }}
                         </span>
                       {%- endif -%}
 
