@@ -226,6 +226,10 @@ cart-drawer-items {
 }
 
 .cart-drawer .cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-drawer .cart-item:last-child {
   margin-bottom: 1rem;
 }
 
