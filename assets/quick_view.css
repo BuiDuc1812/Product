@@ -36,31 +36,6 @@
     display: none;
 }
 
-@media screen and (max-width:750px) {
-    .icon-search {
-        display: block;
-        padding: 8px 0 4px 0;
-    }
-
-    .text-btn {
-        display: none;
-    }
-
-    .form-quick_view button {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0 8px 0 0;
-        float: right;
-        
-    }
-    
-    .cart-item__quantity-wrapper {
-        justify-content: space-between;
-    }
-}
-
 @media screen and (max-width:990px) {
     .title-wrapper-with-link {
         justify-content: center;
@@ -100,20 +75,35 @@
     .cart-item__quantity-wrapper {
         flex-direction: column;
     }
+
+    .cart-item__media {
+        max-width: 150px;
+    }
 }
 
 @media screen and (min-width:990px) {
+    #MainContent {
+        position: relative;
+    }
+
+    #shopify-section-template--17942965027135__cart-footer {
+        position: absolute;
+        width: 100%;
+        top: 0;
+    }
     .cart-items-desk {
         max-width: 65% !important;
     }
 
     #main-cart-footer {
-        margin-top: -332px;
+        position: relative;
     }
 
     .cart__footer {
+        position: absolute;
         max-width: 344px;
-        float: right;
+        right: 0;
+        top: 96px;
     }
 }
 
@@ -142,4 +132,68 @@
 
 .checkout-style {
     background-color: #C03732;
+}
+
+.cart-item__image {
+    max-width: 150px;
+}
+
+.image-cart__draw {
+    height: inherit;
+    object-fit: cover;
+}
+
+.style-remove {
+    flex-direction: unset;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 24px;
+}
+
+.vendor-draw {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+.href-cart-draw {
+    font-family: 'Alaska VAR';
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@media screen and (max-width:750px) {
+    .icon-search {
+        display: block;
+        padding: 8px 0 4px 0;
+    }
+
+    .text-btn {
+        display: none;
+    }
+
+    .form-quick_view button {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        padding: 0;
+        margin: 0 8px 0 0;
+        float: right;
+        
+    }
+    
+    .cart-item__quantity-wrapper {
+        justify-content: space-between;
+    }
+
+    .vendor-cart {
+        font-size: 16px !important;
+        line-height: 20px;
+    }
+
+    .cart-items-img {
+        padding-right: 16px;
+    }
 }

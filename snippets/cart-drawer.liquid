@@ -114,9 +114,9 @@
                         <td class="cart-item__media" role="cell" headers="CartDrawer-ColumnProductImage">
                           {% if item.image %}
                             {% comment %} Leave empty space due to a:empty CSS display: none rule {% endcomment %}
-                            <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a>
+                            {% comment %} <a href="{{ item.url }}" class="cart-item__link" tabindex="-1" aria-hidden="true"> </a> {% endcomment %}
                             <img
-                              class="cart-item__image"
+                              class="cart-item__image image-cart__draw"
                               src="{{ item.image | image_url: width: 300 }}"
                               alt="{{ item.image.alt | escape }}"
                               loading="lazy"
@@ -128,14 +128,14 @@
 
                         <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
                           {%- if settings.show_vendor -%}
-                            <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
+                            <p class="caption-with-letter-spacing vendor-draw">{{ item.product.vendor }}</p>
                           {%- endif -%}
 
-                          <a href="{{ item.url }}" class="cart-item__name h4 break">
+                          <a href="{{ item.url }}" class="cart-item__name h4 break href-cart-draw">
                             {{- item.product.title | escape -}}
                           </a>
 
-                          {%- if item.original_price != item.final_price -%}
+                          {% comment %} {%- if item.original_price != item.final_price -%}
                             <div class="cart-item__discounted-prices">
                               <span class="visually-hidden">
                                 {{ 'products.product.price.regular_price' | t }}
@@ -154,7 +154,7 @@
                             <div class="product-option">
                               {{ item.original_price | money }}
                             </div>
-                          {%- endif -%}
+                          {%- endif -%} {% endcomment %}
 
                           {%- if item.product.has_only_default_variant == false
                             or item.properties.size != 0
@@ -269,7 +269,7 @@
                         </td>
 
                         <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
-                          <div class="cart-item__quantity-wrapper">
+                          <div class="cart-item__quantity-wrapper style-remove">
                             <quantity-input class="quantity cart-quantity">
                               <button class="quantity__button no-js-hidden" name="minus" type="button">
                                 <span class="visually-hidden">
@@ -309,10 +309,11 @@
                             >
                               <button
                                 type="button"
-                                class="button button--tertiary"
+                                class="button button--tertiary remove--text"
                                 aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}"
                               >
-                                {% render 'icon-remove' %}
+                                {% comment %} {% render 'icon-remove' %} {% endcomment %}
+                                Remove
                               </button>
                             </cart-remove-button>
                           </div>

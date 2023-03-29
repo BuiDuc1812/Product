@@ -107,6 +107,7 @@ class CartItems extends HTMLElement {
 
         if (parsedState.errors) {
           quantityElement.value = quantityElement.getAttribute('value');
+          this.updateLiveRegions(line, parsedState.errors);
           return;
         }
 
@@ -131,6 +132,7 @@ class CartItems extends HTMLElement {
             message = window.cartStrings.quantityError.replace('[quantity]', updatedValue);
           }
         }
+        this.updateLiveRegions(line, message);
 
         const lineItem = document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
@@ -148,6 +150,20 @@ class CartItems extends HTMLElement {
         const errors = document.getElementById('cart-errors') || document.getElementById('CartDrawer-CartErrors');
         errors.textContent = window.cartStrings.error;
       })
+  }
+
+  updateLiveRegions(line, message) {
+    const lineItemError = document.getElementById(`Line-item-error-${line}`) || document.getElementById(`CartDrawer-LineItemError-${line}`);
+    if (lineItemError) lineItemError.querySelector('.cart-item__error-text').innerHTML = message;
+
+    this.lineItemStatusElement.setAttribute('aria-hidden', true);
+
+    const cartStatus = document.getElementById('cart-live-region-text') || document.getElementById('CartDrawer-LiveRegionText');
+    cartStatus.setAttribute('aria-hidden', false);
+
+    setTimeout(() => {
+      cartStatus.setAttribute('aria-hidden', true);
+    }, 1000);
   }
 
   getSectionInnerHTML(html, selector) {
