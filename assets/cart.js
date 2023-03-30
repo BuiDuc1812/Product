@@ -149,6 +149,9 @@ class CartItems extends HTMLElement {
     if (itemCount.errors) {
       quantityElement.value = quantityElement.getAttribute('value');
       this.errorMessage(line, itemCount.errors);
+      if(quantityElement.value == 1) {
+        quantityElement.parentNode.querySelector('button[name="minus"]').style.pointerEvents = "none";
+      }
       return;
     }
   }

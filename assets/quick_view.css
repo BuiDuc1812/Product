@@ -198,3 +198,12 @@
         padding-right: 16px;
     }
 }
+
+.style-error {
+    position: relative;
+}
+
+.cart-item__error {
+    position: absolute;
+    right: 0;
+}

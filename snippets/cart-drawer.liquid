@@ -71,6 +71,17 @@
           class=" is-empty"
         {% endif %}
       >
+          <div class="shipping">
+            {% assign total_price = cart.total_price | divided_by: 100.0 %}
+            {% assign free_shipping = settings.rate-shipping %}
+            {% assign result = free_shipping | minus: total_price %}
+            {% if total_price >= free_shipping %}
+              🎉You qualify for <b>free shipping!</b> 
+            {% else %}
+              Just <b>${{ result }}</b> away from free shipping!
+            {% endif %}
+          </div>
+          <div class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
         <form
           action="{{ routes.cart_url }}"
           id="CartDrawer-Form"
