@@ -830,3 +830,12 @@ class ProductRecommendations extends HTMLElement {
 }
 
 customElements.define('product-recommendations', ProductRecommendations);
+
+
+// function  loadData() {
+//     document.querySelectorAll('.line').forEach(item=>{
+//       var result = Math.floor((item.getAttribute('total') / item.getAttribute('shipping')) * 100);
+//       item.style.setProperty('--afterWidth',`${result}%`)
+//     })
+// }
+// loadData()

@@ -102,28 +102,52 @@ customElements.define('cart-drawer', CartDrawer);
 
 class CartDrawerItems extends CartItems {
   getSectionsToRender() {
-    return [
-      {
-        id: 'CartDrawer',
-        section: 'cart-drawer',
-        selector: '.drawer__inner'
-      },
-      {
-        id: 'cart-icon-bubble',
-        section: 'cart-icon-bubble',
-        selector: '.shopify-section'
-      },
-      {
-        id: 'main-cart-items',
-        section: document.getElementById('main-cart-items').dataset.id,
-        selector: '.js-contents'
-      },
-      {
-        id: 'main-cart-footer',
-        section: document.getElementById('main-cart-footer').dataset.id,
-        selector: '.js-contents'
-      }
-    ];
+    if(window.location.pathname == '/cart'){
+      return [
+        {
+          id: 'CartDrawer',
+          section: 'cart-drawer',
+          selector: '.drawer__inner'
+        },
+        {
+          id: 'cart-icon-bubble',
+          section: 'cart-icon-bubble',
+          selector: '.shopify-section'
+        },
+        {
+          id: 'main-cart-items',
+          section: document.getElementById('main-cart-items').dataset.id,
+          selector: '.js-contents'
+        },
+        {
+          id: 'main-cart-footer',
+          section: document.getElementById('main-cart-footer').dataset.id,
+          selector: '.js-contents'
+        },
+        {
+          id:'shipping-draw',
+          section:'shipping-draw'
+        }
+      ];
+    }
+    else {
+      return [
+        {
+          id: 'CartDrawer',
+          section: 'cart-drawer',
+          selector: '.drawer__inner'
+        },
+        {
+          id: 'cart-icon-bubble',
+          section: 'cart-icon-bubble',
+          selector: '.shopify-section'
+        },
+        {
+          id:'shipping-draw',
+          section:'shipping-draw'
+        }
+      ];
+    }
   }
 }
 

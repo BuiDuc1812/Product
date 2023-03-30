@@ -20,7 +20,6 @@ class CartItems extends HTMLElement {
     const debouncedOnChange = debounce((event) => {
       this.onChange(event);
     }, ON_CHANGE_DEBOUNCE_TIMER);
-    this.loadData();
     this.addEventListener('change', debouncedOnChange.bind(this));
     this.load = document.querySelector('.page-load');
   }
@@ -85,6 +84,10 @@ class CartItems extends HTMLElement {
         id: 'main-cart-footer',
         section: document.getElementById('main-cart-footer').dataset.id,
         selector: '.js-contents'
+      },
+      {
+        id:'shipping-draw',
+        section:'shipping-draw'
       }
     ];
   }
@@ -112,8 +115,6 @@ class CartItems extends HTMLElement {
           elementToReplace.innerHTML =
             this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
         }));
-
-        this.loadData();
       }).catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
       })
@@ -136,12 +137,6 @@ class CartItems extends HTMLElement {
     return new DOMParser()
       .parseFromString(html, 'text/html')
       .querySelector(selector).innerHTML;
-  }
-
-  loadData() {
-    var line = document.querySelector('.line');
-    var result = Math.floor((line.getAttribute('total') / line.getAttribute('shipping')) * 100);
-    line.style.setProperty('--afterWidth',`${result}%`)
   }
 
   checkStock(itemCount, line) {
