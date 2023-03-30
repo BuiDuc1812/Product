@@ -35,8 +35,8 @@
                   {% else %}
                     Just <b>${{ result }}</b> away from free shipping!
                   {% endif %}
+                  <div class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
                 </div>
-                <div class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
                 <div class="free-shipping totals">
                   <h2 class="totals__subtotal tall">Shipping</h2>
                   <p class="totals__subtotal tall">Free</p>

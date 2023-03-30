@@ -80,8 +80,8 @@
             {% else %}
               Just <b>${{ result }}</b> away from free shipping!
             {% endif %}
+            <div id="shipping-draw-line" class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
           </div>
-          <div id="shipping-draw-line" class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
         <form
           action="{{ routes.cart_url }}"
           id="CartDrawer-Form"
