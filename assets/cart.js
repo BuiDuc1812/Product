@@ -21,6 +21,7 @@ class CartItems extends HTMLElement {
       this.onChange(event);
     }, ON_CHANGE_DEBOUNCE_TIMER);
     this.addEventListener('change', debouncedOnChange.bind(this));
+    this.loadData();
     this.load = document.querySelector('.page-load');
   }
 
@@ -84,10 +85,6 @@ class CartItems extends HTMLElement {
         id: 'main-cart-footer',
         section: document.getElementById('main-cart-footer').dataset.id,
         selector: '.js-contents'
-      },
-      {
-        id:'shipping-draw',
-        section:'shipping-draw'
       }
     ];
   }
@@ -115,12 +112,22 @@ class CartItems extends HTMLElement {
           elementToReplace.innerHTML =
             this.getSectionInnerHTML(parsedState.sections[section.section], section.selector);
         }));
+        this.loadData()
       }).catch(() => {
         this.querySelectorAll('.loading-overlay').forEach((overlay) => overlay.classList.add('hidden'));
       })
       .finally(()=>{
         this.load.classList.add('hidden')
       })
+  }
+  loadData (){
+      document.querySelectorAll('.line').forEach(item=>{
+        var result = Math.floor((item.getAttribute('total') / item.getAttribute('shipping')) * 100);
+        item.style.setProperty('--afterWidth',`${result}%`)
+      })
+      // var line = item.querySelector('.line');
+      // var result = Math.floor((line.getAttribute('total') / line.getAttribute('shipping')) * 100);
+      // line.style.setProperty('--afterWidth',`${result}%`)
   }
 
   errorMessage(line, message) {
