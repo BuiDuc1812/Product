@@ -56,7 +56,7 @@
         </div>
       {%- endif -%}
       <div class="drawer__header">
-        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }} <p class="count-item">({{ cart.item_count }} items)</p> </h2>
+        <h2 class="drawer__heading">{{ 'sections.cart.title' | t }}&nbsp;<p class="count-item">({{ cart.item_count }} items)</p> </h2>
         <button
           class="drawer__close unset-btn-close"
           type="button"
@@ -178,7 +178,7 @@
                                     <dt>{{ option.name }}:</dt>
                                     <dd>
                                       {{ option.value -}}
-                                      {%- unless forloop.last %}, {% endunless %}
+                                      {%- unless forloop.last %}/{% endunless %}
                                     </dd>
                                   </div>
                                 {%- endfor -%}

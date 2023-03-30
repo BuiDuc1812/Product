@@ -82,15 +82,39 @@ class CartDrawer extends HTMLElement {
   }
 
   getSectionsToRender() {
-    return [
-      {
-        id: 'cart-drawer',
-        selector: '#CartDrawer'
-      },
-      {
-        id: 'cart-icon-bubble'
-      }
-    ];
+    if(window.location.pathname == '/cart'){
+      return [
+        {
+          id: 'cart-drawer',
+          selector: '#CartDrawer'
+        },
+        {
+          id: 'cart-icon-bubble'
+        },
+        {
+          id: 'main-cart-items',
+          section: document.getElementById('main-cart-items').dataset.id,
+          selector: 'cart-items'
+        }
+        // {
+        //   id: 'main-cart-footer',
+        //   section: document.getElementById('main-cart-footer').dataset.id,
+        //   selector: '.cart__footer-wrapper'
+        // }
+      ];
+    }
+    else {
+      return [
+        {
+          id: 'cart-drawer',
+          selector: '#CartDrawer'
+        },
+        {
+          id: 'cart-icon-bubble'
+        }
+      ];
+    }
+    
   }
 
   setActiveElement(element) {
