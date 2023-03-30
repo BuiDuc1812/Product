@@ -84,6 +84,7 @@
 @media screen and (min-width:990px) {
     #MainContent {
         position: relative;
+        min-height: 500px;
     }
 
     #shopify-section-template--17942965027135__cart-footer {

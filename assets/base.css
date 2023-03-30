@@ -1510,6 +1510,7 @@ button.shopify-payment-button__button--unbranded {
 .customer button.disabled,
 .quantity__button.disabled {
   cursor: not-allowed;
+  pointer-events: none;
   /* opacity: 0.7; */
 }
 
@@ -3281,4 +3282,19 @@ details-disclosure > details {
   .list-payment {
     padding-left: 0;
   }
+}
+
+
+.page-load {
+  display: flex;
+  z-index: 9999 !important;
+  width: 100% !important;
+  height: 100%;
+  background-color: rgba(1, 1, 1, 0.1);
+  align-items: center;
+  justify-content: center;
+}
+
+.page-spinner {
+  width: 3rem !important;
 }

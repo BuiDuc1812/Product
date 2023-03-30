@@ -151,6 +151,7 @@ class QuantityInput extends HTMLElement {
     this.querySelectorAll('button').forEach(
       (button) => button.addEventListener('click', this.onButtonClick.bind(this))
     );
+    this.load = document.querySelector('.page-load');
   }
 
   quantityUpdateUnsubscriber = undefined;
@@ -172,6 +173,7 @@ class QuantityInput extends HTMLElement {
 
   onButtonClick(event) {
     event.preventDefault();
+    this.load.classList.remove('hidden')
     const previousValue = this.input.value;
     event.target.name === 'plus' ? this.input.stepUp() : this.input.stepDown();
     if (previousValue !== this.input.value) this.input.dispatchEvent(this.changeEvent);
