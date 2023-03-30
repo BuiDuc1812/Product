@@ -120,11 +120,16 @@ class CartItems extends HTMLElement {
         this.load.classList.add('hidden')
       })
   }
-  loadData (){
+
+  loadData(){
       document.querySelectorAll('.line').forEach(item=>{
         var result = Math.floor((item.getAttribute('total') / item.getAttribute('shipping')) * 100);
         item.style.setProperty('--afterWidth',`${result}%`)
       })
+  }
+
+  cancelButton(){
+    
   }
 
   errorMessage(line, message) {
