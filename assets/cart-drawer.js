@@ -65,8 +65,11 @@ class CartDrawer extends HTMLElement {
     this.productId = parsedState.id;
     this.getSectionsToRender().forEach((section => {
       const sectionElement = section.selector ? document.querySelector(section.selector) : document.getElementById(section.id);
+      console.log(sectionElement)
+
       sectionElement.innerHTML =
           this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
+          console.log(parsedState.sections[section.id])
     }));
 
     setTimeout(() => {
@@ -97,9 +100,8 @@ class CartDrawer extends HTMLElement {
           selector: 'cart-items'
         }
         // {
-        //   id: 'main-cart-footer',
-        //   section: document.getElementById('main-cart-footer').dataset.id,
-        //   selector: '.cart__footer-wrapper'
+        //   id: 'total-checkout',
+        //   selector: '.totals'
         // }
       ];
     }
