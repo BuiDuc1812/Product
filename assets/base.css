@@ -3298,3 +3298,13 @@ details-disclosure > details {
 .page-spinner {
   width: 3rem !important;
 }
+
+.change-grid {
+  flex-wrap: nowrap !important;
+}
+
+.img-collection {
+  max-height: 344px;
+  padding-bottom: 100%;
+  object-fit: cover;
+}
