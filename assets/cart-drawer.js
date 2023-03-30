@@ -65,11 +65,8 @@ class CartDrawer extends HTMLElement {
     this.productId = parsedState.id;
     this.getSectionsToRender().forEach((section => {
       const sectionElement = section.selector ? document.querySelector(section.selector) : document.getElementById(section.id);
-      console.log(sectionElement)
-
       sectionElement.innerHTML =
           this.getSectionInnerHTML(parsedState.sections[section.id], section.selector);
-          console.log(parsedState.sections[section.id])
     }));
 
     setTimeout(() => {

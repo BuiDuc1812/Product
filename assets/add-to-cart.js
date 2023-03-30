@@ -11,7 +11,9 @@ function quickView(){
                 e.preventDefault();
                 const formData = new FormData(item);
                     formData.append('sections', cartDrawer.getSectionsToRender().map((section) => section.id));
-                    formData.append('sections_url', window.location.pathname);           
+                    formData.append('sections_url', window.location.pathname);   
+                    
+                checkInventory(btnSubmit)
                 fetch(window.Shopify.routes.root + 'cart/add.js', {
                     method: 'POST',
                     body: formData
@@ -31,3 +33,9 @@ function quickView(){
     }
 }
 quickView()
+
+
+function checkInventory (btn){
+    var quantity = btn.getAttribute('quantity');
+    console.log(quantity);
+}

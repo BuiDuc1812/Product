@@ -125,9 +125,6 @@ class CartItems extends HTMLElement {
         var result = Math.floor((item.getAttribute('total') / item.getAttribute('shipping')) * 100);
         item.style.setProperty('--afterWidth',`${result}%`)
       })
-      // var line = item.querySelector('.line');
-      // var result = Math.floor((line.getAttribute('total') / line.getAttribute('shipping')) * 100);
-      // line.style.setProperty('--afterWidth',`${result}%`)
   }
 
   errorMessage(line, message) {
