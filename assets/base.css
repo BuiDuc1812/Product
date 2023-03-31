@@ -974,6 +974,10 @@ summary::-webkit-details-marker {
 .title,
 .title-wrapper-with-link {
   margin: 3rem 0 2rem;
+  font-family: 'Alaska VAR';
+  font-size: 30px;
+  line-height: 36px;
+  font-weight: 600;
 }
 
 .title-wrapper-with-link .title {
@@ -2906,6 +2910,7 @@ details-disclosure > details {
 }
 
 .gradient {
+  position: relative;
   background: rgb(var(--color-background));
   background: var(--gradient-background);
   background-attachment: fixed;
@@ -3291,7 +3296,6 @@ details-disclosure > details {
   width: 100% !important;
   height: 100%;
   background-color: rgba(1, 1, 1, 0.1);
-  align-items: center;
   justify-content: center;
 }
 
@@ -3307,4 +3311,9 @@ details-disclosure > details {
   max-height: 344px;
   padding-bottom: 100%;
   object-fit: cover;
+}
+
+.fixed-loading {
+  position: fixed;
+  top: 50%;
 }

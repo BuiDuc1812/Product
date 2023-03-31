@@ -1,8 +1,10 @@
 var swiper = new Swiper(".swiper", {
     slidesPerView: 4,
     breakpoints: {
-        // when window width is >= 320px
-        320: {
+        0: {
+            slidesPerView: 1,
+        },
+        376: {
           slidesPerView: 2,
         },
         750: {
