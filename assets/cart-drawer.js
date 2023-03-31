@@ -95,11 +95,11 @@ class CartDrawer extends HTMLElement {
           id: 'main-cart-items',
           section: document.getElementById('main-cart-items').dataset.id,
           selector: 'cart-items'
+        },
+        {
+          id: 'main-cart-footer'
+          // selector: '.cart__blocks'
         }
-        // {
-        //   id: 'total-checkout',
-        //   selector: '.totals'
-        // }
       ];
     }
     else {
