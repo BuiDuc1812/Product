@@ -124,7 +124,7 @@
       {%- endif -%}
     </slider-component>
 
-    {% comment %} {%- if section.settings.show_view_all and more_in_collection -%}
+    {%- if section.settings.show_view_all and more_in_collection -%}
       <div class="center collection__view-all">
         <a
           href="{{ section.settings.collection.url }}"
@@ -134,7 +134,7 @@
           {{ 'sections.featured_collection.view_all' | t }}
         </a>
       </div>
-    {%- endif -%} {% endcomment %}
+    {%- endif -%}
   </div>
 </div>
 

@@ -3308,8 +3308,6 @@ details-disclosure > details {
 }
 
 .img-collection {
-  max-height: 344px;
-  padding-bottom: 100%;
   object-fit: cover;
 }
 
