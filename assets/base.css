@@ -3315,3 +3315,11 @@ details-disclosure > details {
   position: fixed;
   top: 50%;
 }
+
+.remove-gap {
+  gap: 0 !important;
+}
+
+.padding-bottom {
+  padding-bottom: 100% !important;
+}

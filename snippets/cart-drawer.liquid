@@ -279,7 +279,7 @@
                           </div>
                         </td>
 
-                        <td class="cart-item__quantity" role="cell" headers="CartDrawer-ColumnQuantity">
+                        <td class="cart-item__quantity parent-error" role="cell" headers="CartDrawer-ColumnQuantity">
                           <div class="cart-item__quantity-wrapper style-remove">
                             <quantity-input class="quantity cart-quantity">
                               <button class="quantity__button no-js-hidden" name="minus" type="button">
@@ -331,13 +331,13 @@
 
                           <div
                             id="CartDrawer-LineItemError-{{ item.index | plus: 1 }}"
-                            class="cart-item__error"
+                            class="cart-item__error draw-cart__error"
                             role="alert"
                           >
                             <small class="cart-item__error-text"></small>
                             <svg
                               aria-hidden="true"
-                              focusable="false"
+                               focusable="false"
                               class="icon icon-error"
                               viewBox="0 0 13 13"
                             >

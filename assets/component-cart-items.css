@@ -55,7 +55,7 @@
 }
 
 .cart-item__details > * + * {
-  margin-top: 1rem;
+  margin-top: 0.4rem;
 }
 
 .cart-item__media {
@@ -175,7 +175,7 @@ cart-remove-button .icon-remove {
 .cart-item__error {
   display: flex;
   align-items: flex-start;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
 }
 
 .cart-item__error-text {
