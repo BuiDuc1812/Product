@@ -104,7 +104,7 @@ class CartItems extends HTMLElement {
       .then((state) => {
         const parsedState = JSON.parse(state);
         this.checkStock(parsedState, line)
-        this.checkEmpty(parsedState, line, name)
+        this.checkEmpty(parsedState)
 
         this.getSectionsToRender().forEach((section => {
           const elementToReplace =
@@ -160,26 +160,14 @@ class CartItems extends HTMLElement {
     }
   }
 
-  checkEmpty(parsedState, line, name){
+  checkEmpty(parsedState){
     this.classList.toggle('is-empty', parsedState.item_count === 0);
     const cartDrawerWrapper = document.querySelector('cart-drawer');
     const cartFooter = document.getElementById('main-cart-footer');
 
     if (cartFooter) cartFooter.classList.toggle('is-empty', parsedState.item_count === 0);
     if (cartDrawerWrapper) cartDrawerWrapper.classList.toggle('is-empty', parsedState.item_count === 0);
-
-    const lineItem = document.getElementById(`CartItem-${line}`) || document.getElementById(`CartDrawer-Item-${line}`);
-    if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
-      cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
-    } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
-      trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'))
-    } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
-      trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
-    }
-    publish(PUB_SUB_EVENTS.cartUpdate, {source: 'cart-items'});
   }
-
-
 }
 
 customElements.define('cart-items', CartItems);
