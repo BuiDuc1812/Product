@@ -71,6 +71,13 @@
           class=" is-empty"
         {% endif %}
       >
+
+        <form
+          action="{{ routes.cart_url }}"
+          id="CartDrawer-Form"
+          class="cart__contents cart-drawer__form"
+          method="post"
+        >
           <div id="shipping-draw" class="shipping">
             {% assign total_price = cart.total_price | divided_by: 100.0 %}
             {% assign free_shipping = settings.rate-shipping %}
@@ -82,12 +89,6 @@
             {% endif %}
             <div id="shipping-draw-line" class="line" total="{{ total_price }}" shipping="{{ free_shipping }}"></div>
           </div>
-        <form
-          action="{{ routes.cart_url }}"
-          id="CartDrawer-Form"
-          class="cart__contents cart-drawer__form"
-          method="post"
-        >
           <div id="CartDrawer-CartItems" class="drawer__contents js-contents">
             {%- if cart != empty -%}
               <div class="drawer__cart-items-wrapper">

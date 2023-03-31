@@ -3308,7 +3308,13 @@ details-disclosure > details {
 }
 
 .img-collection {
-  object-fit: cover;
+  max-height: 308px;
+  height: 100%;
+}
+
+.style-img-collection {
+  height: inherit;
+  padding-bottom: 100% !important;
 }
 
 .fixed-loading {
