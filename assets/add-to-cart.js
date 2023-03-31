@@ -54,7 +54,3 @@ function ajax(form){
         console.error('Error:', error);
     });
 }
-
-// const checkQuanty = async (btn) =>{
-//     await cancelBtn(btn)
-// }
