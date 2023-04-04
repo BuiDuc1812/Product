@@ -173,17 +173,18 @@
             {%- endif -%}
         </form>
       </div>
-      {% comment %} <script>
-        console.log({{ card_product.options | json }})
-      </script> {% endcomment %}
+
       {% for option in card_product.options %}
         {% if option == 'Color' %}
           <form class="product-swatch" action="">
-            <label class="" for="black"></label><input checked="true" type="radio" name="color" id="black">
-            <label class="" for="grey"></label><input type="radio" name="color" id="grey">
+            {% for item in card_product.metafields.custom.product_swatch_handle.value %}
+              <label style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};" for="{{ item }}"></label>
+              <input class="label-handle" type="radio" name="{{ card_product.id }}" id="{{ item }}">
+            {% endfor %}
           </form>
         {% endif %}
       {% endfor %}
+
       <div class="card__content">
         <div class="card__information">
           <h3

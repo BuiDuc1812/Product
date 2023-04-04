@@ -2,16 +2,20 @@
     display: flex;
     position: absolute;
     z-index: 2;
+    right: 0;
 }
-
+  
 .product-swatch label {
     display: block;
     width: 22px;
     height: 22px;
-    background-color: aqua;
     border-radius: 50%;
 }
-
+  
 .product-swatch input {
-    
+    display: none;
 }
+  
+/* .product-swatch input[type='radio']:checked + label {
+    border: 1px solid red;
+} */
