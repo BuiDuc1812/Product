@@ -103,8 +103,8 @@ class CartItems extends HTMLElement {
       })
       .then((state) => {
         const parsedState = JSON.parse(state);
-        this.checkStock(parsedState, line)
-        this.checkEmpty(parsedState)
+        this.checkStock(parsedState, line);
+        this.checkEmpty(parsedState);
 
         this.getSectionsToRender().forEach((section => {
           const elementToReplace =
@@ -126,10 +126,6 @@ class CartItems extends HTMLElement {
         var result = Math.floor((item.getAttribute('total') / item.getAttribute('shipping')) * 100);
         item.style.setProperty('--afterWidth',`${result}%`)
       })
-  }
-
-  cancelButton(){
-    
   }
 
   errorMessage(line, message) {

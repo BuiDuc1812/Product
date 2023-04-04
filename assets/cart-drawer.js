@@ -101,8 +101,7 @@ class CartDrawer extends HTMLElement {
           // selector: '.cart__blocks'
         }
       ];
-    }
-    else {
+    } else {
       return [
         {
           id: 'cart-drawer',
@@ -113,7 +112,6 @@ class CartDrawer extends HTMLElement {
         }
       ];
     }
-    
   }
 
   setActiveElement(element) {
@@ -148,8 +146,7 @@ class CartDrawerItems extends CartItems {
           selector: '.js-contents'
         }
       ];
-    }
-    else {
+    } else {
       return [
         {
           id: 'CartDrawer',
