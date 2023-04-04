@@ -46,13 +46,13 @@ class swatches {
 
     
     getHandle(btn){
-        this.parrent = btn.parentNode;
         btn.forEach((item, index)=>{
+            this.parent = item.parentNode.parentNode;
             item.addEventListener('click',()=>{
                 item.classList.add('choose');
                 this.removeChoose(btn, index);
                 this.handleLink = item.getAttribute('handle');
-                this.parrent.querySelector('.handlelink').setAttribute('href',"/products/"+this.handleLink);
+                this.parent.querySelector('.handlelink').href = "/products/"+this.handleLink;
             })  
         })
     }
