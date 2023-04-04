@@ -1,0 +1,29 @@
+{% layout 'none' %}
+{
+    'id':'{{ product.id }}',
+    'title':'{{ product.title }}',
+    'handle':'{{ product.handle }}',
+    'available':{{ product.available }},
+    'handle_opt':[
+        {% for item in product.metafields.custom.custom.product_swatch_handle.value %}
+            {
+                'handle':'{{ item }}'
+            }
+        {% endfor %}
+    ]
+    'test':{{ product.metafields.custom.custom.product_swatch_handle }}
+    {% comment %} 'variant':[
+        {% for variant in product.variants %}
+            {
+                'id':{{ variant.id }},
+                'image':{{ variant.featured_image }},
+                'option':'{{ variant.option1 }}',
+                'price':{{ product.price }},
+                'compare_at_price':{{ product.compare_at_price }}
+            }
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ], {% endcomment %}
+    'image':'{{ product.featured_image }}'
+
+}

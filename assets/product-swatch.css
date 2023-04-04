@@ -1,21 +1,28 @@
-.product-swatch {
+.color-swatch {
     display: flex;
     position: absolute;
     z-index: 2;
     right: 0;
 }
-  
-.product-swatch label {
+
+.color-variant {
+    box-sizing: border-box;
+    margin-right: 16px;
+    margin-top: 8px;
+}
+
+.color-variant:last-child {
+    margin-right: 0;
+}
+
+.color-variant span {
     display: block;
-    width: 22px;
     height: 22px;
+    width: 22px;
     border-radius: 50%;
 }
-  
-.product-swatch input {
-    display: none;
-}
-  
-/* .product-swatch input[type='radio']:checked + label {
+
+.choose {
     border: 1px solid red;
-} */
+    border-radius: 50%;
+}

@@ -33,6 +33,7 @@
       assign ratio = 1
     endif
   -%}
+
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -176,12 +177,13 @@
 
       {% for option in card_product.options %}
         {% if option == 'Color' %}
-          <form class="product-swatch" action="">
-            {% for item in card_product.metafields.custom.product_swatch_handle.value %}
-              <label style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};" for="{{ item }}"></label>
-              <input class="label-handle" type="radio" name="{{ card_product.id }}" id="{{ item }}">
-            {% endfor %}
-          </form>
+        <div class="color-swatch">
+          {% for item in card_product.metafields.custom.product_swatch_handle.value %}
+            <div class="color-variant" handle="{{ item }}">
+              <span style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};"></span>
+            </div>
+          {% endfor %}
+        </div>
         {% endif %}
       {% endfor %}
 
@@ -430,3 +432,5 @@
     </div>
   </div>
 {%- endif -%}
+
+
