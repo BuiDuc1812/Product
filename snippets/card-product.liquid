@@ -19,6 +19,7 @@
 {% endcomment %}
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{{ 'product-swatch.css' | asset_url | stylesheet_tag }}
 
 {%- if card_product and card_product != empty -%}
   {%- liquid
@@ -172,6 +173,17 @@
             {%- endif -%}
         </form>
       </div>
+      {% comment %} <script>
+        console.log({{ card_product.options | json }})
+      </script> {% endcomment %}
+      {% for option in card_product.options %}
+        {% if option == 'Color' %}
+          <form class="product-swatch" action="">
+            <label class="" for="black"></label><input checked="true" type="radio" name="color" id="black">
+            <label class="" for="grey"></label><input type="radio" name="color" id="grey">
+          </form>
+        {% endif %}
+      {% endfor %}
       <div class="card__content">
         <div class="card__information">
           <h3

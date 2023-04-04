@@ -1,0 +1,17 @@
+.product-swatch {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+}
+
+.product-swatch label {
+    display: block;
+    width: 22px;
+    height: 22px;
+    background-color: aqua;
+    border-radius: 50%;
+}
+
+.product-swatch input {
+    
+}
