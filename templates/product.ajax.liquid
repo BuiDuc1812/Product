@@ -5,7 +5,7 @@
     'handle':'{{ product.handle }}',
     'available':{{ product.available }},
     'handle_opt':[
-        {% for item in product.metafields.custom.custom.product_swatch_handle.value %}
+        {% for item in product.metafields.custom.product_swatch_handle.value %}
             {
                 'handle':'{{ item }}'
             }
