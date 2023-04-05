@@ -8,11 +8,11 @@ class swatches {
     }
 
     getHandle(btn){
-        btn.forEach((item, index)=>{
+        btn.forEach((item)=>{
             item.addEventListener('click',()=>{
+                this.removeChoose(btn);
                 this.parent = item.parentNode.parentNode;
                 item.classList.add('choose');
-                this.removeChoose(btn, index);
                 this.handleLink = item.getAttribute('handle');
                 this.getData(this.handleLink,this.parent);
                 this.parent.querySelector('.handlelink').href = "/products/"+this.handleLink;
@@ -20,11 +20,9 @@ class swatches {
         })
     }
 
-    removeChoose(btn, ind){
-        btn.forEach((item, i)=>{
-            if(i != ind){
-                item.classList.remove('choose');
-            }
+    removeChoose(btn){
+        btn.forEach((item)=>{
+            item.classList.remove('choose');
         })
     }
 
@@ -38,7 +36,7 @@ class swatches {
         }) 
     }
 
-    changeData(data, parent){
+    changeData(data, parent) {
         this.liProduct = parent.parentNode.parentNode;
         this.liProduct.querySelector('.change-img').srcset = data.image;
         this.liProduct.querySelector('.handlelink').innerHTML = data.title;
