@@ -3369,3 +3369,7 @@ details-disclosure > details {
   line-height: 24px;
   text-transform: capitalize;
 }
+
+.product-slide {
+  box-shadow: 1px 1px 1px 1px #ccc;
+}
