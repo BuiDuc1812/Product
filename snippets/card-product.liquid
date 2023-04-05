@@ -68,7 +68,7 @@
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
-                class="motion-reduce"
+                class="motion-reduce change-img"
                 {% unless lazy_load == false %}
                   loading="lazy"
                 {% endunless %}
@@ -77,7 +77,7 @@
               >
               {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
 
-              {%- if card_product.media[1] != null and show_secondary_image -%}
+              {% comment %} {%- if card_product.media[1] != null and show_secondary_image -%}
                 <img
                   srcset="
                     {%- if card_product.media[1].width >= 165 -%}{{ card_product.media[1] | image_url: width: 165 }} 165w,{%- endif -%}
@@ -96,7 +96,7 @@
                   width="{{ card_product.media[1].width }}"
                   height="{{ card_product.media[1].height }}"
                 >
-              {%- endif -%}
+              {%- endif -%} {% endcomment %}
             </div>
           </div>
         {%- endif -%}
@@ -118,7 +118,7 @@
               </a>
             </h3>
           </div>
-          <div class="card__badge {{ settings.badge_position }}">
+          {% comment %} <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
               <span
                 id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}"
@@ -134,15 +134,15 @@
                 {{- 'products.product.on_sale' | t -}}
               </span>
             {%- endif -%}
-          </div>
+          </div> {% endcomment %}
         </div>
         <form class="form-quick_view" action="" product_id="{{ card_product.selected_or_first_available_variant.id }}">
-          <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id">
+          <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id change-quick">
           <input type="text" name="quantity" value="1" class="hidden product-variant-id">
             {%- if card_product.available == false or quantity_rule_soldout -%}
               <button
                 id = "ProductSubmitButton-{{ section_id }}"
-                class = "ProductSubmitButton"
+                class = "ProductSubmitButton soul"
                 type="submit"
                 name="add"
                 disabled
@@ -152,7 +152,7 @@
             {%- else -%}
               <button
                 id = "ProductSubmitButton-{{ section_id }}"
-                class = "ProductSubmitButton"
+                class = "ProductSubmitButton quick"
                 type="submit"
                 name="add"
                 idvariant="{{ card_product.selected_or_first_available_variant.id }}"
@@ -179,7 +179,9 @@
         {% if option == 'Color' %}
         <div class="color-swatch">
           {% for item in card_product.metafields.custom.product_swatch_handle.value %}
-            <div class="color-variant" handle="{{ item }}">
+            <div class="color-variant {% if card_product.handle == item %}choose{% endif %}" handle="{{ item }}"> 
+              
+            
               <span style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};"></span>
             </div>
           {% endfor %}

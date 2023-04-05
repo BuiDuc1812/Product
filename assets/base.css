@@ -3314,7 +3314,7 @@ details-disclosure > details {
 
 .style-img-collection {
   height: inherit;
-  padding-bottom: 100% !important;
+  padding-bottom:calc(100% - 40px)  !important;
 }
 
 .fixed-loading {
@@ -3328,4 +3328,25 @@ details-disclosure > details {
 
 .padding-bottom {
   padding-bottom: 100% !important;
+}
+
+.change-pricesale {
+  color: #E3413B;
+  font-weight: 600;
+}
+
+.change-pricesale-compare {
+  color: #9D9EA0;
+  font-weight: 600;
+}
+
+.handlelink {
+  font-size: 18px;
+  font-family: 'Alaska VAR';
+  /* font-weight: 600; */
+}
+
+.change-price-regular {
+  font-weight: 600;
+  font-size: 16px;
 }

@@ -46,22 +46,22 @@
     {%- endcomment -%}
     <div class="price__regular">
       <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-      <span class="price-item price-item--regular">
+      <span class="price-item price-item--regular change-price-regular">
         {{ money_price }}
       </span>
     </div>
     <div class="price__sale">
-      <span class="price-item new-price-item price-item--sale price-item--last money-sale">
+      <span class="price-item new-price-item price-item--sale change-pricesale price-item--last money-sale">
         {{ money_price }}
       </span>
       {%- unless product.price_varies == false and product.compare_at_price_varies %}
         <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
-        <span>
-          <s class="price-item new-price-item price-item--regular price-compare">
+        <span>RRP
+          <s class="price-item new-price-item price-item--regular change-pricesale-compare price-compare">
             {% if settings.currency_code_enabled %}
-              RRP {{ compare_at_price | money_with_currency }}
+              {{ compare_at_price | money_with_currency }}
             {% else %}
-              RRP {{ compare_at_price | money }}
+              {{ compare_at_price | money }}
             {% endif %}
           </s>
         </span>
