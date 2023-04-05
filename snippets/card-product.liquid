@@ -33,7 +33,6 @@
       assign ratio = 1
     endif
   -%}
-
   <div class="card-wrapper product-card-wrapper underline-links-hover">
     <div
       class="
@@ -139,20 +138,23 @@
         <form class="form-quick_view" action="" product_id="{{ card_product.selected_or_first_available_variant.id }}">
           <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id change-quick">
           <input type="text" name="quantity" value="1" class="hidden product-variant-id">
-            {%- if card_product.available == false or quantity_rule_soldout -%}
+
               <button
                 id = "ProductSubmitButton-{{ section_id }}"
-                class = "ProductSubmitButton soul"
+                class = "ProductSubmitButton soul {% if card_product.available == true %}
+                hidden
+              {% endif %}"
                 type="submit"
                 name="add"
                 disabled
               >
                   Soul out
               </button>
-            {%- else -%}
               <button
                 id = "ProductSubmitButton-{{ section_id }}"
-                class = "ProductSubmitButton quick"
+                class = "ProductSubmitButton quick {% if card_product.available == false or quantity_rule_soldout %}
+                hidden
+              {% endif %}"
                 type="submit"
                 name="add"
                 idvariant="{{ card_product.selected_or_first_available_variant.id }}"
@@ -171,7 +173,6 @@
                 </span>
                 <span class="text-btn">Quick View</span> 
               </button>
-            {%- endif -%}
         </form>
       </div>
 
