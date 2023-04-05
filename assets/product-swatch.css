@@ -1,11 +1,12 @@
 .color-swatch {
     margin-top: 10px;
     display: flex;
+    align-items: center;
 }
 
 .color-variant {
     box-sizing: border-box;
-    margin-right: 12px;
+    margin-right: 8px;
 }
 
 .color-variant:last-child {
@@ -14,10 +15,13 @@
 
 .color-variant span {
     display: block;
-    height: 24px;
-    width: 24px;
+    height: 48px;
+    width: 48px;
+    border-radius: 3px;
 }
 
 .choose {
-    border: 1px solid red;
+    box-shadow: 1px 2px 3px black;
+    border-radius: 5px;
+
 }

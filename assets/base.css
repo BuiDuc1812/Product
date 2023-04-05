@@ -3341,9 +3341,10 @@ details-disclosure > details {
 }
 
 .handlelink {
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Alaska VAR';
-  /* font-weight: 600; */
+  font-weight: 600;
+  line-height: 32px;
 }
 
 .change-price-regular {
@@ -3353,4 +3354,18 @@ details-disclosure > details {
 
 .soul {
   cursor: no-drop !important;
+}
+
+.rrp {
+  font-weight: 600;
+  font-size: 16px;
+  color:#9D9EA0;
+}
+
+.collection_vendor {
+  font-family: "Alaska VAR";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: capitalize;
 }
