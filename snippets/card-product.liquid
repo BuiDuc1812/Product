@@ -180,8 +180,6 @@
         <div class="color-swatch">
           {% for item in card_product.metafields.custom.product_swatch_handle.value %}
             <div class="color-variant {% if card_product.handle == item %}choose{% endif %}" handle="{{ item }}"> 
-              
-            
               <span style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};"></span>
             </div>
           {% endfor %}
