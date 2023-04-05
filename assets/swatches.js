@@ -1,20 +1,23 @@
 class swatches {
     constructor(){
+        this.getElementSwatch();
+    }
+    getElementSwatch(){
         this.colorSwatch = document.querySelectorAll('.color-swatch');
         this.colorSwatch.forEach(item=>{
             this.colorVariant = item.querySelectorAll('.color-variant');
-            this.getHandle(this.colorVariant);
+            this.getHandleProduct(this.colorVariant);
         })
     }
 
-    getHandle(btn){
+    getHandleProduct(btn){
         btn.forEach((item)=>{
             item.addEventListener('click',()=>{
                 this.removeChoose(btn);
                 this.parent = item.parentNode.parentNode;
                 item.classList.add('choose');
                 this.handleLink = item.getAttribute('handle');
-                this.getData(this.handleLink,this.parent);
+                this.getDataProduct(this.handleLink,this.parent);
                 this.parent.querySelector('.handlelink').href = "/products/"+this.handleLink;
             })  
         })
@@ -26,43 +29,46 @@ class swatches {
         })
     }
 
-    getData(product, node){
+    getDataProduct(product, node){
         fetch(`/products/${product}?view=ajax`)
         .then(res => {
             return res.json();
         }) 
         .then(data => {
-            this.changeData(data, node);
+            this.changeDataProduct(data, node);
         }) 
     }
 
-    changeData(data, parent) {
+    changeDataProduct(data, parent) {
         this.liProduct = parent.parentNode.parentNode;
         this.liProduct.querySelector('.change-img').srcset = data.image;
         this.liProduct.querySelector('.handlelink').innerHTML = data.title;
         this.liProduct.querySelector('.change-quick').setAttribute('value',data.variant[0].id);
+        this.btnQuickAdd = this.liProduct.querySelector('.quick');
+        this.btnSoul = this.liProduct.querySelector('.soul');
         if (data.available) {
-            this.liProduct.querySelector('.soul').classList.add('hidden');
-            this.liProduct.querySelector('.quick').classList.remove('hidden');
-            this.liProduct.querySelector('.quick').setAttribute('idvariant',data.id);
-            this.liProduct.querySelector('.quick').setAttribute('quantity',data.variant[0].inventory_quantity);
-            // console.log(this.firstVariant.inventory_quantity)
+            this.btnSoul.classList.add('hidden');
+            this.btnQuickAdd.classList.remove('hidden');
+            this.btnQuickAdd.setAttribute('idvariant',data.id);
+            this.btnQuickAdd.setAttribute('quantity',data.variant[0].inventory_quantity);
         } else {
-            // console.log('het')
-            this.liProduct.querySelector('.soul').classList.remove('hidden');
-            this.liProduct.querySelector('.quick').classList.add('hidden');
+            this.btnSoul.classList.remove('hidden');
+            this.btnQuickAdd.classList.add('hidden');
         }
 
+        this.priceSale = this.liProduct.querySelector('.price__sale');
+        this.priceRegular = this.liProduct.querySelector('.price__regular');
+        
         if(data.compare_at_price){
-            this.liProduct.querySelector('.price__regular').style.display = 'none';
-            this.liProduct.querySelector('.price__sale').style.display = 'flex';
-            this.liProduct.querySelector('.price__sale').style.flexDirection = "column";
+            this.priceRegular.style.display = 'none';
+            this.priceSale.style.display = 'flex';
+            this.priceSale.style.flexDirection = "column";
             this.liProduct.querySelector('.change-pricesale').innerHTML = data.price;
             this.liProduct.querySelector('.change-pricesale-compare').innerHTML = data.compare_at_price;
         } else {
             this.liProduct.querySelector('.change-price-regular').innerHTML = data.price;
-            this.liProduct.querySelector('.price__regular').style.display = 'block';
-            this.liProduct.querySelector('.price__sale').style.display = 'none';
+            this.priceRegular.style.display = 'block';
+            this.priceSale.style.display = 'none';
         }
     }
 }

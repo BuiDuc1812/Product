@@ -4,15 +4,13 @@
     "title":{{ product.title | json }},
     "handle":{{ product.handle | json }},
     "available":{{ product.available | json }},
-    "image":"{{ product.featured_media | img_url: 'master' }}",
+    "image":"{{ product.featured_media | img_url: 'master'}}",
     "price":{{ product.price | money_with_currency | json }},
     "compare_at_price":{{ product.compare_at_price | money_with_currency | json }},
     "variant":[
         {% assign variant = product.selected_or_first_available_variant %} 
         {
             "id":{{ variant.id | json }},
-            "price":{{ variant.price | json }},
-            "compare_at_price":{{ variant.compare_at_price | json }},
             "inventory_quantity":{{ variant.inventory_quantity | json }}
         }
     ]
