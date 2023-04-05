@@ -52,6 +52,7 @@ class swatches {
                 item.classList.add('choose');
                 this.removeChoose(btn, index);
                 this.handleLink = item.getAttribute('handle');
+                this.getData(this.handleLink);
                 this.parent.querySelector('.handlelink').href = "/products/"+this.handleLink;
             })  
         })
@@ -63,6 +64,21 @@ class swatches {
                 item.classList.remove('choose');
             }
         })
+    }
+
+    getData(product){
+        fetch('/products/'+ product +'?view=ajax',{
+            headers : { 
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }
+        })
+        .then(res => {
+            return res.json();
+        }) 
+        .then(data => {
+            console.log(data);
+        }) 
     }
 }
 
