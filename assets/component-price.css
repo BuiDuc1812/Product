@@ -74,6 +74,10 @@
   flex-wrap: wrap;
 }
 
+.check-card .price__sale {
+  flex-direction: unset;
+}
+ 
 .price--center {
   display: initial;
   justify-content: center;
