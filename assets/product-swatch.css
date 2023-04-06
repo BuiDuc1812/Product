@@ -51,3 +51,6 @@
     transition: all 0.3s ease;
 }
 
+.underline-links-hover:hover .quick-add-popup {
+    transform: translateY(0);
+}
