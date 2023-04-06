@@ -3311,6 +3311,7 @@ details-disclosure > details {
   max-height: 308px;
   height: 100%;
   padding-bottom: 100%;
+  overflow: hidden;
 }
 
 /* .style-img-collection {
@@ -3373,4 +3374,8 @@ details-disclosure > details {
 
 .product-slide {
   box-shadow: 1px 1px 1px 1px #ccc;
+}
+
+.style-paginate {
+  position: unset !important;
 }

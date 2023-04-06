@@ -61,7 +61,6 @@ class swatches {
         if(data.compare_at_price){
             this.priceRegular.style.display = 'none';
             this.priceSale.style.display = 'flex';
-            this.priceSale.style.flexDirection = "column";
             this.liProduct.querySelector('.change-pricesale').innerHTML = data.price;
             this.liProduct.querySelector('.change-pricesale-compare').innerHTML = data.compare_at_price;
         } else {

@@ -1,11 +1,12 @@
 .form-quick_view {
     z-index: 2;
     position: absolute;
-    bottom: 8px;
+    bottom: 0;
     right: 0;
     left: 0;
-    display: none;
     transition: all 0.2s ease;
+    padding-bottom: 8px;
+    transform: translateY(100%);
 }
 
 .form-quick_view button {
@@ -29,7 +30,7 @@
 }
 
 .underline-links-hover:hover .form-quick_view {
-    display: block;
+    transform: translateY(0);
 }
 
 .icon-search {
