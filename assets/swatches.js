@@ -41,24 +41,13 @@ class swatches {
 
     changeDataProduct(data, parent) {
         const liProduct = parent.parentNode.parentNode;
-        const btnQuickAdd = liProduct.querySelector('.quick');
-        const btnSoul = liProduct.querySelector('.soul');
         const priceSale = liProduct.querySelector('.price__sale');
         const priceRegular = liProduct.querySelector('.price__regular');
-
+        const quickAdd = liProduct.querySelector('.form-quick_view');
+        const buttonQuickAdd = liProduct.querySelector('.quick-add-popup');
         liProduct.querySelector('.change-img').srcset = data.image;
         liProduct.querySelector('.handlelink').innerHTML = data.title;
-        liProduct.querySelector('.change-quick').setAttribute('value',data.variant[0].id);
-        
-        if (data.available) {
-            btnSoul.classList.add('hidden');
-            btnQuickAdd.classList.remove('hidden');
-            btnQuickAdd.setAttribute('idvariant',data.id);
-            btnQuickAdd.setAttribute('quantity',data.variant[0].inventory_quantity);
-        } else {
-            btnSoul.classList.remove('hidden');
-            btnQuickAdd.classList.add('hidden');
-        }
+        liProduct.querySelector('.collection_vendor').innerHTML = data.vendor;
 
         if(data.compare_at_price){
             priceRegular.style.display = 'none';
@@ -71,7 +60,33 @@ class swatches {
             priceSale.style.display = 'none';
         }
 
-        liProduct.querySelector('.collection_vendor').innerHTML = data.vendor;
+        if(quickAdd){
+            this.addFirstVariant(liProduct, data)
+        }
+
+        if(buttonQuickAdd) {
+            this.addProductPopup(buttonQuickAdd, data)
+        }
+    }
+
+    addFirstVariant(liProduct, data){
+        const btnQuickAdd = liProduct.querySelector('.quick');
+        const btnSoul = liProduct.querySelector('.soul');
+        liProduct.querySelector('.change-quick').setAttribute('value',data.variant[0].id);
+        if (data.available) {
+            btnSoul.classList.add('hidden');
+            btnQuickAdd.classList.remove('hidden');
+            btnQuickAdd.setAttribute('idvariant',data.id);
+            btnQuickAdd.setAttribute('quantity',data.variant[0].inventory_quantity);
+        } else {
+            btnSoul.classList.remove('hidden');
+            btnQuickAdd.classList.add('hidden');
+        }
+    }
+
+    addProductPopup(buttonQuickAdd, data) {
+        buttonQuickAdd.querySelector('.id-modal-product').setAttribute('data-modal',`#QuickAdd-${data.id}`);
+        buttonQuickAdd.querySelector('.quick-add__submit-btn').setAttribute('data-product-url',`/products/${data.handle}`);
     }
 }
 

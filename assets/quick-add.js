@@ -18,7 +18,6 @@ if (!customElements.get('quick-add-modal')) {
       opener.setAttribute('aria-disabled', true);
       opener.classList.add('loading');
       opener.querySelector('.loading-overlay__spinner').classList.remove('hidden');
-
       fetch(opener.getAttribute('data-product-url'))
         .then((response) => response.text())
         .then((responseText) => {
@@ -28,13 +27,13 @@ if (!customElements.get('quick-add-modal')) {
           this.removeDOMElements();
           this.setInnerHTML(this.modalContent, this.productElement.innerHTML);
 
-          if (window.Shopify && Shopify.PaymentButton) {
-            Shopify.PaymentButton.init();
-          }
+          // if (window.Shopify && Shopify.PaymentButton) {
+          //   Shopify.PaymentButton.init();
+          // }
 
-          if (window.ProductModel) window.ProductModel.loadShopifyXR();
+          // if (window.ProductModel) window.ProductModel.loadShopifyXR();
 
-          this.removeGalleryListSemantic();
+          // this.removeGalleryListSemantic();
           this.updateImageSizes();
           this.preventVariantURLSwitching();
           super.show(opener);
@@ -46,25 +45,12 @@ if (!customElements.get('quick-add-modal')) {
         });
     }
 
-    setInnerHTML(element, html) {
-      element.innerHTML = html;
-
-      // Reinjects the script tags to allow execution. By default, scripts are disabled when using element.innerHTML.
-      element.querySelectorAll('script').forEach(oldScriptTag => {
-        const newScriptTag = document.createElement('script');
-        Array.from(oldScriptTag.attributes).forEach(attribute => {
-          newScriptTag.setAttribute(attribute.name, attribute.value)
-        });
-        newScriptTag.appendChild(document.createTextNode(oldScriptTag.innerHTML));
-        oldScriptTag.parentNode.replaceChild(newScriptTag, oldScriptTag);
+    preventDuplicatedIDs() {
+      const sectionId = this.productElement.dataset.section;
+      this.productElement.innerHTML = this.productElement.innerHTML.replaceAll(sectionId, `quickadd-${ sectionId }`);
+      this.productElement.querySelectorAll('variant-selects, variant-radios, product-info').forEach((element) => {
+        element.dataset.originalSection = sectionId;
       });
-    }
-
-    preventVariantURLSwitching() {
-      const variantPicker = this.modalContent.querySelector('variant-radios,variant-selects');
-      if (!variantPicker) return;
-
-      variantPicker.setAttribute('data-update-url', 'false');
     }
 
     removeDOMElements() {
@@ -78,14 +64,19 @@ if (!customElements.get('quick-add-modal')) {
       if (modalDialog) modalDialog.forEach(modal => modal.remove());
     }
 
-    preventDuplicatedIDs() {
-      const sectionId = this.productElement.dataset.section;
-      this.productElement.innerHTML = this.productElement.innerHTML.replaceAll(sectionId, `quickadd-${ sectionId }`);
-      this.productElement.querySelectorAll('variant-selects, variant-radios, product-info').forEach((element) => {
-        element.dataset.originalSection = sectionId;
-      });
-    }
+    setInnerHTML(element, html) {
+      element.innerHTML = html;
 
+      // Reinjects the script tags to allow execution. By default, scripts are disabled when using element.innerHTML.
+      // element.querySelectorAll('script').forEach(oldScriptTag => {
+      //   const newScriptTag = document.createElement('script');
+      //   Array.from(oldScriptTag.attributes).forEach(attribute => {
+      //     newScriptTag.setAttribute(attribute.name, attribute.value)
+      //   });
+      //   newScriptTag.appendChild(document.createTextNode(oldScriptTag.innerHTML));
+      //   oldScriptTag.parentNode.replaceChild(newScriptTag, oldScriptTag);
+      // });
+    }
     removeGalleryListSemantic() {
       const galleryList = this.modalContent.querySelector('[id^="Slider-Gallery"]');
       if (!galleryList) return;
@@ -110,7 +101,17 @@ if (!customElements.get('quick-add-modal')) {
         mediaImageSizes = mediaImageSizes.replace('715px', '495px');
       }
 
-      mediaImages.forEach(img => img.setAttribute('sizes', mediaImageSizes));
+      mediaImages.forEach(img =>{
+        console.log(img)
+        img.setAttribute('sizes', mediaImageSizes)
+      });
+    }
+    
+    preventVariantURLSwitching() {
+      const variantPicker = this.modalContent.querySelector('variant-radios,variant-selects');
+      if (!variantPicker) return;
+
+      variantPicker.setAttribute('data-update-url', 'false');
     }
   });
 }
