@@ -3310,12 +3310,13 @@ details-disclosure > details {
 .img-collection {
   max-height: 308px;
   height: 100%;
+  /* padding-bottom: 100%; */
 }
 
-.style-img-collection {
+/* .style-img-collection {
   height: inherit;
   padding-bottom:calc(100% - 40px)  !important;
-}
+} */
 
 .fixed-loading {
   position: fixed;
