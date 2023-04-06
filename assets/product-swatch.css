@@ -30,3 +30,7 @@
 .style-heading {
     padding: 0 12px;
 }
+
+.remove-befor .ratio::before{
+    content: unset;
+}
