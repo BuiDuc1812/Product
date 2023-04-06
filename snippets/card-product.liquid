@@ -99,7 +99,7 @@
             </div>
           </div>
         {%- endif -%}
-        {% if quick-add-first %}
+        {% if section.settings.quick-add-first %}
           <form class="form-quick_view" action="" product_id="{{ card_product.selected_or_first_available_variant.id }}">
             <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id change-quick">
             <input type="text" name="quantity" value="1" class="hidden product-variant-id">
