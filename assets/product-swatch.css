@@ -16,9 +16,14 @@
 
 .color-variant span {
     display: block;
-    height: 48px;
-    width: 48px;
+    height: 32px;
+    width: 32px;
     border-radius: 3px;
+    transition:all 0.2s ease;
+}
+
+.color-variant span:hover {
+    transform: scale(1.1);
 }
 
 .choose {
