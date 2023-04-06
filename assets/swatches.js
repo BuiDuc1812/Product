@@ -40,34 +40,36 @@ class swatches {
     }
 
     changeDataProduct(data, parent) {
-        this.liProduct = parent.parentNode.parentNode;
-        this.liProduct.querySelector('.change-img').srcset = data.image;
-        this.liProduct.querySelector('.handlelink').innerHTML = data.title;
-        this.liProduct.querySelector('.change-quick').setAttribute('value',data.variant[0].id);
-        this.btnQuickAdd = this.liProduct.querySelector('.quick');
-        this.btnSoul = this.liProduct.querySelector('.soul');
+        const liProduct = parent.parentNode.parentNode;
+        liProduct.querySelector('.change-img').srcset = data.image;
+        liProduct.querySelector('.handlelink').innerHTML = data.title;
+        liProduct.querySelector('.change-quick').setAttribute('value',data.variant[0].id);
+        const btnQuickAdd = liProduct.querySelector('.quick');
+        const btnSoul = liProduct.querySelector('.soul');
         if (data.available) {
-            this.btnSoul.classList.add('hidden');
-            this.btnQuickAdd.classList.remove('hidden');
-            this.btnQuickAdd.setAttribute('idvariant',data.id);
-            this.btnQuickAdd.setAttribute('quantity',data.variant[0].inventory_quantity);
+            btnSoul.classList.add('hidden');
+            btnQuickAdd.classList.remove('hidden');
+            btnQuickAdd.setAttribute('idvariant',data.id);
+            btnQuickAdd.setAttribute('quantity',data.variant[0].inventory_quantity);
         } else {
-            this.btnSoul.classList.remove('hidden');
-            this.btnQuickAdd.classList.add('hidden');
+            btnSoul.classList.remove('hidden');
+            btnQuickAdd.classList.add('hidden');
         }
 
-        this.priceSale = this.liProduct.querySelector('.price__sale');
-        this.priceRegular = this.liProduct.querySelector('.price__regular');
+        const priceSale = liProduct.querySelector('.price__sale');
+        const priceRegular = liProduct.querySelector('.price__regular');
         if(data.compare_at_price){
-            this.priceRegular.style.display = 'none';
-            this.priceSale.style.display = 'flex';
-            this.liProduct.querySelector('.change-pricesale').innerHTML = data.price;
-            this.liProduct.querySelector('.change-pricesale-compare').innerHTML = data.compare_at_price;
+            priceRegular.style.display = 'none';
+            priceSale.style.display = 'flex';
+            liProduct.querySelector('.change-pricesale').innerHTML = data.price;
+            liProduct.querySelector('.change-pricesale-compare').innerHTML = data.compare_at_price;
         } else {
-            this.liProduct.querySelector('.change-price-regular').innerHTML = data.price;
-            this.priceRegular.style.display = 'block';
-            this.priceSale.style.display = 'none';
+            liProduct.querySelector('.change-price-regular').innerHTML = data.price;
+            priceRegular.style.display = 'block';
+            priceSale.style.display = 'none';
         }
+
+        liProduct.querySelector('.collection_vendor').innerHTML = data.vendor;
     }
 }
 
