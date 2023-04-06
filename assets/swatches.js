@@ -18,7 +18,7 @@ class swatches {
                 item.classList.add('choose');
                 this.handleLink = item.getAttribute('handle');
                 this.getDataProduct(this.handleLink,this.parent);
-                this.parent.querySelector('.handlelink').href = "/products/"+this.handleLink;
+                this.parent.querySelector('.handlelink').href =`/products/${this.handleLink}`;
             })  
         })
     }
@@ -58,7 +58,6 @@ class swatches {
 
         this.priceSale = this.liProduct.querySelector('.price__sale');
         this.priceRegular = this.liProduct.querySelector('.price__regular');
-        
         if(data.compare_at_price){
             this.priceRegular.style.display = 'none';
             this.priceSale.style.display = 'flex';
@@ -70,6 +69,21 @@ class swatches {
             this.priceRegular.style.display = 'block';
             this.priceSale.style.display = 'none';
         }
+
+        // this.onSale = this.liProduct.querySelector('.on_sale');
+        // this.soulOut = this.liProduct.querySelector('.soul-out');
+        // if(data.available){
+        //     if(data.compare_at_price > data.price){
+        //         this.onSale.style.display = 'block';
+        //         this.soulOut.style.display = 'none';
+        //     } else {
+        //         this.onSale.style.display = 'none';
+        //         this.soulOut.style.display = 'none';
+        //     }
+        // } else {
+        //     this.onSale.classList.add('hidden');
+        //     this.soulOut.classList.remove('hidden');
+        // }
     }
 }
 

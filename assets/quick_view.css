@@ -1,24 +1,10 @@
 .form-quick_view {
-    z-index: 2;
     position: absolute;
-    bottom: 8px;
-    right: 0;
-    left: 0;
-    display: none;
-    transition: all 0.2s ease;
+    right: 12px;
+    margin-top: 17px;
 }
 
 .form-quick_view button {
-    font-family: 'Alaska VAR';
-    display: block;
-    width: 90%;
-    border: none;
-    background-color: #FFFFFF;
-    padding: 13px 0;
-    margin: 0 auto;
-    font-size: 16px;
-    line-height: 22px;
-    font-weight: 500;
     cursor: pointer;
     transition:all 0.2s ease-in;
 }
@@ -28,9 +14,9 @@
     cursor: pointer;
 }
 
-.underline-links-hover:hover .form-quick_view {
+/* .underline-links-hover:hover .form-quick_view {
     display: block;
-}
+} */
 
 .icon-search {
     display: none;
@@ -188,25 +174,6 @@
 }
 
 @media screen and (max-width:750px) {
-    .icon-search {
-        display: block;
-        padding: 8px 0 4px 0;
-    }
-
-    .text-btn {
-        display: none;
-    }
-
-    .form-quick_view button {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        padding: 0;
-        margin: 0 8px 0 0;
-        float: right;
-        
-    }
-    
     .cart-item__quantity-wrapper {
         justify-content: space-between;
     }
