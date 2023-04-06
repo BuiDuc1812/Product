@@ -99,10 +99,10 @@
             </div>
           </div>
         {%- endif -%}
-
-        <form class="form-quick_view" action="" product_id="{{ card_product.selected_or_first_available_variant.id }}">
-          <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id change-quick">
-          <input type="text" name="quantity" value="1" class="hidden product-variant-id">
+        {% if quick-add-first %}
+          <form class="form-quick_view" action="" product_id="{{ card_product.selected_or_first_available_variant.id }}">
+            <input type="text" name="id" value="{{ card_product.selected_or_first_available_variant.id }}" class="hidden product-variant-id change-quick">
+            <input type="text" name="quantity" value="1" class="hidden product-variant-id">
 
               <button
                 id = "ProductSubmitButton-{{ section_id }}"
@@ -138,7 +138,9 @@
                 </span>
                 <span class="text-btn">Quick View</span> 
               </button>
-        </form>
+          </form>
+        {% endif %}
+        
       </div>
 
       {% for option in card_product.options %}
