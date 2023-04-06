@@ -41,11 +41,15 @@ class swatches {
 
     changeDataProduct(data, parent) {
         const liProduct = parent.parentNode.parentNode;
+        const btnQuickAdd = liProduct.querySelector('.quick');
+        const btnSoul = liProduct.querySelector('.soul');
+        const priceSale = liProduct.querySelector('.price__sale');
+        const priceRegular = liProduct.querySelector('.price__regular');
+
         liProduct.querySelector('.change-img').srcset = data.image;
         liProduct.querySelector('.handlelink').innerHTML = data.title;
         liProduct.querySelector('.change-quick').setAttribute('value',data.variant[0].id);
-        const btnQuickAdd = liProduct.querySelector('.quick');
-        const btnSoul = liProduct.querySelector('.soul');
+        
         if (data.available) {
             btnSoul.classList.add('hidden');
             btnQuickAdd.classList.remove('hidden');
@@ -56,8 +60,6 @@ class swatches {
             btnQuickAdd.classList.add('hidden');
         }
 
-        const priceSale = liProduct.querySelector('.price__sale');
-        const priceRegular = liProduct.querySelector('.price__regular');
         if(data.compare_at_price){
             priceRegular.style.display = 'none';
             priceSale.style.display = 'flex';
