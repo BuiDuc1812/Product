@@ -68,21 +68,6 @@ class swatches {
             this.priceRegular.style.display = 'block';
             this.priceSale.style.display = 'none';
         }
-
-        // this.onSale = this.liProduct.querySelector('.on_sale');
-        // this.soulOut = this.liProduct.querySelector('.soul-out');
-        // if(data.available){
-        //     if(data.compare_at_price > data.price){
-        //         this.onSale.style.display = 'block';
-        //         this.soulOut.style.display = 'none';
-        //     } else {
-        //         this.onSale.style.display = 'none';
-        //         this.soulOut.style.display = 'none';
-        //     }
-        // } else {
-        //     this.onSale.classList.add('hidden');
-        //     this.soulOut.classList.remove('hidden');
-        // }
     }
 }
 
