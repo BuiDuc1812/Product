@@ -5,7 +5,7 @@
     "handle":{{ product.handle | json }},
     "available":{{ product.available | json }},
     "vendor":{{ product.vendor | json }},
-    "image":{{ product.featured_media | img_url: 'master' | json }},
+    "image":{{ product.featured_media | image_url | json }},
     "price":{{ product.price | money_with_currency | json }},
     "compare_at_price":{{ product.compare_at_price | money_with_currency | json }},
     "variant":[
