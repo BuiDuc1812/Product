@@ -207,9 +207,6 @@
                           class="no-js-hidden change-variant"
                           data-section="{{ section.id }}"
                           data-url="{{ card_product.url }}"
-                          {% if update_url == false %}
-                            data-update-url="false"
-                          {% endif %}
                         >
                           {%- for option in card_product.options_with_values -%}
                             <fieldset class="js product-form__input">
