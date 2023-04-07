@@ -26,3 +26,42 @@
     padding: 0;
     margin: 0;
 }
+
+.variant-picker fieldset {
+    border: none;
+    padding: 0;
+    margin: 20px 0 0 0;
+}
+
+.variant-picker label {
+    border: 1px solid #E0DFDF;
+}
+
+.variant-picker input[type="radio"] {
+    display: none;
+}
+
+.variant-picker input[type="radio"]:checked + label{
+    border: 1px solid black;
+}
+
+.style-variant-popup {
+    display: flex;
+    width: calc( 25% - 6px );
+    min-width: 80px;
+    justify-content: center;
+    height: 48px;
+    align-items: center;
+    
+}
+
+.list-picker-variant {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0.8rem;
+}
+
+.button-popup-addcart {
+    margin-top: 16px;
+}
