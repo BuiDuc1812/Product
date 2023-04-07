@@ -200,9 +200,18 @@
                         {% render 'price', product: card_product, price_class: '' %}
                       </div>
                     </div>
+                    <script>
+                      console.log({{ product_form_id | json }})
+                    </script>
                     <div class="body-product_popup">
-                      {% render 'product-variant-picker', product: card_product, block: block, product_form_id: product_form_id %}
-                      {%- render 'buy-buttons', block: block, product: card_product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                      {% for block in section.blocks %}
+                        {% case block.type %}
+                          {% when 'variant_picker' %}
+                            {% render 'product-variant-picker', product: card_product, block: block, product_form_id: product_form_id %}
+                          {% when 'buy_buttons' %}
+                            {%- render 'buy-buttons', block: block, product: card_product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+                        {% endcase %}
+                      {% endfor %}
                     </div>
                   </div>
                 </div>

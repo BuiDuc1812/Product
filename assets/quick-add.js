@@ -20,22 +20,8 @@ if (!customElements.get('quick-add-modal')) {
         .then((response) => response.json())
         .then((response) => {
           const productItem = response.product;
-          // this.setDataHtml(productItem)
           super.show(opener);
         })
     }
-
-    // setDataHtml(product) {
-    //   const headerPopup = this.querySelector('.header-product_popup');
-    //   const ulImages =  headerPopup.querySelector('ul');
-    //   product.images.map(item=>{
-    //     const liImage = document.createElement('li');
-    //     liImage.classList.add('swiper-slide');
-    //     const srcimg = document.createElement('img');
-    //     srcimg.src = item.src;
-    //     liImage.appendChild(srcimg);
-    //     ulImages.appendChild(liImage);
-    //   })
-    // }
   });
 }
