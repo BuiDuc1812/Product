@@ -202,17 +202,25 @@
                     </div>
                     <div class="body-product_popup">
                       <div class="variant-picker">
-                        {% for option in card_product.options_with_values %}
-                          <fieldset class="js product-form__input">
-                            <legend class="form__label new-variant">{{ option.name }}:</legend>
-                            <div class="list-picker-variant">
+                        <variant-radios
+                          id="variant-radios-{{ section.id }}"
+                          class="no-js-hidden change-variant"
+                          data-section="{{ section.id }}"
+                          data-url="{{ card_product.url }}"
+                          {% if update_url == false %}
+                            data-update-url="false"
+                          {% endif %}
+                        >
+                          {%- for option in card_product.options_with_values -%}
+                            <fieldset class="js product-form__input">
+                              <div class="list-picker-variant">
                               {%- liquid
                                 assign arr_variants_available = card_product.variants | map: 'available'
                                 assign arr_color_option = card_product.variants | map: 'option1'
                                 assign arr_size_option = card_product.variants | map: 'option2'
                                 assign arr_width_option = card_product.variants | map: 'option3'
                               -%}
-                              {%- for value in option.values -%}
+                                  {%- for value in option.values -%}
                                 {%- liquid
                                   assign option_disabled = true
                                   for option1_name in arr_color_option
@@ -268,9 +276,13 @@
                                   </label>
                                 {% endif %} 
                               {%- endfor -%}
-                            </div>
-                          </fieldset>
-                        {% endfor %}
+                              </div>
+                            </fieldset>
+                        {%- endfor -%}
+                        <script type="application/json">
+                          {{ product.variants | json }}
+                        </script>
+                      </variant-radios>
                       </div>
                       <div class="button-popup-addcart">
                         <div class="list-button">
