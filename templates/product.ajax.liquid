@@ -4,8 +4,24 @@
     "title":{{ product.title | json }},
     "handle":{{ product.handle | json }},
     "available":{{ product.available | json }},
+    "options":[
+        {% for option in product.options %}
+            {
+                "option[{{ forloop.index }}]": {{ option | json }}
+            } 
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ],
     "vendor":{{ product.vendor | json }},
     "image":{{ product.featured_media | image_url | json }},
+    "images":[
+        {% for img in product.images %}
+            {
+                "image[{{ forloop.index }}]": {{ img | image_url | json }}
+            } 
+        {% unless forloop.last %},{% endunless %}
+        {% endfor %}
+    ],
     "price":{{ product.price | money_with_currency | json }},
     "compare_at_price":{{ product.compare_at_price | money_with_currency | json }},
     "variant":[

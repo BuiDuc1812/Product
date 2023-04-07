@@ -1,4 +1,4 @@
-var swiper = new Swiper(".swiper", {
+var swiper = new Swiper(".swiper-list", {
     slidesPerView: 4,
     breakpoints: {
         0: {

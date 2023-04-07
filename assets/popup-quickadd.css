@@ -1,0 +1,28 @@
+.modal-product_popup {
+    max-width: 537px;
+}
+
+.quick-add-modal__content-popup {
+    flex-direction: column;
+}
+
+.header-product_popup {
+    display: flex;
+}
+
+.slide--product_popup {
+    max-width: 164px;
+    max-height: 164px;
+    margin: 0;
+}
+
+.slide--product_popup img {
+    min-width: 108px;
+    min-height: 108px;
+    width: 100%;
+}
+
+.list-img_popup {
+    padding: 0;
+    margin: 0;
+}
