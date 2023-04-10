@@ -45,6 +45,8 @@ class swatches {
         const priceRegular = liProduct.querySelector('.price__regular');
         const quickAdd = liProduct.querySelector('.form-quick_view');
         const buttonQuickAdd = liProduct.querySelector('.quick-add-popup');
+        const oldData = buttonQuickAdd.querySelector('.id-modal-product').getAttribute('data-modal');
+        document.querySelector(oldData).setAttribute('id', `QuickAdd-${data.id}`);
         liProduct.querySelector('.change-img').srcset = data.image;
         liProduct.querySelector('.handlelink').innerHTML = data.title;
         liProduct.querySelector('.collection_vendor').innerHTML = data.vendor;
@@ -65,7 +67,7 @@ class swatches {
         }
 
         if(buttonQuickAdd) {
-            this.addProductPopup(buttonQuickAdd, data)
+            this.addProductPopup(buttonQuickAdd, data, oldData)
         }
     }
 
