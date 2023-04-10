@@ -37,9 +37,9 @@
     border: 1px solid #E0DFDF;
 }
 
-.variant-picker input[type="radio"] {
+/* .variant-picker input[type="radio"] {
     display: none;
-}
+} */
 
 .variant-picker input[type="radio"]:checked + label{
     border: 1px solid black;
@@ -64,4 +64,19 @@
 
 .button-popup-addcart {
     margin-top: 16px;
+}
+
+.variant-picker .disabled + label {
+    position: relative;
+    overflow: hidden;
+}
+
+
+.variant-picker .disabled + label::after {
+    position: absolute;
+    content: '';;
+    width: 120%;
+    height: 1px;
+    background-color: #E0DFDF;
+    transform: rotateZ(20deg);
 }
