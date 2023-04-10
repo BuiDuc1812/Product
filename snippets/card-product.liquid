@@ -157,6 +157,7 @@
                   name="add"
                   class="quick-add__submit quick-add__submit-btn  button button--full-width button--secondary{% if horizontal_quick_add %} card--horizontal__quick-add animate-arrow{% endif %}"
                   aria-haspopup="dialog"
+                  aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   data-product-url="{{ card_product.url }}"
                 >
                   Quick View
@@ -185,100 +186,36 @@
                     <div class="header-product_popup">
                       <div class="slide--product_popup swiper">
                         <ul class="swiper-wrapper list-img_popup">
-                          {% comment %} {% for img in card_product.media %}
-                            <li class="swiper-slide">
-                              <img loading="lazy" width="" height="" src="{{ img.src | image_url }}" alt="">
-                            </li>
-                          {% endfor %} {% endcomment %}
                         </ul>
                         <div class="swiper-pagination"></div>
                       </div>
                       <div class="header-infor_popup">
-                        <h3 class="popup_vendor">{{ card_product.vendor | json }}</h3>
-                        <p class="popup_title">{{ card_product.title | json }}</p>
-                        {% render 'price', product: card_product, price_class: '' %}
+                        <h3 class="popup_vendor"></h3>
+                        <p class="popup_title"></p>
+                        <div class="price__container">
+                          <div class="price__regular">
+                            <span></span>
+                          </div>
+                          <div class="price__sale style-price">
+                            <span class="price-old"></span>
+                            <span class="price-compare"></span>
+                          </div>
+                        </div>
                       </div>
                     </div>
                     <div class="body-product_popup">
                       <div class="variant-picker">
-                        <variant-radios
+                        <div
                           id="variant-radios-{{ section.id }}"
                           class="modal-radios no-js-hidden change-variant"
                           data-section="{{ section.id }}"
                           data-url="{{ card_product.url }}"
                         >
-                          {%- for option in card_product.options_with_values -%}
-                            <fieldset class="js product-form__input">
-                              <div class="list-picker-variant">
-                              {%- liquid
-                                assign arr_variants_available = card_product.variants | map: 'available'
-                                assign arr_color_option = card_product.variants | map: 'option1'
-                                assign arr_size_option = card_product.variants | map: 'option2'
-                                assign arr_width_option = card_product.variants | map: 'option3'
-                              -%}
-                                  {%- for value in option.values -%}
-                                {%- liquid
-                                  assign option_disabled = true
-                                  for option1_name in arr_color_option
-                                    case option.position
-                                      when 1
-                                        if arr_color_option[forloop.index0] == value and arr_variants_available[forloop.index0]
-                                          assign option_disabled = false
-                                        endif
-                                      when 2
-                                        if option1_name == card_product.selected_or_first_available_variant.option1 and arr_size_option[forloop.index0] == value and arr_variants_available[forloop.index0]
-                                          assign option_disabled = false
-                                        endif
-                                      when 3
-                                        if option1_name == card_product.selected_or_first_available_variant.option1 and arr_size_option[forloop.index0] == card_product.selected_or_first_available_variant.option2 and arr_width_option[forloop.index0] == value and arr_variants_available[forloop.index0]
-                                          assign option_disabled = false
-                                        endif
-                                    endcase
-                                  endfor
-                                -%}
-                                {% if option.name == 'Color' %}
-                                  <input
-                                    type="radio"
-                                    id="{{ card_product.id }}-{{ value }}"
-                                    name="{{ option.name }}"
-                                    value="{{ value | escape }}"
-                                    form="{{ product_form_id }}"
-                                    {% if option.selected_value == value %}
-                                      checked
-                                    {% endif %}
-                                    {% if option_disabled %}
-                                      class="disabled"
-                                    {% endif %}
-                                  >
-                                  <label for="{{ card_product.id }}-{{ value }}">
-                                    {{ card_product.featured_image | img_url: '65x65' | img_tag }}
-                                  </label>
-                                {% else %}
-                                  <input
-                                    type="radio"
-                                    id="{{ card_product.id }}-{{ value }}"
-                                    name="{{ option.name }}"
-                                    value="{{ value | escape }}"
-                                    form="{{ product_form_id }}"
-                                    {% if option.selected_value == value %}
-                                      checked
-                                    {% endif %}
-                                    {% if option_disabled %}
-                                      class="disabled"
-                                    {% endif %}
-                                  >
-                                  <label class="style-variant-popup" for="{{ card_product.id }}-{{ value }}">
-                                    {{ value }}
-                                  </label>
-                                {% endif %} 
-                              {%- endfor -%}
-                              </div>
-                            </fieldset>
-                        {%- endfor -%}
-                        <script type="application/json">
-                          {{ card_product.variants | json }}
-                        </script>
-                      </variant-radios>
+                          <fieldset class="js product-form__input">
+                            <div class="list-picker-variant">
+                            </div>
+                          </fieldset>
+                      </div>
                       </div>
                       <div class="button-popup-addcart">
                         <div class="list-button">

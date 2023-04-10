@@ -28,6 +28,7 @@
 }
 
 .variant-picker fieldset {
+    display: flex;
     border: none;
     padding: 0;
     margin: 20px 0 0 0;
@@ -37,9 +38,9 @@
     border: 1px solid #E0DFDF;
 }
 
-/* .variant-picker input[type="radio"] {
+.variant-picker input[type="radio"] {
     display: none;
-} */
+}
 
 .variant-picker input[type="radio"]:checked + label{
     border: 1px solid black;
@@ -55,7 +56,7 @@
     
 }
 
-.list-picker-variant {
+.list-picker-variant fieldset {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
