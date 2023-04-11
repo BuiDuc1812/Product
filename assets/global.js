@@ -513,6 +513,7 @@ class VariantSelects extends HTMLElement {
 
   updateMasterId() {
     this.currentVariant = this.getVariantData().find((variant) => {
+      console.log(variant)
       return !variant.options.map((option, index) => {
         return this.options[index] === option;
       }).includes(false);
@@ -695,7 +696,6 @@ class VariantRadios extends VariantSelects {
   updateOptions() {
     const fieldsets = Array.from(this.querySelectorAll('fieldset'));
     this.options = fieldsets.map((fieldset) => {
-      console.log(Array.from(fieldset.querySelectorAll('input')));
       return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
     });
   }

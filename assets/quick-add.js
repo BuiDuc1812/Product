@@ -37,7 +37,7 @@ if (!customElements.get("quick-add-modal")) {
             super.show(opener);
             this.radios.addEventListener("change", (event) => {
               this.updateOption();
-              // this.updateIdVariant();
+              this.updateIdVariant();
               this.updateVariant(this.ajaxData);
             });
           });
@@ -178,6 +178,7 @@ if (!customElements.get("quick-add-modal")) {
 
       updateIdVariant() {
         this.currentVariant = this.getVariantData().find((variant) => {
+          console.log(variant)
           return !variant.options
             .map((option, index) => {
               return this.options[index] === option;
