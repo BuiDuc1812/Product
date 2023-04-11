@@ -4,7 +4,7 @@
     "title":{{ product.title | json }},
     "handle":{{ product.handle | json }},
     "available":{{ product.available | json }},
-    "options":[
+    "option":[
         {% for option in product.options %}
             {
                 "option[{{ forloop.index }}]": {{ option | json }}
@@ -38,7 +38,8 @@
             "available":{{ variant.available | json }},
             "option1":{{ variant.option1 | json }},
             "option2":{{ variant.option2 | json }},
-            "option3":{{ variant.option3 | json }}
+            "option3":{{ variant.option3 | json }},
+            "options":{{ variant.options | json }}
             }
         {% unless forloop.last %},{% endunless %}
         {% endfor %}

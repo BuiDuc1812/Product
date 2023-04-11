@@ -124,11 +124,9 @@ if (!customElements.get("quick-add-modal")) {
       }
 
       updateOption() {
-        const fieldsets = this.querySelectorAll("fieldset");
-        this.options = fieldsets.forEach((fieldset) => {
-          const arrOtp = Array.from(fieldset.querySelectorAll("input"));
-          const inputChecked = arrOtp.find((radio) => radio.checked);
-          return inputChecked.value;
+        const fieldsets = Array.from(this.querySelectorAll('fieldset'));
+        this.options = fieldsets.map((fieldset) => {
+          return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
         });
       }
 
@@ -152,16 +150,17 @@ if (!customElements.get("quick-add-modal")) {
 
           const variantAvailable = selectedOptionOneVariants.filter(
             (variant) => {
-              if ( variant.available && variant[`option${index}`] === previousOptionSelected) {
+              if (
+                variant.available &&
+                variant[`option${index}`] === previousOptionSelected
+              ) {
                 return variant;
               }
             }
           );
-          const availableOptionInput = variantAvailable.map(
-            (variantOption) => {
-              return variantOption[`option${index + 1}`];
-            }
-          );
+          const availableOptionInput = variantAvailable.map((variantOption) => {
+            return variantOption[`option${index + 1}`];
+          });
           this.setInputAvailability(optionInputs, availableOptionInput);
         });
       }
@@ -178,21 +177,19 @@ if (!customElements.get("quick-add-modal")) {
 
       updateIdVariant() {
         this.currentVariant = this.getVariantData().find((variant) => {
-          console.log(variant)
-          return !variant.options
-            .map((option, index) => {
-              return this.options[index] === option;
-            })
-            .includes(false);
+          return !variant.options.map((option, index) => {
+            return this.options[index] === option;
+          }).includes(false);
         });
+        console.log(this.currentVariant)
       }
 
       getVariantData() {
         this.radios.setAttribute(
           "data-url",
-          `/products/${this.productItem.handle}`
+          `/products/${this.ajaxData.handle}`
         );
-        this.variantData = this.productItem.variants;
+        this.variantData = this.ajaxData.variants;
         return this.variantData;
       }
     }
