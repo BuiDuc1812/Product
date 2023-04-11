@@ -5,6 +5,7 @@ if (!customElements.get("quick-add-modal")) {
       constructor() {
         super();
         this.modalContent = this.querySelector('[id^="QuickAddInfo-"]');
+        // this.onChangeV()
       }
 
       hide() {
@@ -12,7 +13,13 @@ if (!customElements.get("quick-add-modal")) {
       }
 
       show(opener) {
-        fetch(`${opener.getAttribute("data-product-url")}?view=ajax`, {
+        fetch(`${opener.getAttribute("data-product-url")}?view=ajax`)
+          .then((res) => res.json())
+          .then((res) => {
+            this.ajaxData = res;
+          });
+
+        fetch(`${opener.getAttribute("data-product-url")}`, {
           headers: {
             "Content-Type": "application/json",
             Accept: "application/json",
@@ -20,16 +27,19 @@ if (!customElements.get("quick-add-modal")) {
         })
           .then((response) => response.json())
           .then((response) => {
-            const productItem = response.product;
             this.radios = this.querySelector(".change-variant");
-            console.log(productItem);
-            this.changeDataPopup(productItem);
-            this.priceProduct(productItem);
+            this.productItem = response.product;
+            this.changeDataPopup(this.productItem);
+            this.priceProduct(this.productItem);
+            this.createFieldsetVariant(this.productItem);
+            this.setDataVariant(this.productItem);
+            this.addChecked();
             super.show(opener);
-            this.radios.addEventListener(
-              "change",
-              this.onChangeVariant(productItem)
-            );
+            this.radios.addEventListener("change", (event) => {
+              this.updateOption();
+              // this.updateIdVariant();
+              this.updateVariant(this.ajaxData);
+            });
           });
       }
 
@@ -50,19 +60,11 @@ if (!customElements.get("quick-add-modal")) {
 
       priceProduct(product) {
         const priceContainer = this.querySelector(".price__container");
-        if (product.variants[0].compare_at_price) {
+        if (product.variants[0].compare_at_price > product.variants[0].price) {
           priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].compare_at_price}</span><span>$${product.variants[0].price}</span>`;
         } else {
-          priceContainer.innerHTML = `<span class="change-price-regular">$ ${product.variants[0].price}</span>`;
+          priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].price}</span>`;
         }
-      }
-
-      onChangeVariant(product) {
-        this.createFieldsetVariant(product);
-        this.setDataVariant(product);
-        this.updateOption();
-        this.updateIdVariant(product);
-        this.updateVariant();
       }
 
       createFieldsetVariant(product) {
@@ -78,7 +80,7 @@ if (!customElements.get("quick-add-modal")) {
       }
 
       setDataVariant(product) {
-        const listField = this.radios.querySelectorAll("fieldset");
+        this.listField = this.radios.querySelectorAll("fieldset");
         const listVariantColor = [];
         const listItemVariant = [];
         product.options.map((option, index) => {
@@ -107,45 +109,66 @@ if (!customElements.get("quick-add-modal")) {
             </label>`);
             });
           }
-          // listVariantColor[0].setAttribute('checked');
           const listColor = `${listVariantColor.join("")}`;
-          listField[0].innerHTML = listColor;
+          this.listField[0].innerHTML = listColor;
           const listVariant = `${listItemVariant.join("")}`;
           listItemVariant.length = 0;
-          listField[index].innerHTML = listVariant;
+          this.listField[index].innerHTML = listVariant;
         });
       }
 
-      updateVariant() {
-        const selectedOptionOneVariants = this.variantData.filter(
+      addChecked() {
+        this.listField.forEach((fieldset) => {
+          fieldset.querySelectorAll("input")[0].setAttribute("checked", true);
+        });
+      }
+
+      updateOption() {
+        const fieldsets = this.querySelectorAll("fieldset");
+        this.options = fieldsets.forEach((fieldset) => {
+          const arrOtp = Array.from(fieldset.querySelectorAll("input"));
+          const inputChecked = arrOtp.find((radio) => radio.checked);
+          return inputChecked.value;
+        });
+      }
+
+      updateVariant(product) {
+        const selectedOptionOneVariants = product.variants.filter(
           (variant) => this.querySelector(":checked").value === variant.option1
         );
 
         const inputWrappers = [
           ...this.querySelectorAll(".product-form__input"),
         ];
+
         inputWrappers.forEach((option, index) => {
           if (index === 0) return;
           const optionInputs = [
-            ...option.querySelectorAll('input[type="radio"], option'),
+            ...option.querySelectorAll('input[type="radio"]'),
           ];
 
           const previousOptionSelected =
             inputWrappers[index - 1].querySelector(":checked").value;
-          const availableOptionInputsValue = selectedOptionOneVariants
-            .filter(
-              (variant) =>
-                variant.available &&
-                variant[`option${index}`] === previousOptionSelected
-            )
-            .map((variantOption) => variantOption[`option${index + 1}`]);
-          this.setInputAvailability(optionInputs, availableOptionInputsValue);
+
+          const variantAvailable = selectedOptionOneVariants.filter(
+            (variant) => {
+              if ( variant.available && variant[`option${index}`] === previousOptionSelected) {
+                return variant;
+              }
+            }
+          );
+          const availableOptionInput = variantAvailable.map(
+            (variantOption) => {
+              return variantOption[`option${index + 1}`];
+            }
+          );
+          this.setInputAvailability(optionInputs, availableOptionInput);
         });
       }
 
-      setInputAvailability(listOfOptions, listOfAvailableOptions) {
-        listOfOptions.forEach((input) => {
-          if (listOfAvailableOptions.includes(input.getAttribute("value"))) {
+      setInputAvailability(listOptions, listAvailableOptions) {
+        listOptions.forEach((input) => {
+          if (listAvailableOptions.includes(input.getAttribute("value"))) {
             input.classList.remove("disabled");
           } else {
             input.classList.add("disabled");
@@ -153,45 +176,24 @@ if (!customElements.get("quick-add-modal")) {
         });
       }
 
-      updateOption() {
-        const fieldsets = Array.from(this.querySelectorAll("fieldset"));
-        this.options = fieldsets.map((fieldset) => {
-          const arrVariant = Array.from(fieldset.querySelectorAll("input"));
-          // console.log(arrVariant.find((radio) => radio.checked).value);
-          // console.log(arrVariant)
-          // arrVariant.map(item=>console.log(item));
-          // return arrVariant.find(checkEd(arrVariant)).value;
+      updateIdVariant() {
+        this.currentVariant = this.getVariantData().find((variant) => {
+          return !variant.options
+            .map((option, index) => {
+              return this.options[index] === option;
+            })
+            .includes(false);
         });
       }
 
-      // // checkEd(listVariant){
-      // //   listVariant.map(item => console.log*item);
-      // // }
-
-      updateIdVariant(product) {
-        this.currentVariant = this.getVariantData(product).find((variant) => {
-          // console.log(variant.options);
-          // return !variant.options.map((option, index) => {
-          //   return this.options[index] === option;
-          // }).includes(false);
-        });
-      }
-
-      getVariantData(product) {
-        this.radios.setAttribute("data-url", `/products/${product.handle}`);
-        this.variantData = product.variants;
+      getVariantData() {
+        this.radios.setAttribute(
+          "data-url",
+          `/products/${this.productItem.handle}`
+        );
+        this.variantData = this.productItem.variants;
         return this.variantData;
       }
-
-      // setInputAvailability(listOfOptions, listOfAvailableOptions) {
-      //   listOfOptions.forEach(input => {
-      //     if (listOfAvailableOptions.includes(input.getAttribute('value'))) {
-      //       input.innerText = input.getAttribute('value');
-      //     } else {
-      //       input.innerText = window.variantStrings.unavailable_with_option.replace('[value]', input.getAttribute('value'));
-      //     }
-      //   });
-      // }
     }
   );
 }
