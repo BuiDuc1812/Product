@@ -5,7 +5,6 @@ if (!customElements.get("quick-add-modal")) {
       constructor() {
         super();
         this.modalContent = this.querySelector('[id^="QuickAddInfo-"]');
-        // this.onChangeV()
       }
 
       hide() {
@@ -13,12 +12,6 @@ if (!customElements.get("quick-add-modal")) {
       }
 
       show(opener) {
-        fetch(`${opener.getAttribute("data-product-url")}?view=ajax`)
-          .then((res) => res.json())
-          .then((res) => {
-            this.ajaxData = res;
-          });
-
         fetch(`${opener.getAttribute("data-product-url")}`, {
           headers: {
             "Content-Type": "application/json",
@@ -32,18 +25,35 @@ if (!customElements.get("quick-add-modal")) {
             this.addcartBtn = this.querySelector(".addcart-btn");
             this.inputButton = this.querySelector(".product-variant-id");
             this.productItem = response.product;
+            this.setupDefaultButton(opener);
             this.changeDataPopup(this.productItem);
             this.priceProduct(this.productItem);
             this.createFieldsetVariant(this.productItem);
             this.setDataVariant(this.productItem);
             this.addChecked();
             super.show(opener);
-            this.radios.addEventListener("change", (event) => {
+            this.radios.addEventListener("change", () => {
               this.updateOption();
               this.updateIdVariant();
               this.updateIdButton();
               this.updateVariant(this.ajaxData);
             });
+          });
+      }
+
+      setupDefaultButton(opener) {
+        fetch(`${opener.getAttribute("data-product-url")}?view=ajax`)
+          .then((res) => res.json())
+          .then((res) => {
+            this.ajaxData = res;
+            this.inputButton.value = this.ajaxData.variants[0].id;
+            if( this.ajaxData.variants[0].available){
+              this.souloutBtn.style.display = "none";
+              this.addcartBtn.style.display = "block";
+            } else {
+              this.souloutBtn.style.display = "block";
+              this.addcartBtn.style.display = "none";
+            }
           });
       }
 
@@ -76,11 +86,10 @@ if (!customElements.get("quick-add-modal")) {
 
         product.options.map((option) => {
           listVariant.push(
-            `<fieldset class="js product-form__input"><legend>${option.name}</legend></fieldset>`
+            `<fieldset class="js product-form__input"></fieldset>`
           );
         });
         const newListVariant = `${listVariant.join("")}`;
-        console.log(newListVariant);
         this.radios.innerHTML = newListVariant;
       }
 
@@ -126,15 +135,6 @@ if (!customElements.get("quick-add-modal")) {
         this.listField.forEach((fieldset) => {
           fieldset.querySelectorAll("input")[0].setAttribute("checked", true);
         });
-
-        // this.inputButton.value = this.ajaxData.variants[0].id;
-        // if( this.ajaxData.variants[0].available){
-        //   this.souloutBtn.style.display = "none";
-        //   this.addcartBtn.style.display = "block";
-        // } else {
-        //   this.souloutBtn.style.display = "block";
-        //   this.addcartBtn.style.display = "none";
-        // }
       }
 
       updateOption() {
