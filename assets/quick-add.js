@@ -28,6 +28,9 @@ if (!customElements.get("quick-add-modal")) {
           .then((response) => response.json())
           .then((response) => {
             this.radios = this.querySelector(".change-variant");
+            this.souloutBtn = this.querySelector(".soulout-btn");
+            this.addcartBtn = this.querySelector(".addcart-btn");
+            this.inputButton = this.querySelector(".product-variant-id");
             this.productItem = response.product;
             this.changeDataPopup(this.productItem);
             this.priceProduct(this.productItem);
@@ -38,6 +41,7 @@ if (!customElements.get("quick-add-modal")) {
             this.radios.addEventListener("change", (event) => {
               this.updateOption();
               this.updateIdVariant();
+              this.updateIdButton();
               this.updateVariant(this.ajaxData);
             });
           });
@@ -61,7 +65,7 @@ if (!customElements.get("quick-add-modal")) {
       priceProduct(product) {
         const priceContainer = this.querySelector(".price__container");
         if (product.variants[0].compare_at_price > product.variants[0].price) {
-          priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].compare_at_price}</span><span>$${product.variants[0].price}</span>`;
+          priceContainer.innerHTML = `<span class="change-pricesale">$${product.variants[0].price}</span><span class="change-price-regular change-pricesale-compare">$${product.variants[0].compare_at_price}</span>`;
         } else {
           priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].price}</span>`;
         }
@@ -71,11 +75,12 @@ if (!customElements.get("quick-add-modal")) {
         const listVariant = [];
 
         product.options.map((option) => {
-          listVariant.unshift(
-            `<fieldset class="js product-form__input"><div class="list-picker-variant"></div></fieldset>`
+          listVariant.push(
+            `<fieldset class="js product-form__input"><legend>${option.name}</legend></fieldset>`
           );
         });
         const newListVariant = `${listVariant.join("")}`;
+        console.log(newListVariant);
         this.radios.innerHTML = newListVariant;
       }
 
@@ -92,7 +97,7 @@ if (!customElements.get("quick-add-modal")) {
               name="${option.name}"
               value="${item}"
             >
-            <label class="style-variant-popup" for="${product.id}-${item}">
+            <label class="style-variant-popup lable-color" for="${product.id}-${item}">
               <img src="${product.image.src}">
             </label>`);
             });
@@ -121,12 +126,23 @@ if (!customElements.get("quick-add-modal")) {
         this.listField.forEach((fieldset) => {
           fieldset.querySelectorAll("input")[0].setAttribute("checked", true);
         });
+
+        // this.inputButton.value = this.ajaxData.variants[0].id;
+        // if( this.ajaxData.variants[0].available){
+        //   this.souloutBtn.style.display = "none";
+        //   this.addcartBtn.style.display = "block";
+        // } else {
+        //   this.souloutBtn.style.display = "block";
+        //   this.addcartBtn.style.display = "none";
+        // }
       }
 
       updateOption() {
-        const fieldsets = Array.from(this.querySelectorAll('fieldset'));
+        const fieldsets = Array.from(this.listField);
         this.options = fieldsets.map((fieldset) => {
-          return Array.from(fieldset.querySelectorAll('input')).find((radio) => radio.checked).value;
+          return Array.from(fieldset.querySelectorAll("input")).find(
+            (radio) => radio.checked
+          ).value;
         });
       }
 
@@ -177,11 +193,23 @@ if (!customElements.get("quick-add-modal")) {
 
       updateIdVariant() {
         this.currentVariant = this.getVariantData().find((variant) => {
-          return !variant.options.map((option, index) => {
-            return this.options[index] === option;
-          }).includes(false);
+          return !variant.options
+            .map((option, index) => {
+              return this.options[index] === option;
+            })
+            .includes(false);
         });
-        console.log(this.currentVariant)
+      }
+
+      updateIdButton() {
+        this.inputButton.value = this.currentVariant.id;
+        if (this.currentVariant.available) {
+          this.souloutBtn.style.display = "none";
+          this.addcartBtn.style.display = "block";
+        } else {
+          this.souloutBtn.style.display = "block";
+          this.addcartBtn.style.display = "none";
+        }
       }
 
       getVariantData() {

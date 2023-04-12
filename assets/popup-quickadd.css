@@ -2,12 +2,34 @@
     max-width: 537px;
 }
 
+.modal-product_popup .quick-add-modal__toggle {
+    border: none;
+    padding: 0;
+    stroke: black;
+    width: fit-content;
+    top: 3.2rem;
+    right: 3.2rem;
+}
+
+.modal-product_popup .quick-add-modal__toggle svg {
+    width: 20px;
+    height: 20px;
+}
+
 .quick-add-modal__content-popup {
     flex-direction: column;
 }
 
 .header-product_popup {
     display: flex;
+    align-items: center;
+    gap: 16px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #E0DFDF;
+}
+
+.body-product_popup {
+    padding-top: 24px;
 }
 
 .slide--product_popup {
@@ -17,6 +39,7 @@
 }
 
 .slide--product_popup img {
+    border-radius: 3px;
     min-width: 108px;
     min-height: 108px;
     width: 100%;
@@ -32,6 +55,22 @@
     border: none;
     padding: 0;
     margin: 20px 0 0 0;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.dot-paginate {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50px;
+}
+
+.dot-paginate span {
+    width: 6px;
+    height: 6px;
+}
+
+.lable-color {
+    height: unset !important;
 }
 
 .variant-picker label {
@@ -42,18 +81,18 @@
     display: none;
 }
 
-.variant-picker input[type="radio"]:checked + label{
+.variant-picker input[type="radio"]:checked+label {
     border: 1px solid black;
 }
 
 .style-variant-popup {
     display: flex;
-    width: calc( 25% - 6px );
+    width: calc(25% - 6px);
     min-width: 80px;
     justify-content: center;
     height: 48px;
     align-items: center;
-    
+
 }
 
 .list-picker-variant fieldset {
@@ -67,17 +106,40 @@
     margin-top: 16px;
 }
 
-.variant-picker .disabled + label {
+.variant-picker .disabled+label {
     position: relative;
     overflow: hidden;
 }
 
 
-.variant-picker .disabled + label::after {
+.variant-picker .disabled+label::after {
     position: absolute;
-    content: '';;
+    content: '';
+    ;
     width: 120%;
     height: 1px;
     background-color: #E0DFDF;
     transform: rotateZ(20deg);
+}
+
+.modal-product_popup .quick-add-modal__content-popup {
+    padding: 32px;
+}
+
+.popup_vendor {
+    font-family: "Alaska VAR";
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 24px;
+    margin: 0;
+}
+
+.popup_title {
+    font-family: 'Alaska VAR';
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+    color: #404346;
+    margin: 0;
+    padding: 4px 0 8px 0;
 }

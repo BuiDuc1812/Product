@@ -3340,6 +3340,7 @@ details-disclosure > details {
 .change-pricesale-compare {
   color: #9D9EA0;
   font-weight: 600;
+  text-decoration: line-through;
 }
 
 .handlelink {
