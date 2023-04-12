@@ -187,7 +187,7 @@ if (!customElements.get("quick-add-modal")) {
         const inputWrappers = [
           ...this.querySelectorAll(".product-form__input"),
         ];
-
+        
         inputWrappers.forEach((option, index) => {
           if (index === 0) return;
           const optionInputs = [
