@@ -54,6 +54,7 @@ if (!customElements.get("quick-add-modal")) {
               this.souloutBtn.style.display = "block";
               this.addcartBtn.style.display = "none";
             }
+            this.updateVariant(this.ajaxData);
           });
       }
 
@@ -61,7 +62,7 @@ if (!customElements.get("quick-add-modal")) {
         const ulImg = this.querySelector(".list-img_popup");
         const listLi = [];
         product.images.map((item) => {
-          listLi.unshift(`<li class="swiper-slide">
+          listLi.push(`<li class="swiper-slide">
                             <img class="image-p" loading="lazy" width="" height="" src="${item.src}" alt="">
                           </li>`);
         });
@@ -75,7 +76,7 @@ if (!customElements.get("quick-add-modal")) {
       priceProduct(product) {
         const priceContainer = this.querySelector(".price__container");
         if (product.variants[0].compare_at_price > product.variants[0].price) {
-          priceContainer.innerHTML = `<span class="change-pricesale">$${product.variants[0].price}</span><span class="change-price-regular change-pricesale-compare">$${product.variants[0].compare_at_price}</span>`;
+          priceContainer.innerHTML = `<span class="change-pricesale">$${product.variants[0].price}</span><span class="rrr"> RRR</span><span class="change-price-regular change-pricesale-compare">$${product.variants[0].compare_at_price}</span>`;
         } else {
           priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].price}</span>`;
         }
@@ -99,6 +100,7 @@ if (!customElements.get("quick-add-modal")) {
         const listItemVariant = [];
         product.options.map((option, index) => {
           if (option.name == "Color") {
+            listVariantColor.push(`<legend>${option.name} :</legend>`)
             option.values.map((item) => {
               listVariantColor.push(`<input
               type="radio"
@@ -106,11 +108,12 @@ if (!customElements.get("quick-add-modal")) {
               name="${option.name}"
               value="${item}"
             >
-            <label class="style-variant-popup lable-color" for="${product.id}-${item}">
+            <label class="lable-color" for="${product.id}-${item}">
               <img src="${product.image.src}">
             </label>`);
             });
           } else {
+            listItemVariant.push(`<legend>${option.name} :</legend>`)
             option.values.map((item) => {
               listItemVariant.push(`<input
             type="radio"

@@ -33,16 +33,15 @@
 }
 
 .slide--product_popup {
-    max-width: 164px;
-    max-height: 164px;
+    width: 164px;
+    height: 164px;
     margin: 0;
 }
 
 .slide--product_popup img {
     border-radius: 3px;
-    min-width: 108px;
-    min-height: 108px;
-    width: 100%;
+    height: inherit;
+    object-fit: cover;
 }
 
 .list-img_popup {
@@ -70,7 +69,15 @@
 }
 
 .lable-color {
-    height: unset !important;
+    width: 60px !important;
+    height: 60px !important;
+    min-width: unset;
+}
+
+.lable-color img{
+    width: inherit;
+    height: 5.8rem;
+    object-fit: cover;
 }
 
 .variant-picker label {
@@ -88,18 +95,19 @@
 .style-variant-popup {
     display: flex;
     width: calc(25% - 6px);
-    min-width: 80px;
     justify-content: center;
     height: 48px;
     align-items: center;
 
 }
 
-.list-picker-variant fieldset {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    gap: 0.8rem;
+
+.variant-picker legend {
+    font-family:'Alaska VAR';
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    color: #232323;
 }
 
 .button-popup-addcart {
@@ -119,7 +127,7 @@
     width: 120%;
     height: 1px;
     background-color: #E0DFDF;
-    transform: rotateZ(20deg);
+    transform: rotateZ(22deg);
 }
 
 .modal-product_popup .quick-add-modal__content-popup {
@@ -132,6 +140,7 @@
     font-weight: 600;
     line-height: 24px;
     margin: 0;
+    text-transform: capitalize;
 }
 
 .popup_title {
@@ -142,4 +151,52 @@
     color: #404346;
     margin: 0;
     padding: 4px 0 8px 0;
+}
+
+@media screen and (max-width:750px) {
+    .slide--product_popup {
+        width: 108px;
+        min-width : 108px;
+        height: 108px;
+    }
+
+    .modal-product_popup .quick-add-modal__content-popup {
+        padding: 24px 16px;
+    }
+}
+
+.button-popup-addcart {
+    display: flex;
+    gap: 2px;
+    height: 54px;
+}
+
+.button-popup-addcart .list-button {
+    width: 100%;
+}
+
+.button-popup-addcart .group-btn button {
+    background-color: #C03732;
+    height: 54px;
+}
+
+.button-popup-addcart .wish-list {
+    width: 61px;
+    background-color: #C03732;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quick-add-modal .modal-product_popup {
+    margin: 0;
+}
+
+.node-error {
+    position: absolute;
+    bottom: 0;
+}
+
+.node-error svg{
+    width: 12px;
 }

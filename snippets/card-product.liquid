@@ -213,7 +213,7 @@
                       <div class="button-popup-addcart">
                         <div class="list-button">
                           <product-form class="product-form remove-style">
-                            <div class="product-form__error-message-wrapper" role="alert" hidden>
+                            <div class="product-form__error-message-wrapper node-error" role="alert" hidden>
                               <svg
                                 aria-hidden="true"
                                 focusable="false"
@@ -284,17 +284,14 @@
                                       </svg>
                                     </div>
                                   </button>
-                                  <span class="wish-list">
-                                    {% render 'icon-heart' %}
-                                  </span>
                                 </div>
-                                {% comment %} {%- if block.settings.show_dynamic_checkout -%}
-                                  {{ form | payment_button }}
-                                {%- endif -%} {% endcomment %}
                               </div>
                             {%- endform -%}
                           </product-form>
                         </div>
+                        <span class="wish-list">
+                          {% render 'icon-heart' %}
+                        </span>
                       </div>
                     </div>
                   </div>
