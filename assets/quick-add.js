@@ -34,7 +34,7 @@ if (!customElements.get("quick-add-modal")) {
             super.show(opener);
             this.radios.addEventListener("change", () => {
               this.updateOption();
-              this.updateIdVariant();
+              this.getIdVariant();
               this.updateIdButton();
               this.updateVariant(this.ajaxData);
             });
@@ -47,7 +47,7 @@ if (!customElements.get("quick-add-modal")) {
           .then((res) => {
             this.ajaxData = res;
             this.inputButton.value = this.ajaxData.variants[0].id;
-            if( this.ajaxData.variants[0].available){
+            if (this.ajaxData.variants[0].available) {
               this.souloutBtn.style.display = "none";
               this.addcartBtn.style.display = "block";
             } else {
@@ -146,6 +146,36 @@ if (!customElements.get("quick-add-modal")) {
         });
       }
 
+      getIdVariant() {
+        this.currentVariant = this.getVariantData().find((variant) => {
+          return !variant.options
+            .map((option, index) => {
+              return this.options[index] === option;
+            })
+            .includes(false);
+        });
+      }
+
+      getVariantData() {
+        this.radios.setAttribute(
+          "data-url",
+          `/products/${this.ajaxData.handle}`
+        );
+        this.variantData = this.ajaxData.variants;
+        return this.variantData;
+      }
+
+      updateIdButton() {
+        this.inputButton.value = this.currentVariant.id;
+        if (this.currentVariant.available) {
+          this.souloutBtn.style.display = "none";
+          this.addcartBtn.style.display = "block";
+        } else {
+          this.souloutBtn.style.display = "block";
+          this.addcartBtn.style.display = "none";
+        }
+      }
+
       updateVariant(product) {
         const selectedOptionOneVariants = product.variants.filter(
           (variant) => this.querySelector(":checked").value === variant.option1
@@ -189,36 +219,6 @@ if (!customElements.get("quick-add-modal")) {
             input.classList.add("disabled");
           }
         });
-      }
-
-      updateIdVariant() {
-        this.currentVariant = this.getVariantData().find((variant) => {
-          return !variant.options
-            .map((option, index) => {
-              return this.options[index] === option;
-            })
-            .includes(false);
-        });
-      }
-
-      updateIdButton() {
-        this.inputButton.value = this.currentVariant.id;
-        if (this.currentVariant.available) {
-          this.souloutBtn.style.display = "none";
-          this.addcartBtn.style.display = "block";
-        } else {
-          this.souloutBtn.style.display = "block";
-          this.addcartBtn.style.display = "none";
-        }
-      }
-
-      getVariantData() {
-        this.radios.setAttribute(
-          "data-url",
-          `/products/${this.ajaxData.handle}`
-        );
-        this.variantData = this.ajaxData.variants;
-        return this.variantData;
       }
     }
   );
