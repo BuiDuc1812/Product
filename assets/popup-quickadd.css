@@ -8,8 +8,8 @@
     padding: 0;
     stroke: black;
     width: fit-content;
-    top: 3.2rem;
-    right: 3.2rem;
+    top: 3rem;
+    right: 3rem;
 }
 
 .modal-product_popup .quick-add-modal__toggle svg {
@@ -29,9 +29,9 @@
     border-bottom: 1px solid #E0DFDF;
 }
 
-.body-product_popup {
+/* .body-product_popup {
     padding-top: 24px;
-}
+} */
 
 .slide--product_popup {
     width: 164px;
@@ -54,7 +54,7 @@
     display: flex;
     border: none;
     padding: 0;
-    margin: 20px 0 0 0;
+    margin: 24px 0 0 0;
     flex-wrap: wrap;
     gap: 8px;
 }
@@ -62,6 +62,9 @@
 .dot-paginate {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 50px;
+    width: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%);
 }
 
 .dot-paginate span {
@@ -75,7 +78,7 @@
     min-width: unset;
 }
 
-.lable-color img{
+.lable-color img {
     width: inherit;
     height: 5.8rem;
     object-fit: cover;
@@ -102,11 +105,12 @@
 }
 
 .variant-picker legend {
-    font-family:'Alaska VAR';
+    font-family: 'Alaska VAR';
     font-size: 16px;
     font-weight: 600;
     line-height: 24px;
     color: #232323;
+    margin-bottom: 8px;
 }
 
 .button-popup-addcart {
@@ -134,27 +138,31 @@
 
 .popup_vendor {
     font-family: "Alaska VAR";
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 600;
-    line-height: 24px;
+    line-height: 32px;
     margin: 0;
     text-transform: capitalize;
 }
 
 .popup_title {
     font-family: 'Alaska VAR';
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
     line-height: 24px;
     color: #404346;
     margin: 0;
-    padding: 4px 0 8px 0;
+    padding: 2px 0 8px 0;
+}
+
+.change-pricesale {
+    line-height: 24px;
 }
 
 @media screen and (max-width:749x) {
     .slide--product_popup {
         width: 108px;
-        min-width : 108px;
+        min-width: 108px;
         height: 108px;
     }
 
@@ -195,6 +203,11 @@
     bottom: 0;
 }
 
-.node-error svg{
+.node-error svg {
     width: 12px;
+}
+
+.addtext {
+    font-weight: 600;
+    font-size: 16px;
 }

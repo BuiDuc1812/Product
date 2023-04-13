@@ -118,7 +118,6 @@
     transform: translateY(0);
   }
 }
-
 .quick-add-modal__toggle {
   background-color: rgb(var(--color-background));
   border: 0.1rem solid rgba(var(--color-foreground), 0.1);

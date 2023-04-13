@@ -250,7 +250,7 @@
                                     name="add"
                                     class="new-add-to-card product-form__submit button button--full-width addcart-btn"
                                   >
-                                  <span>{{ 'products.product.add_to_cart' | t }} </span>
+                                  <span class="addtext">Add to Cart</span>
                                     <div class="loading-overlay__spinner hidden">
                                       <svg
                                         aria-hidden="true"
@@ -289,9 +289,9 @@
                             {%- endform -%}
                           </product-form>
                         </div>
-                        <span class="wish-list">
+                        {% comment %} <span class="wish-list">
                           {% render 'icon-heart' %}
-                        </span>
+                        </span> {% endcomment %}
                       </div>
                     </div>
                   </div>

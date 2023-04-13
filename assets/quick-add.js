@@ -79,7 +79,7 @@ if (!customElements.get("quick-add-modal")) {
           product.variants[0].compare_at_price > product.variants[0].price &&
           product.variants[0].compare_at_price
         ) {
-          priceContainer.innerHTML = `<span class="change-pricesale">$${product.variants[0].price}</span><span class="rrr"> RRR</span><span class="change-price-regular change-pricesale-compare">$${product.variants[0].compare_at_price}</span>`;
+          priceContainer.innerHTML = `<span class="change-pricesale">$${product.variants[0].price}</span><span class="rrr">  RRR</span><span class="change-price-regular change-pricesale-compare">$${product.variants[0].compare_at_price}</span>`;
         } else {
           priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].price}</span>`;
         }
