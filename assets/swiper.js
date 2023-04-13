@@ -1,5 +1,4 @@
 var swiper = new Swiper(".swiper-list", {
-  slidesPerView: 1,
   breakpoints: {
     320: {
       slidesPerView: 2,
@@ -34,6 +33,7 @@ equalHeight();
 function setHeight(handle, talet) {
   handle.forEach((item) => {
     contentBlock(item, talet);
+
   });
 }
 
