@@ -134,7 +134,7 @@ if (!customElements.get("quick-add-modal")) {
 
       innerTextHtml(listVariantColor, listItemVariant, option, index) {
         this.listField = this.radios.querySelectorAll("fieldset");
-        if(Boolean(option.name == 'Color')){
+        if (Boolean(option.name == "Color")) {
           const listColor = `${listVariantColor.join("")}`;
           this.listField[0].innerHTML = listColor;
         } else {
