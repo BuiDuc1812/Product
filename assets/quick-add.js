@@ -128,17 +128,20 @@ if (!customElements.get("quick-add-modal")) {
             </label>`);
             });
           }
-          this.innerTextHtml(listVariantColor, listItemVariant, index);
+          this.innerTextHtml(listVariantColor, listItemVariant, option, index);
         });
       }
 
-      innerTextHtml(listVariantColor, listItemVariant, index) {
+      innerTextHtml(listVariantColor, listItemVariant, option, index) {
         this.listField = this.radios.querySelectorAll("fieldset");
-        const listColor = `${listVariantColor.join("")}`;
-        this.listField[0].innerHTML = listColor;
-        const listVariant = `${listItemVariant.join("")}`;
-        listItemVariant.length = 0;
-        this.listField[index].innerHTML = listVariant;
+        if(Boolean(option.name == 'Color')){
+          const listColor = `${listVariantColor.join("")}`;
+          this.listField[0].innerHTML = listColor;
+        } else {
+          const listVariant = `${listItemVariant.join("")}`;
+          listItemVariant.length = 0;
+          this.listField[index].innerHTML = listVariant;
+        }
       }
 
       addChecked() {
