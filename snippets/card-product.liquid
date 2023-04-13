@@ -160,7 +160,7 @@
                   aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                   data-product-url="{{ card_product.url }}"
                 >
-                  <span>Quick View</span>
+                  <span class="addtext">Quick View</span>
                 </button>
               </modal-opener>
               <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
@@ -250,7 +250,7 @@
                                     name="add"
                                     class="new-add-to-card product-form__submit button button--full-width addcart-btn"
                                   >
-                                  <span class="addtext">Add to Cart</span>
+                                    <span class="addtext">Add to Cart</span>
                                     <div class="loading-overlay__spinner hidden">
                                       <svg
                                         aria-hidden="true"
@@ -271,7 +271,7 @@
                                     class="new-add-to-card product-form__submit button button--full-width soulout-btn"
                                     disabled
                                   >
-                                  <span>{{ 'products.product.sold_out' | t }}</span>
+                                  <span class="addtext">{{ 'products.product.sold_out' | t }}</span>
                                     <div class="loading-overlay__spinner hidden">
                                       <svg
                                         aria-hidden="true"
@@ -326,7 +326,7 @@
                       disabled
                     {% endif %}
                   >
-                    <span>
+                    <span class="addtext">
                       {%- if card_product.selected_or_first_available_variant.available -%}
                         {{ 'products.product.add_to_cart' | t }}
                       {%- else -%}
@@ -358,19 +358,20 @@
         {%- endif -%}
       </div>
 
-      {% for option in card_product.options %}
-        {% if option == 'Color' %}
-        <div class="color-swatch">
-          {% for item in card_product.metafields.custom.product_swatch_handle.value %}
-            <div class="color-variant {% if card_product.handle == item %}choose{% endif %}" handle="{{ item }}"> 
-              <span style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};"></span>
+      <div class="card__content check-pad">
+        <div class="min-h">
+          {% for option in card_product.options %}
+            {% if option == 'Color' %}
+            <div class="color-swatch">
+              {% for item in card_product.metafields.custom.product_swatch_handle.value %}
+                <div class="color-variant {% if card_product.handle == item %}choose{% endif %}" handle="{{ item }}"> 
+                  <span style="background-color: {{ card_product.metafields.custom.product_swatch_color.value[forloop.index0] }};"></span>
+                </div>
+              {% endfor %}
             </div>
+            {% endif %}
           {% endfor %}
         </div>
-        {% endif %}
-      {% endfor %}
-
-      <div class="card__content">
         <div class="card__information">
           <h3
             class="card__heading style-heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
