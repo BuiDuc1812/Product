@@ -75,7 +75,10 @@ if (!customElements.get("quick-add-modal")) {
 
       priceProduct(product) {
         const priceContainer = this.querySelector(".price__container");
-        if (product.variants[0].compare_at_price > product.variants[0].price) {
+        if (
+          product.variants[0].compare_at_price > product.variants[0].price &&
+          product.variants[0].compare_at_price
+        ) {
           priceContainer.innerHTML = `<span class="change-pricesale">$${product.variants[0].price}</span><span class="rrr"> RRR</span><span class="change-price-regular change-pricesale-compare">$${product.variants[0].compare_at_price}</span>`;
         } else {
           priceContainer.innerHTML = `<span class="change-price-regular">$${product.variants[0].price}</span>`;
@@ -85,7 +88,7 @@ if (!customElements.get("quick-add-modal")) {
       createFieldsetVariant(product) {
         const listVariant = [];
 
-        product.options.map((option) => {
+        product.options.map(() => {
           listVariant.push(
             `<fieldset class="js product-form__input"></fieldset>`
           );
@@ -95,12 +98,11 @@ if (!customElements.get("quick-add-modal")) {
       }
 
       setDataVariant(product) {
-        this.listField = this.radios.querySelectorAll("fieldset");
         const listVariantColor = [];
         const listItemVariant = [];
         product.options.map((option, index) => {
           if (option.name == "Color") {
-            listVariantColor.push(`<legend>${option.name} :</legend>`)
+            listVariantColor.push(`<legend>${option.name} :</legend>`);
             option.values.map((item) => {
               listVariantColor.push(`<input
               type="radio"
@@ -113,7 +115,7 @@ if (!customElements.get("quick-add-modal")) {
             </label>`);
             });
           } else {
-            listItemVariant.push(`<legend>${option.name} :</legend>`)
+            listItemVariant.push(`<legend>${option.name} :</legend>`);
             option.values.map((item) => {
               listItemVariant.push(`<input
             type="radio"
@@ -126,12 +128,17 @@ if (!customElements.get("quick-add-modal")) {
             </label>`);
             });
           }
-          const listColor = `${listVariantColor.join("")}`;
-          this.listField[0].innerHTML = listColor;
-          const listVariant = `${listItemVariant.join("")}`;
-          listItemVariant.length = 0;
-          this.listField[index].innerHTML = listVariant;
+          this.innerTextHtml(listVariantColor, listItemVariant, index);
         });
+      }
+
+      innerTextHtml(listVariantColor, listItemVariant, index) {
+        this.listField = this.radios.querySelectorAll("fieldset");
+        const listColor = `${listVariantColor.join("")}`;
+        this.listField[0].innerHTML = listColor;
+        const listVariant = `${listItemVariant.join("")}`;
+        listItemVariant.length = 0;
+        this.listField[index].innerHTML = listVariant;
       }
 
       addChecked() {
@@ -187,7 +194,11 @@ if (!customElements.get("quick-add-modal")) {
         const inputWrappers = [
           ...this.querySelectorAll(".product-form__input"),
         ];
-        
+
+        this.checkSoulOutVariant(inputWrappers, selectedOptionOneVariants);
+      }
+
+      checkSoulOutVariant(inputWrappers, selectedOptionOneVariants) {
         inputWrappers.forEach((option, index) => {
           if (index === 0) return;
           const optionInputs = [

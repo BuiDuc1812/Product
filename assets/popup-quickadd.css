@@ -99,9 +99,7 @@
     justify-content: center;
     height: 48px;
     align-items: center;
-
 }
-
 
 .variant-picker legend {
     font-family:'Alaska VAR';
@@ -124,7 +122,6 @@
 .variant-picker .disabled+label::after {
     position: absolute;
     content: '';
-    ;
     width: 120%;
     height: 1px;
     background-color: #E0DFDF;
