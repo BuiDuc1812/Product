@@ -1,11 +1,7 @@
 var swiper = new Swiper(".swiper-list", {
-  slidesPerView: 4,
+  slidesPerView: 1,
   breakpoints: {
-    0: {
-      slidesPerView: 1,
-      spaceBetween: 8,
-    },
-    376: {
+    320: {
       slidesPerView: 2,
       spaceBetween: 8,
     },
@@ -37,9 +33,7 @@ equalHeight();
 
 function setHeight(handle, talet) {
   handle.forEach((item) => {
-    let titleHeight = item.querySelector(".handlelink");
     contentBlock(item, talet);
-    contentBlock(titleHeight, talet);
   });
 }
 
