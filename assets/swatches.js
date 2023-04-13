@@ -91,9 +91,14 @@ class swatches {
         buttonQuickAdd.querySelector('.quick-add__submit-btn').setAttribute('data-product-url',`/products/${data.handle}`);
         const buttonPopup = buttonQuickAdd.querySelector('.quick-open')
         const buttonAddFirst = buttonQuickAdd.querySelector('.add-first')
+        buttonAddFirst.querySelector('.addfist-value').value = data.variants[0].id;
         console.log(buttonPopup, buttonAddFirst);
         if(data.variants.length === 1){
-
+            buttonPopup.classList.add('hidden');
+            buttonAddFirst.classList.remove('hidden');
+        } else {
+            buttonPopup.classList.remove('hidden');
+            buttonAddFirst.classList.add('hidden');
         }
     }
 }
