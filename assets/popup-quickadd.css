@@ -3,6 +3,7 @@
 }
 
 .modal-product_popup .quick-add-modal__toggle {
+    position: absolute;
     border: none;
     padding: 0;
     stroke: black;
@@ -153,7 +154,7 @@
     padding: 4px 0 8px 0;
 }
 
-@media screen and (max-width:750px) {
+@media screen and (max-width:749x) {
     .slide--product_popup {
         width: 108px;
         min-width : 108px;
