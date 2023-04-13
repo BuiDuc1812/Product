@@ -89,6 +89,12 @@ class swatches {
     addProductPopup(buttonQuickAdd, data) {
         buttonQuickAdd.querySelector('.id-modal-product').setAttribute('data-modal',`#QuickAdd-${data.id}`);
         buttonQuickAdd.querySelector('.quick-add__submit-btn').setAttribute('data-product-url',`/products/${data.handle}`);
+        const buttonPopup = buttonQuickAdd.querySelector('.quick-open')
+        const buttonAddFirst = buttonQuickAdd.querySelector('.add-first')
+        console.log(buttonPopup, buttonAddFirst);
+        if(data.variants.length === 1){
+
+        }
     }
 }
 
