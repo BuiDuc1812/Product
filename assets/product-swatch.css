@@ -22,7 +22,7 @@
     height: 32px;
     width: 32px;
     border-radius: 3px;
-    transition:all 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 .color-variant span:hover {
@@ -39,7 +39,7 @@
     padding: 0 12px;
 }
 
-.remove-befor .ratio::before{
+.remove-befor .ratio::before {
     content: unset;
 }
 
